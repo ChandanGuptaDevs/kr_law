@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
 import Image2 from '../../assets/services_imgs/img_02.webp';
 
 const Container = styled.div`
@@ -18,29 +17,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
-`;
-
-const KeyTakeaways = styled.div`
-  background-color: #f8f8f8;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 4px;
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  div {
-    line-height: 1.8;
-    font-size: 16px;
-  }
-
-  p {
-    margin-bottom: 10px;
-  }
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const FormContainer = styled.div`
@@ -253,14 +231,6 @@ const Section = styled.div`
   }
 `;
 
-const SectionLeft = styled(Section)`
-  flex-direction: row;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
@@ -296,23 +266,9 @@ const ImageContent = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  color: #111;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
-`;
-
-const Subheading = styled.h2`
-  font-size: 22px;
-  margin: 32px 0 16px;
-`;
-
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;
@@ -442,27 +398,28 @@ const AirbnbPage = () => {
               an Airbnb rental, including:
             </Paragraph>
             <Paragraph>
-              Slip and fall accidents: These can occur if a guest slips on a wet
-              or slippery surface, or trips over an object that was not properly
-              marked or removed.
+              <strong>Slip and fall accidents:</strong> These can occur if a
+              guest slips on a wet or slippery surface, or trips over an object
+              that was not properly marked or removed.
             </Paragraph>
             <Paragraph>
-              Burn injuries: These can occur if there is a malfunction with a
-              stove, oven, or another heating element in the rental property.
+              <strong>Burn injuries:</strong> These can occur if there is a
+              malfunction with a stove, oven, or another heating element in the
+              rental property.
             </Paragraph>
             <Paragraph>
-              Electrical injuries: These can occur if there is faulty wiring or
-              electrical equipment in the rental property.
+              <strong>Electrical injuries:</strong> These can occur if there is
+              faulty wiring or electrical equipment in the rental property.
             </Paragraph>
             <Paragraph>
-              Structural accidents: These can occur if there is a collapse or
-              failure of a structure in the rental property, such as a balcony
-              or staircase.
+              <strong>Structural accidents:</strong> These can occur if there is
+              a collapse or failure of a structure in the rental property, such
+              as a balcony or staircase.
             </Paragraph>
             <Paragraph>
-              Swimming pool accidents: These can occur if there is a lack of
-              proper maintenance or safety precautions with a swimming pool on
-              the property.
+              <strong>Swimming pool accidents:</strong> These can occur if there
+              is a lack of proper maintenance or safety precautions with a
+              swimming pool on the property.
             </Paragraph>
             <Paragraph>
               If you have been injured in an Airbnb rental due to one of these
@@ -480,35 +437,35 @@ const AirbnbPage = () => {
               are several steps you can take to address the situation:
             </Paragraph>
             <Paragraph>
-              Contact the host: The first step is to reach out to the host and
-              explain the situation. They may be able to resolve the issue
-              quickly and easily.
+              <strong>Contact the host:</strong> The first step is to reach out
+              to the host and explain the situation. They may be able to resolve
+              the issue quickly and easily.
             </Paragraph>
             <Paragraph>
-              Contact Airbnb customer service: If the host is unresponsive or
-              unable to help, you can contact Airbnb customer service for
-              assistance. They can provide guidance and support to help you
-              resolve the issue
+              <strong>Contact Airbnb customer service:</strong> If the host is
+              unresponsive or unable to help, you can contact Airbnb customer
+              service for assistance. They can provide guidance and support to
+              help you resolve the issue
             </Paragraph>
             <Paragraph>
-              Document the issue: It's important to document any issues you
-              encounter during your stay, including taking photos and videos if
-              possible. This can help support your case if you need to escalate
-              the issue.
+              <strong>Document the issue:</strong> It's important to document
+              any issues you encounter during your stay, including taking photos
+              and videos if possible. This can help support your case if you
+              need to escalate the issue.
             </Paragraph>
             <Paragraph>
-              Consider filing a complaint: If you are unable to resolve the
-              issue with the host or Airbnb customer service, you may want to
-              consider filing a complaint with local authorities or with Airbnb
-              directly.
+              <strong>Consider filing a complaint:</strong> If you are unable to
+              resolve the issue with the host or Airbnb customer service, you
+              may want to consider filing a complaint with local authorities or
+              with Airbnb directly.
             </Paragraph>
             <Paragraph>
-              Contact an attorney: If you have been injured or have suffered
-              significant financial losses as a result of the issue, you may
-              want to consider contacting an attorney who is experienced in
-              handling Airbnb-related legal issues. An attorney can help you
-              understand your legal rights and pursue compensation for your
-              losses.
+              <strong>Contact an attorney:</strong> If you have been injured or
+              have suffered significant financial losses as a result of the
+              issue, you may want to consider contacting an attorney who is
+              experienced in handling Airbnb-related legal issues. An attorney
+              can help you understand your legal rights and pursue compensation
+              for your losses.
             </Paragraph>
             <Paragraph>
               Ultimately, it's important to address any issues or concerns as
@@ -532,31 +489,32 @@ const AirbnbPage = () => {
               Here are just a few:
             </Paragraph>
             <Paragraph>
-              Experience: The attorneys at KR Injury Law have years of
-              experience representing clients in a wide range of personal injury
-              cases, including car accidents, truck accidents, slip and falls,
-              and more. They have a deep understanding of the law and the legal
-              system and know how to build strong cases for their clients.
+              <strong>Experience:</strong> The attorneys at KR Injury Law have
+              years of experience representing clients in a wide range of
+              personal injury cases, including car accidents, truck accidents,
+              slip and falls, and more. They have a deep understanding of the
+              law and the legal system and know how to build strong cases for
+              their clients.
             </Paragraph>
             <Paragraph>
-              Personalized attention: At KR Injury Law, clients are treated as
-              individuals, not just case numbers. The attorneys take the time to
-              get to know their clients and understand their unique
-              circumstances and needs, and work closely with them throughout the
-              legal process.
+              <strong>Personalized attention:</strong> At KR Injury Law, clients
+              are treated as individuals, not just case numbers. The attorneys
+              take the time to get to know their clients and understand their
+              unique circumstances and needs, and work closely with them
+              throughout the legal process.
             </Paragraph>
             <Paragraph>
-              Representation: KR Injury Law attorneys are passionate about
-              fighting for their clients and getting them the compensation they
-              deserve. They are not afraid to take on big insurance companies
-              and other powerful opponents and will work tirelessly to ensure
-              that their client's rights are protected.
+              <strong>Representation:</strong> KR Injury Law attorneys are
+              passionate about fighting for their clients and getting them the
+              compensation they deserve. They are not afraid to take on big
+              insurance companies and other powerful opponents and will work
+              tirelessly to ensure that their client's rights are protected.
             </Paragraph>
             <Paragraph>
-              Excellent reputation: KR Injury Law has a proven track record of
-              success, with numerous satisfied clients and positive reviews.
-              They are known for their professionalism, integrity, and
-              dedication to their clients.
+              <strong>Excellent reputation:</strong> KR Injury Law has a proven
+              track record of success, with numerous satisfied clients and
+              positive reviews. They are known for their professionalism,
+              integrity, and dedication to their clients.
             </Paragraph>
             <Paragraph>
               Overall, if you are looking for an experienced, compassionate, and

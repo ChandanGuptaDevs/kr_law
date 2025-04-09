@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image1 from '../../assets/services_imgs/img_01.webp';
-// import Image3 from '../../assets/services_imgs/img_03.html';
 
 const Container = styled.div`
   max-width: 1500px;
@@ -18,8 +17,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const KeyTakeaways = styled.div`
@@ -253,14 +252,6 @@ const Section = styled.div`
   }
 `;
 
-const SectionLeft = styled(Section)`
-  flex-direction: row;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
@@ -296,23 +287,9 @@ const ImageContent = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  color: #111;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
-`;
-
-const Subheading = styled.h2`
-  font-size: 22px;
-  margin: 32px 0 16px;
-`;
-
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;
@@ -498,57 +475,57 @@ const AccidentPage = () => {
               areas of expertise. Some common types of accident lawyers include:
             </Paragraph>
             <Paragraph>
-              Car accident lawyers: Car accident lawyers specialize in cases
-              involving car accidents. They may work with clients who have been
-              injured in a car accident or who have lost a loved one in a car
-              accident.
+              <strong>Car accident lawyers:</strong> Car accident lawyers
+              specialize in cases involving car accidents. They may work with
+              clients who have been injured in a car accident or who have lost a
+              loved one in a car accident.
             </Paragraph>
             <Paragraph>
-              Truck accident lawyers: Truck accident lawyers specialize in cases
-              involving commercial truck accidents. These accidents can be more
-              complex than car accidents due to the size and weight of the
-              trucks involved and may involve multiple parties such as the truck
-              driver, trucking company, and manufacturers of the truck or its
-              parts.
+              <strong>Truck accident lawyers:</strong> Truck accident lawyers
+              specialize in cases involving commercial truck accidents. These
+              accidents can be more complex than car accidents due to the size
+              and weight of the trucks involved and may involve multiple parties
+              such as the truck driver, trucking company, and manufacturers of
+              the truck or its parts.
             </Paragraph>
             <Paragraph>
-              Motorcycle accident lawyers: Motorcycle accident lawyers
-              specialize in cases involving motorcycle accidents. These
+              <strong>Motorcycle accident lawyers:</strong> Motorcycle accident
+              lawyers specialize in cases involving motorcycle accidents. These
               accidents can be particularly dangerous for riders due to the lack
               of protection offered by a motorcycle.
             </Paragraph>
             <Paragraph>
-              Pedestrian accident lawyers: Pedestrian accident lawyers
-              specialize in cases involving accidents between pedestrians and
-              motor vehicles. Pedestrians are particularly vulnerable in
-              accidents due to their lack of protection and the high speeds at
-              which motor vehicles can travel.
+              <strong>Pedestrian accident lawyers:</strong> Pedestrian accident
+              lawyers specialize in cases involving accidents between
+              pedestrians and motor vehicles. Pedestrians are particularly
+              vulnerable in accidents due to their lack of protection and the
+              high speeds at which motor vehicles can travel.
             </Paragraph>
             <Paragraph>
-              Bicycle accident lawyers: Bicycle accident lawyers specialize in
-              cases involving accidents between bicycles and motor vehicles.
-              Bicyclists are also vulnerable in accidents due to their lack of
-              protection and the high speeds at which motor vehicles can
-              travel.​
+              <strong>Bicycle accident lawyers:</strong> Bicycle accident
+              lawyers specialize in cases involving accidents between bicycles
+              and motor vehicles. Bicyclists are also vulnerable in accidents
+              due to their lack of protection and the high speeds at which motor
+              vehicles can travel.​
             </Paragraph>
             <Paragraph>
-              Slip and fall lawyers: Slip and fall lawyers specialize in cases
-              involving accidents on someone else's property. These accidents
-              can occur due to hazards such as wet floors, uneven surfaces, or
-              inadequate lighting.
+              <strong>Slip and fall lawyers:</strong> Slip and fall lawyers
+              specialize in cases involving accidents on someone else's
+              property. These accidents can occur due to hazards such as wet
+              floors, uneven surfaces, or inadequate lighting.
             </Paragraph>
             <Paragraph>
-              Medical malpractice lawyers: Medical malpractice lawyers
-              specialize in cases involving injuries or illnesses that result
-              from medical negligence or error. These cases can be complex and
-              may involve multiple parties, including doctors, nurses, and
-              hospitals.
+              <strong>Medical malpractice lawyers:</strong> Medical malpractice
+              lawyers specialize in cases involving injuries or illnesses that
+              result from medical negligence or error. These cases can be
+              complex and may involve multiple parties, including doctors,
+              nurses, and hospitals.
             </Paragraph>
             <Paragraph>
-              Wrongful death lawyers: Wrongful death lawyers specialize in cases
-              where a person has died as a result of someone else's negligence
-              or wrongdoing. These cases may involve accidents, medical
-              malpractice, or other types of incidents.
+              <strong>Wrongful death lawyers:</strong> Wrongful death lawyers
+              specialize in cases where a person has died as a result of someone
+              else's negligence or wrongdoing. These cases may involve
+              accidents, medical malpractice, or other types of incidents.
             </Paragraph>
             <Paragraph>
               It's important to choose an accident lawyer who has experience in
@@ -568,34 +545,38 @@ const AccidentPage = () => {
               visits, prescription medications, and rehabilitation.
             </Paragraph>
             <Paragraph>
-              Lost wages: This includes any income you may have lost as a result
-              of the accident, including time off work for medical treatment or
-              recovery.
+              <strong>Lost wages:</strong> This includes any income you may have
+              lost as a result of the accident, including time off work for
+              medical treatment or recovery.
             </Paragraph>
             <Paragraph>
-              Property damage: This includes any damage to your vehicle or other
-              property as a result of the accident.
+              <strong>Property damage:</strong> This includes any damage to your
+              vehicle or other property as a result of the accident.
             </Paragraph>
             <Paragraph>
-              Pain and suffering: This includes any physical or emotional pain
-              or suffering you may have experienced as a result of the accident.
+              <strong>Pain and suffering:</strong> This includes any physical or
+              emotional pain or suffering you may have experienced as a result
+              of the accident.
             </Paragraph>
             <Paragraph>
-              Loss of consortium: This refers to the loss of companionship or
-              support from a spouse or partner as a result of the accident.
+              <strong>Loss of consortium:</strong> This refers to the loss of
+              companionship or support from a spouse or partner as a result of
+              the accident.
             </Paragraph>
             <Paragraph>
-              Future medical expenses: This includes any anticipated medical
-              expenses you may have in the future as a result of the accident.
+              <strong>Future medical expenses:</strong> This includes any
+              anticipated medical expenses you may have in the future as a
+              result of the accident.
             </Paragraph>
             <Paragraph>
-              Future lost wages: This includes any anticipated loss of income
-              you may experience in the future as a result of the accident.
+              <strong>Future lost wages:</strong> This includes any anticipated
+              loss of income you may experience in the future as a result of the
+              accident.
             </Paragraph>
             <Paragraph>
-              Punitive damages: In some cases, you may be awarded punitive
-              damages, which are designed to punish the at-fault party for their
-              actions.
+              <strong>Punitive damages:</strong> In some cases, you may be
+              awarded punitive damages, which are designed to punish the
+              at-fault party for their actions.
             </Paragraph>
             <Paragraph>
               To calculate the value of your accident, you should work with an
@@ -666,27 +647,27 @@ const AccidentPage = () => {
               their clients.
             </Paragraph>
             <Paragraph>
-              Personalized attention: At KR Injury Law, clients are treated as
-              individuals, not just case numbers. The attorneys take the time to
-              get to know their clients and understand their unique
-              circumstances and needs, and work closely with them throughout the
-              legal process.
+              <strong>Personalized attention:</strong> At KR Injury Law, clients
+              are treated as individuals, not just case numbers. The attorneys
+              take the time to get to know their clients and understand their
+              unique circumstances and needs, and work closely with them
+              throughout the legal process.
             </Paragraph>
             <Paragraph>
-              Representation: KR Injury Law attorneys are passionate about
-              fighting for their clients and getting them the compensation they
-              deserve. They are not afraid to take on big insurance companies
-              and other powerful opponents and will work tirelessly to ensure
-              that their client's rights are protected.
+              <strong>Representation:</strong> KR Injury Law attorneys are
+              passionate about fighting for their clients and getting them the
+              compensation they deserve. They are not afraid to take on big
+              insurance companies and other powerful opponents and will work
+              tirelessly to ensure that their client's rights are protected.
             </Paragraph>
             <Paragraph>
-              Excellent reputation: KR Injury Law has a proven track record of
-              success, with numerous satisfied clients and positive reviews.
-              They are known for their professionalism, integrity, and
-              dedication to their clients. Overall, if you are looking for an
-              experienced, compassionate, and representative law firm to
-              represent you in your personal injury case, KR Injury Law is an
-              excellent choice.
+              <strong>Excellent reputation:</strong> KR Injury Law has a proven
+              track record of success, with numerous satisfied clients and
+              positive reviews. They are known for their professionalism,
+              integrity, and dedication to their clients. Overall, if you are
+              looking for an experienced, compassionate, and representative law
+              firm to represent you in your personal injury case, KR Injury Law
+              is an excellent choice.
             </Paragraph>
           </TextContent>
         </SectionRight>

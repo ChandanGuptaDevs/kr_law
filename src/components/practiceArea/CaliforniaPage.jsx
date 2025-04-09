@@ -18,8 +18,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const KeyTakeaways = styled.div`
@@ -301,13 +301,13 @@ const Heading = styled.h2`
   font-size: 2rem;
   font-weight: 700;
   line-height: 1.4;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   letter-spacing: -0.3px;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;
@@ -629,20 +629,21 @@ const CaliforniaPage = () => {
               help:
             </Paragraph>
             <Paragraph>
-              Communication with insurance companies: Our law firm can
-              communicate with the insurance companies on your behalf and help
-              you navigate the claims process. We can ensure that you are not
-              taken advantage of by the insurance companies and that your rights
-              are protected. Investigation: Our law firm can investigate the
-              accident by interviewing witnesses, examining physical evidence,
-              and analyzing any available photographs or videos of the accident.
-              This can help establish liability and ensure that you receive the
-              compensation you deserve. Negotiation: Our law firm can negotiate
-              with insurance companies to ensure that you receive a fair
-              settlement for your damages, including medical expenses, lost
-              wages, and pain and suffering. Litigation: If necessary, our law
-              firm can file a lawsuit and represent you in court. We can argue
-              on your behalf and help you receive compensation for your damages.
+              <strong>Communication with insurance companies:</strong> Our law
+              firm can communicate with the insurance companies on your behalf
+              and help you navigate the claims process. We can ensure that you
+              are not taken advantage of by the insurance companies and that
+              your rights are protected. Investigation: Our law firm can
+              investigate the accident by interviewing witnesses, examining
+              physical evidence, and analyzing any available photographs or
+              videos of the accident. This can help establish liability and
+              ensure that you receive the compensation you deserve. Negotiation:
+              Our law firm can negotiate with insurance companies to ensure that
+              you receive a fair settlement for your damages, including medical
+              expenses, lost wages, and pain and suffering. Litigation: If
+              necessary, our law firm can file a lawsuit and represent you in
+              court. We can argue on your behalf and help you receive
+              compensation for your damages.
             </Paragraph>
             <Paragraph>
               In summary, our law firm can provide invaluable assistance if you

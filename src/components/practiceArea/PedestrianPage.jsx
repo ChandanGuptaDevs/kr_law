@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
 import Image2 from '../../assets/services_imgs/img_02.webp';
 
 const Container = styled.div`
@@ -18,29 +17,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
-`;
-
-const KeyTakeaways = styled.div`
-  background-color: #f8f8f8;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 4px;
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  div {
-    line-height: 1.8;
-    font-size: 16px;
-  }
-
-  p {
-    margin-bottom: 10px;
-  }
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const FormContainer = styled.div`
@@ -253,14 +231,6 @@ const Section = styled.div`
   }
 `;
 
-const SectionLeft = styled(Section)`
-  flex-direction: row;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
@@ -296,23 +266,9 @@ const ImageContent = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  color: #111;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
-`;
-
-const Subheading = styled.h2`
-  font-size: 22px;
-  margin: 32px 0 16px;
-`;
-
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;
@@ -475,31 +431,33 @@ const PedestrianPage = () => {
               Here are just a few:
             </Paragraph>
             <Paragraph>
-              Experience: The attorneys at KR Injury Law have years of
-              experience representing clients in a wide range of personal injury
-              cases, including car accidents, truck accidents, slip and falls,
-              and more. They have a deep understanding of the law and the legal
-              system and know how to build strong cases for their clients.
+              <strong>Experience:</strong> The attorneys at KR Injury Law have
+              years of experience representing clients in a wide range of
+              personal injury cases, including car accidents, truck accidents,
+              slip and falls, and more. They have a deep understanding of the
+              law and the legal system and know how to build strong cases for
+              their clients.
             </Paragraph>
             <Paragraph>
-              Personalized attention: At KR Injury Law, clients are treated as
-              individuals, not just case numbers. The attorneys take the time to
-              get to know their clients and understand their unique
-              circumstances and needs, and work closely with them throughout the
-              legal process.
+              <strong>Personalized attention:</strong> At KR Injury Law, clients
+              are treated as Personalized attention: At KR Injury Law, clients
+              are treated as individuals, not just case numbers. The attorneys
+              take the time to get to know their clients and understand their
+              unique circumstances and needs, and work closely with them
+              throughout the legal process.
             </Paragraph>
             <Paragraph>
-              Representation: KR Injury Law attorneys are passionate about
-              fighting for their clients and getting them the compensation they
-              deserve. They are not afraid to take on big insurance companies
-              and other powerful opponents and will work tirelessly to ensure
-              that their client's rights are protected.
+              <strong>Representation:</strong> KR Injury Law attorneys are
+              passionate about fighting for their clients and getting them the
+              compensation they deserve. They are not afraid to take on big
+              insurance companies and other powerful opponents and will work
+              tirelessly to ensure that their client's rights are protected.
             </Paragraph>
             <Paragraph>
-              Excellent reputation: KR Injury Law has a proven track record of
-              success, with numerous satisfied clients and positive reviews.
-              They are known for their professionalism, integrity, and
-              dedication to their clients.
+              <strong>Excellent reputation:</strong> KR Injury Law has a proven
+              track record of success, with numerous satisfied clients and
+              positive reviews. They are known for their professionalism,
+              integrity, and dedication to their clients.
             </Paragraph>
             <Paragraph>
               Overall, if you are looking for an experienced, compassionate, and

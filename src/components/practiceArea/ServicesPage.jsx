@@ -24,7 +24,7 @@ const ServicesPage = () => {
         mainText='KR Law, APC'
         otherText='Founded by Kathy Rabii'
       />
-      {/* <CaliforniaPage /> */}
+      <CaliforniaPage />
       {/* <ReportingPage /> */}
       {/* <AccidentPage /> */}
       {/* <RentalPage /> */}
@@ -32,7 +32,7 @@ const ServicesPage = () => {
       {/* <AirbnbPage /> */}
       {/* <UberPage /> */}
       {/* <WrongfulPage /> */}
-      <ElectricalPage />
+      {/* <ElectricalPage /> */}
       <AwardsPage />
       <ConsultationFormPage />
       <CTABanner />

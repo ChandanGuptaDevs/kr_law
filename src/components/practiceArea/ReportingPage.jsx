@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
 import Image2 from '../../assets/services_imgs/img_02.webp';
 
 const Container = styled.div`
@@ -18,8 +17,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const KeyTakeaways = styled.div`
@@ -253,14 +252,6 @@ const Section = styled.div`
   }
 `;
 
-const SectionLeft = styled(Section)`
-  flex-direction: row;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
@@ -296,23 +287,14 @@ const ImageContent = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  color: #111;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
-`;
-
 const Subheading = styled.h2`
   font-size: 22px;
   margin: 32px 0 16px;
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;

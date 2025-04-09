@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
 import Image2 from '../../assets/services_imgs/img_02.webp';
 
 const Container = styled.div`
@@ -18,29 +17,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
-  margin-bottom: 16px;
-`;
-
-const KeyTakeaways = styled.div`
-  background-color: #f8f8f8;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 4px;
-
-  h3 {
-    font-size: 20px;
-    margin-bottom: 16px;
-  }
-
-  div {
-    line-height: 1.8;
-    font-size: 16px;
-  }
-
-  p {
-    margin-bottom: 10px;
-  }
+  font-size: 27px;
+  margin-bottom: 15px;
 `;
 
 const FormContainer = styled.div`
@@ -253,14 +231,6 @@ const Section = styled.div`
   }
 `;
 
-const SectionLeft = styled(Section)`
-  flex-direction: row;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
@@ -296,23 +266,9 @@ const ImageContent = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  color: #111;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  letter-spacing: -0.3px;
-`;
-
-const Subheading = styled.h2`
-  font-size: 22px;
-  margin: 32px 0 16px;
-`;
-
 const Paragraph = styled.p`
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.07rem;
+  margin-bottom: 15px;
   color: #3a3a3a;
   font-weight: 400;
   line-height: 1.8;
@@ -447,38 +403,39 @@ const RentalPage = () => {
               ensure your safety. Here are some suggestions:
             </Paragraph>
             <Paragraph>
-              Check for injuries: First and foremost, check yourself and others
-              involved in the accident for any injuries. If anyone is hurt, call
-              for medical attention immediately.
+              <strong>Check for injuries:</strong> First and foremost, check
+              yourself and others involved in the accident for any injuries. If
+              anyone is hurt, call for medical attention immediately.
             </Paragraph>
             <Paragraph>
-              Contact the rental car company: Call the rental car company's
-              emergency phone number to report the accident. They will provide
-              further instructions on what to do next.
+              <strong>Contact the rental car company:</strong> Call the rental
+              car company's emergency phone number to report the accident. They
+              will provide further instructions on what to do next.
             </Paragraph>
             <Paragraph>
-              Contact the police: Call the police to report the accident and get
-              a police report. Make sure to get the name and badge number of the
-              responding officer.
+              <strong>Contact the police:</strong> Call the police to report the
+              accident and get a police report. Make sure to get the name and
+              badge number of the responding officer.
             </Paragraph>
             <Paragraph>
-              Document the accident scene: Take photos of the accident scene,
-              including any damage to the vehicles involved.
+              <strong>Document the accident scene:</strong> Take photos of the
+              accident scene, including any damage to the vehicles involved.
             </Paragraph>
             <Paragraph>
-              Gather information: Collect contact information from any witnesses
-              and exchange insurance information with the other driver.
+              <strong>Gather information:</strong> Collect contact information
+              from any witnesses and exchange insurance information with the
+              other driver.
             </Paragraph>
             <Paragraph>
-              Contact your insurance company: Notify your insurance company
-              about the accident. They will advise you on what to do next and
-              provide further instructions.
+              <strong>Contact your insurance company:</strong> Notify your
+              insurance company about the accident. They will advise you on what
+              to do next and provide further instructions.
             </Paragraph>
             <Paragraph>
-              Contact a rental car accident attorney: If you believe you may
-              have a legal claim, contact a rental car accident attorney to
-              protect your rights and assist you in navigating the complex legal
-              issues involved in these types of cases.
+              <strong>Contact a rental car accident attorney:</strong> If you
+              believe you may have a legal claim, contact a rental car accident
+              attorney to protect your rights and assist you in navigating the
+              complex legal issues involved in these types of cases.
             </Paragraph>
 
             <Title>What Happens If You Crash Someone Else’s Rental Car?</Title>
