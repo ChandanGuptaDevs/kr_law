@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import LogoImage from "../../assets/home_imgs/kr_law_logo.webp";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Link, useNavigate } from 'react-router-dom';
+import LogoImage from '../../assets/home_imgs/kr_law_logo.webp';
 
 const HeaderContainer = styled.header`
   background-color: #000000;
@@ -10,7 +10,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   height: 100px;
-  font-family: "Spartan", sans-serif;
+  font-family: 'Spartan', sans-serif;
 
   @media (max-width: 1024px) {
     flex-wrap: wrap;
@@ -48,7 +48,7 @@ const Navigation = styled.nav`
   }
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? "flex" : "none")};
+    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     flex-direction: column;
     align-items: center;
     padding: 10px 0;
@@ -228,13 +228,15 @@ const MobileDropdownToggle = styled.span`
     margin-left: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    transform: ${(props) => (props.isOpen ? "rotate(180deg)" : "rotate(0)")};
+    transform: ${(props) => (props.isOpen ? 'rotate(180deg)' : 'rotate(0)')};
   }
 `;
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [practiceAreasOpen, setPracticeAreasOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -244,21 +246,26 @@ const Header = () => {
     e.preventDefault();
     e.stopPropagation();
     setPracticeAreasOpen(!practiceAreasOpen);
+    navigate('/california-at-fault-accidents');
   };
 
   return (
     <HeaderContainer>
       <LogoWrapper>
-        <Link to="/">
-          <LogoImg src={LogoImage} alt="KR Law Logo" />
+        <Link to='/'>
+          <LogoImg src={LogoImage} alt='KR Law Logo' />
         </Link>
       </LogoWrapper>
 
-      <MenuToggle onClick={toggleMenu}>{menuOpen ? "✕" : "☰"}</MenuToggle>
+      <MenuToggle onClick={toggleMenu}>{menuOpen ? '✕' : '☰'}</MenuToggle>
 
       <Navigation isOpen={menuOpen}>
         <NavItem>
-          <NavLink href="#" onClick={togglePracticeAreas}>
+          {/* <NavLink href='#' onClick={togglePracticeAreas}> */}
+          <StyledLink
+            to='/california-at-fault-accidents'
+            onClick={togglePracticeAreas}
+          >
             PRACTICE AREAS
             <MobileDropdownToggle
               isOpen={practiceAreasOpen}
@@ -266,42 +273,49 @@ const Header = () => {
             >
               ▼
             </MobileDropdownToggle>
-          </NavLink>
+          </StyledLink>
+          {/* </NavLink> */}
 
           <DropdownMenu
             style={{
               display:
-                practiceAreasOpen && window.innerWidth <= 768 ? "block" : "",
+                practiceAreasOpen && window.innerWidth <= 768 ? 'block' : '',
             }}
           >
-            <DropdownLink href="#">
+            <DropdownLink href='#'>
               CALIFORNIA AT FAULT ACCIDENT REPORTING
             </DropdownLink>
-            <DropdownLink href="#">CAR ACCIDENTS</DropdownLink>
-            <DropdownLink href="#">ACCIDENT LAWYER</DropdownLink>
-            <DropdownLink href="#">RENTAL CAR ACCIDENT</DropdownLink>
-            <DropdownLink href="#">PEDESTRIAN ACCIDENT</DropdownLink>
-            <DropdownLink href="#">AIRBNB ATTORNEY</DropdownLink>
-            <DropdownLink href="#">UBER ACCIDENT LAWYERS</DropdownLink>
-            <DropdownLink href="#">WRONGFUL DEATH ATTORNEY</DropdownLink>
-            <DropdownLink href="#">ELECTRIC SCOOTER ACCIDENT</DropdownLink>
+            <DropdownLink href='#'>CAR ACCIDENTS</DropdownLink>
+            <DropdownLink href='#'>ACCIDENT LAWYER</DropdownLink>
+            <DropdownLink href='#'>RENTAL CAR ACCIDENT</DropdownLink>
+            <DropdownLink href='#'>PEDESTRIAN ACCIDENT</DropdownLink>
+            <DropdownLink href='#'>AIRBNB ATTORNEY</DropdownLink>
+            <DropdownLink href='#'>UBER ACCIDENT LAWYERS</DropdownLink>
+            <DropdownLink href='#'>WRONGFUL DEATH ATTORNEY</DropdownLink>
+            <DropdownLink href='#'>ELECTRIC SCOOTER ACCIDENT</DropdownLink>
           </DropdownMenu>
         </NavItem>
 
         <NavItem>
-          <StyledLink to="/about">ABOUT US</StyledLink>
+          <StyledLink to='/california-at-fault-accidents'>
+            CALIFORNIA AT FAULT ACCIDENT REPORTING
+          </StyledLink>
+        </NavItem>
+
+        <NavItem>
+          <StyledLink to='/about'>ABOUT US</StyledLink>
         </NavItem>
         <NavItem>
-          <NavLink href="#">BLOG</NavLink>
+          <NavLink href='#'>BLOG</NavLink>
         </NavItem>
         <NavItem>
-          <StyledLink to="/contact">CONTACT</StyledLink>
+          <StyledLink to='/contact'>CONTACT</StyledLink>
         </NavItem>
       </Navigation>
 
       <ContactBox>
         <ConsultationText>FREE CONSULTATION</ConsultationText>
-        <PhoneNumber href="tel:+12138338361">+1 213-833-8361</PhoneNumber>
+        <PhoneNumber href='tel:+12138338361'>+1 213-833-8361</PhoneNumber>
         <TaglineSmall>Pay Nothing Until YOU Win!</TaglineSmall>
       </ContactBox>
     </HeaderContainer>
