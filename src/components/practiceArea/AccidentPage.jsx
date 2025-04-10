@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image1 from '../../assets/services_imgs/img_01.webp';
+import Header from '../common/Header';
+import AwardsPage from '../common/AwardsPage';
+import ConsultationFormPage from '../common/ConsultationFormPage';
+import BannerPage from '../common/BannerPage';
+import CTABanner from '../common/CTABanner';
+import Footer from '../common/Footer';
 
 const Container = styled.div`
   max-width: 1500px;
@@ -298,6 +304,12 @@ const Paragraph = styled.p`
 const AccidentPage = () => {
   return (
     <>
+      <Header />
+      <BannerPage
+        text='ACCIDENT LAWYER'
+        mainText='KR Law, APC'
+        otherText='Founded by Kathy Rabii'
+      />
       <Container>
         <SectionRight>
           <ImageContent>
@@ -672,6 +684,10 @@ const AccidentPage = () => {
           </TextContent>
         </SectionRight>
       </Container>
+      <AwardsPage />
+      <ConsultationFormPage />
+      <CTABanner />
+      <Footer />
     </>
   );
 };
