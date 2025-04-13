@@ -6,6 +6,7 @@ import BannerPage from "../common/BannerPage";
 import CTABanner from "../common/CTABanner";
 import Footer from "../common/Footer";
 import PartnerPage from "./PartnerPage";
+import ReviewsPage from "./ReviewsPage";
 
 const AboutPage = () => {
   return (
@@ -17,6 +18,7 @@ const AboutPage = () => {
         otherText="Founded by Kathy Rabii"
       />
       <PartnerPage />
+      <ReviewsPage />
       <AwardsPage />
       <ConsultationFormPage />
       <CTABanner />

@@ -94,7 +94,7 @@ const PhoneNumber = styled.a`
   }
 
   @media (max-width: 480px) {
-    font-size: 28px;
+    font-size: 27px;
   }
 `;
 
