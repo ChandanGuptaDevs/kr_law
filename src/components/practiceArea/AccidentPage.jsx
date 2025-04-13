@@ -1,18 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
-import Header from '../common/Header';
-import AwardsPage from '../common/AwardsPage';
-import ConsultationFormPage from '../common/ConsultationFormPage';
-import BannerPage from '../common/BannerPage';
-import CTABanner from '../common/CTABanner';
-import Footer from '../common/Footer';
+import React from "react";
+import styled from "styled-components";
+import AccidentLayerImage from "../../assets/services_imgs/accident_layer.jpg";
+import AccidentLayerImage2 from "../../assets/services_imgs/accident_layer001.jpg";
+import Header from "../common/Header";
+import AwardsPage from "../common/AwardsPage";
+import ConsultationFormPage from "../common/ConsultationFormPage";
+import BannerPage from "../common/BannerPage";
+import CTABanner from "../common/CTABanner";
+import Footer from "../common/Footer";
 
 const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding: 80px 24px 100px;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 60px 24px 80px;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1d1d1f;
   line-height: 1.75;
   background-color: #fff;
@@ -49,26 +50,30 @@ const KeyTakeaways = styled.div`
 `;
 
 const FormContainer = styled.div`
-  flex: 1;
   background: #212121;
-  padding: 35px;
+  padding: 30px;
   color: white;
-  order: 1;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
   @media (max-width: 1200px) {
     padding: 25px;
   }
   @media (max-width: 768px) {
     padding: 20px;
-    order: 1;
   }
 `;
 
 const FormWrapper = styled.div`
   width: 100%;
 
-  max-width: 520px;
-  margin: 0 auto;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `;
 
 const FormTitle = styled.h2`
@@ -78,7 +83,7 @@ const FormTitle = styled.h2`
   position: relative;
   padding-bottom: 10px;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -94,7 +99,6 @@ const FormTitle = styled.h2`
 const Description = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
-
   margin-bottom: 20px;
   line-height: 1.5;
   color: #cccccc;
@@ -106,6 +110,10 @@ const Description = styled.p`
 
 const FormGroup = styled.div`
   margin-bottom: 12px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 const Input = styled.input`
@@ -114,10 +122,9 @@ const Input = styled.input`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -140,10 +147,9 @@ const Select = styled.select`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -171,10 +177,9 @@ const TextArea = styled.textarea`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -200,7 +205,6 @@ const Button = styled.button`
   width: 100%;
   background: #ba0a02;
   color: white;
-
   font-size: 0.9rem;
   padding: 10px 0;
   border: none;
@@ -209,9 +213,10 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 15px;
+  margin-bottom: 0;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 
   &:hover {
     background: #d01103;
@@ -229,11 +234,16 @@ const Button = styled.button`
   }
 `;
 
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`;
+
 const Row = styled.div`
   display: flex;
-
   gap: 12px;
-
   ${FormGroup} {
     flex: 1;
   }
@@ -246,31 +256,37 @@ const Row = styled.div`
 
 const Section = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-bottom: 40px;
   }
 `;
 
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
 
 const TextOnlySection = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -282,15 +298,47 @@ const ImageContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     width: 100%;
-    max-width: 420px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
   }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const ContentWithFormSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+`;
+
+const FormSide = styled.div`
+  flex: 1;
+  min-width: 320px;
+  align-self: flex-start;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
+
+const ContentSide = styled.div`
+  flex: 1.5;
 `;
 
 const Paragraph = styled.p`
@@ -306,80 +354,12 @@ const AccidentPage = () => {
     <>
       <Header />
       <BannerPage
-        text='ACCIDENT LAWYER'
-        mainText='KR Law, APC'
-        otherText='Founded by Kathy Rabii'
+        text="ACCIDENT LAWYER"
+        mainText="KR Law, APC"
+        otherText="Founded by Kathy Rabii"
       />
       <Container>
-        <SectionRight>
-          <ImageContent>
-            <FormContainer>
-              <FormWrapper>
-                <FormTitle>Contact Us Today!</FormTitle>
-                <Description>
-                  If you've been injured, contact the personal injury lawyers at
-                  KR Law Group today for a FREE no obligation consultation.
-                  Remember, we don't get paid until you do.
-                </Description>
-                <form>
-                  <FormGroup>
-                    <Input type='text' placeholder='Full Name' />
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='email' placeholder='Email*' required />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='tel' placeholder='Phone*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Select required>
-                      <option value='' disabled selected>
-                        Select A Case Type*
-                      </option>
-                      <option value='car-accident'>Car Accident</option>
-                      <option value='uber-lyft'>Uber/Lyft Accident</option>
-                      <option value='pedestrian'>Pedestrian Accident</option>
-                      <option value='scooter'>Electric Scooter Accident</option>
-                      <option value='rental-car'>Rental Car Accident</option>
-                      <option value='wrongful-death'>Wrongful Death</option>
-                      <option value='airbnb'>Airbnb Incident</option>
-                      <option value='others'>Other</option>
-                    </Select>
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='text' placeholder='City' />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='text' placeholder='State*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Address' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Postal Code' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <TextArea
-                      placeholder='Tell Us About Your Case*'
-                      required
-                    ></TextArea>
-                  </FormGroup>
-
-                  <Button type='submit'>Claim My Free Case Review</Button>
-                </form>
-              </FormWrapper>
-            </FormContainer>
-          </ImageContent>
+        <Section>
           <TextContent>
             <Title>ACCIDENT LAWYER</Title>
             <Paragraph>
@@ -406,6 +386,33 @@ const AccidentPage = () => {
               security during a challenging time.
             </Paragraph>
 
+            <Paragraph>
+              Our accident attorneys have extensive experience handling a wide
+              variety of personal injury cases and understand the physical,
+              emotional, and financial toll that accidents can take on victims
+              and their families. We approach each case with compassion and
+              dedication, fighting aggressively for our clients' rights while
+              providing supportive guidance throughout the legal process.
+            </Paragraph>
+            <Paragraph>
+              When you choose KR Law to represent you in your accident case,
+              you're not just getting legal representation – you're gaining a
+              team of advocates who will stand by your side every step of the
+              way. We handle all aspects of your claim, from gathering evidence
+              and interviewing witnesses to negotiating with insurance companies
+              and, if necessary, representing you in court.
+            </Paragraph>
+          </TextContent>
+          <ImageContent>
+            <img
+              src={AccidentLayerImage}
+              alt="Accident lawyer consulting with client"
+            />
+          </ImageContent>
+        </Section>
+
+        <ContentWithFormSection>
+          <ContentSide>
             <Title>Reporting Off-Highway Accidents</Title>
             <Paragraph>
               Drivers are required by law to report car accidents to the
@@ -434,252 +441,193 @@ const AccidentPage = () => {
               car accident, regardless of whether it occurred on a
               street/highway or off-highway.
             </Paragraph>
-          </TextContent>
-        </SectionRight>
+          </ContentSide>
+
+          <FormSide>
+            <FormContainer>
+              <FormWrapper>
+                <FormTitle>Contact Us Today!</FormTitle>
+                <Description>
+                  If you've been injured, contact the personal injury lawyers at
+                  KR Law Group today for a FREE no obligation consultation.
+                  Remember, we don't get paid until you do.
+                </Description>
+                <StyledForm>
+                  <FormGroup>
+                    <Input type="text" placeholder="Full Name" />
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="email" placeholder="Email*" required />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="tel" placeholder="Phone*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Select required>
+                      <option value="" disabled selected>
+                        Select A Case Type*
+                      </option>
+                      <option value="car-accident">Car Accident</option>
+                      <option value="uber-lyft">Uber/Lyft Accident</option>
+                      <option value="pedestrian">Pedestrian Accident</option>
+                      <option value="scooter">Electric Scooter Accident</option>
+                      <option value="rental-car">Rental Car Accident</option>
+                      <option value="wrongful-death">Wrongful Death</option>
+                      <option value="airbnb">Airbnb Incident</option>
+                      <option value="others">Other</option>
+                    </Select>
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="text" placeholder="City" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="text" placeholder="State*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Address" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Postal Code" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <TextArea
+                      placeholder="Tell Us About Your Case*"
+                      required
+                    ></TextArea>
+                  </FormGroup>
+
+                  <Button type="submit">Claim My Free Case Review</Button>
+                </StyledForm>
+              </FormWrapper>
+            </FormContainer>
+          </FormSide>
+        </ContentWithFormSection>
         <TextOnlySection>
           <TextContent>
-            <Title>What is Form SR-1?</Title>
+            <Title>How an Accident Lawyer Can Help You</Title>
             <Paragraph>
-              Form SR-1 is an official document provided by the California DMV.
-              State law (California Vehicle Code §16000) requires that anyone
-              involved in an accident complete and submit the form within 10
-              days of an accident that results in:
-            </Paragraph>
-            <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
-              <div>
-                <p>– Property damage exceeding $1,000</p>
-                <p>– Personal injury, however slight, and/or death.</p>
-                <Paragraph>
-                  You can submit the form on your own, or you can direct your
-                  insurance company or attorney to submit the form on your
-                  behalf.
-                </Paragraph>
-              </div>
-            </KeyTakeaways>
-
-            <Title>Required Information for Form SR-1</Title>
-            <Paragraph>
-              Form SR-1 helps to encourage transparency and full disclosure of
-              relevant information after a car accident in California. You will
-              be required to provide information about the accident as well as
-              certain information for everyone involved.
-            </Paragraph>
-
-            <Title>General Accident Information</Title>
-            <Paragraph>
-              When completing Form SR-1 you must provide the following
-              information:
+              Hiring an accident lawyer can make a significant difference in the
+              outcome of your case. Here are some ways an accident lawyer can
+              help you:
             </Paragraph>
 
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
-                <p>– The time when the accident took place</p>
-                <p>– Date of the accident, and</p>
-                <p>– Specific location, including the city and county.</p>
+                <p>– Investigating the accident and gathering evidence</p>
+                <p>
+                  – Determining liability and identifying all responsible
+                  parties
+                </p>
+                <p>
+                  – Calculating the full extent of your damages, including
+                  future costs
+                </p>
+                <p>– Negotiating with insurance companies on your behalf</p>
+                <p>
+                  – Representing you in court if a fair settlement cannot be
+                  reached
+                </p>
+                <p>
+                  – Handling all paperwork and legal procedures within required
+                  deadlines
+                </p>
               </div>
             </KeyTakeaways>
 
-            <Title>TYPES OF ACCIDENT LAWYERS</Title>
             <Paragraph>
-              There are several types of accident lawyers, each with their own
-              areas of expertise. Some common types of accident lawyers include:
-            </Paragraph>
-            <Paragraph>
-              <strong>Car accident lawyers:</strong> Car accident lawyers
-              specialize in cases involving car accidents. They may work with
-              clients who have been injured in a car accident or who have lost a
-              loved one in a car accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Truck accident lawyers:</strong> Truck accident lawyers
-              specialize in cases involving commercial truck accidents. These
-              accidents can be more complex than car accidents due to the size
-              and weight of the trucks involved and may involve multiple parties
-              such as the truck driver, trucking company, and manufacturers of
-              the truck or its parts.
-            </Paragraph>
-            <Paragraph>
-              <strong>Motorcycle accident lawyers:</strong> Motorcycle accident
-              lawyers specialize in cases involving motorcycle accidents. These
-              accidents can be particularly dangerous for riders due to the lack
-              of protection offered by a motorcycle.
-            </Paragraph>
-            <Paragraph>
-              <strong>Pedestrian accident lawyers:</strong> Pedestrian accident
-              lawyers specialize in cases involving accidents between
-              pedestrians and motor vehicles. Pedestrians are particularly
-              vulnerable in accidents due to their lack of protection and the
-              high speeds at which motor vehicles can travel.
-            </Paragraph>
-            <Paragraph>
-              <strong>Bicycle accident lawyers:</strong> Bicycle accident
-              lawyers specialize in cases involving accidents between bicycles
-              and motor vehicles. Bicyclists are also vulnerable in accidents
-              due to their lack of protection and the high speeds at which motor
-              vehicles can travel.​
-            </Paragraph>
-            <Paragraph>
-              <strong>Slip and fall lawyers:</strong> Slip and fall lawyers
-              specialize in cases involving accidents on someone else's
-              property. These accidents can occur due to hazards such as wet
-              floors, uneven surfaces, or inadequate lighting.
-            </Paragraph>
-            <Paragraph>
-              <strong>Medical malpractice lawyers:</strong> Medical malpractice
-              lawyers specialize in cases involving injuries or illnesses that
-              result from medical negligence or error. These cases can be
-              complex and may involve multiple parties, including doctors,
-              nurses, and hospitals.
-            </Paragraph>
-            <Paragraph>
-              <strong>Wrongful death lawyers:</strong> Wrongful death lawyers
-              specialize in cases where a person has died as a result of someone
-              else's negligence or wrongdoing. These cases may involve
-              accidents, medical malpractice, or other types of incidents.
-            </Paragraph>
-            <Paragraph>
-              It's important to choose an accident lawyer who has experience in
-              the specific area of law that applies to your case. This can help
-              ensure that you receive the best possible representation and
-              increase your chances of getting a fair settlement or judgment.
+              An experienced accident lawyer understands the tactics that
+              insurance companies use to minimize payouts. They can prevent you
+              from accepting a settlement that is less than what you deserve.
+              They can also help ensure that all aspects of your damages are
+              considered, including medical expenses, lost wages, pain and
+              suffering, and future care needs.
             </Paragraph>
 
-            <Title>HOW TO CALCULATE HOW MUCH MY ACCIDENT IS WORTH?</Title>
+            <Title>Types of Accident Cases We Handle</Title>
             <Paragraph>
-              This is a common question asked and calculating the value of an
-              accident can be complex and typically involves taking into account
-              a variety of factors. While there is no definitive formula for
-              calculating the value of an accident, some common factors that may
-              be considered include: Medical expenses: This includes any costs
-              related to medical treatment, including hospital stays, doctor
-              visits, prescription medications, and rehabilitation.
+              Our law firm handles a wide range of accident cases, including:
             </Paragraph>
-            <Paragraph>
-              <strong>Lost wages:</strong> This includes any income you may have
-              lost as a result of the accident, including time off work for
-              medical treatment or recovery.
-            </Paragraph>
-            <Paragraph>
-              <strong>Property damage:</strong> This includes any damage to your
-              vehicle or other property as a result of the accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Pain and suffering:</strong> This includes any physical or
-              emotional pain or suffering you may have experienced as a result
-              of the accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Loss of consortium:</strong> This refers to the loss of
-              companionship or support from a spouse or partner as a result of
-              the accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Future medical expenses:</strong> This includes any
-              anticipated medical expenses you may have in the future as a
-              result of the accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Future lost wages:</strong> This includes any anticipated
-              loss of income you may experience in the future as a result of the
-              accident.
-            </Paragraph>
-            <Paragraph>
-              <strong>Punitive damages:</strong> In some cases, you may be
-              awarded punitive damages, which are designed to punish the
-              at-fault party for their actions.
-            </Paragraph>
-            <Paragraph>
-              To calculate the value of your accident, you should work with an
-              experienced accident lawyer who can help you evaluate these
-              factors and build a strong case for compensation. Your lawyer may
-              also work with experts such as medical professionals, economists,
-              and accident reconstruction specialists to help determine the full
-              value of your case. Ultimately, the value of your accident will
-              depend on the specific circumstances of your case, and the
-              strength of your case will depend on the evidence you are able to
-              present to support your claim.
-            </Paragraph>
-            <Paragraph>
-              If you have been in an accident and are looking to calculate how
-              much your case may be worth, there are several factors to
-              consider. Some of the most common factors include medical
-              expenses, lost wages, property damage, pain and suffering, loss of
-              consortium, future medical expenses, future lost wages, and
-              punitive damages. These factors can be complex and may require the
-              help of an experienced accident lawyer to properly evaluate.
-              Working with a lawyer can also help you build a strong case for
-              compensation, and may involve working with experts such as medical
-              professionals and accident reconstruction specialists to determine
-              the full value of your case. Ultimately, the specific
-              circumstances of your accident will play a large role in
-              determining its value, and a skilled accident lawyer can help you
-              navigate the process and pursue the compensation you deserve.
-            </Paragraph>
-
-            <Title>
-              CAR ACCIDENT INJURIES AND THEIR APPROXIMATE RECOVERY COSTS
-            </Title>
+            <KeyTakeaways>
+              <div>
+                <p>– Car accidents</p>
+                <p>– Truck accidents</p>
+                <p>– Motorcycle accidents</p>
+                <p>– Pedestrian accidents</p>
+                <p>– Bicycle accidents</p>
+                <p>– Slip and fall accidents</p>
+                <p>– Workplace accidents</p>
+                <p>– Product liability cases</p>
+                <p>– Medical malpractice</p>
+                <p>– Wrongful death</p>
+              </div>
+            </KeyTakeaways>
 
             <Paragraph>
-              Car accidents can result in a variety of injuries, ranging from
-              minor to severe. Some of the most common injuries include
-              whiplash, joint and tissue damage, and injuries that require
-              surgery. Severe and life-threatening injuries are also possible.
-              Recovery costs for these injuries can be expensive, as they may
-              require more than just immediate medical attention and can involve
-              weeks or months of physical therapy.
-            </Paragraph>
-
-            <Paragraph>
-              The medical bills for these injuries can range from $3,000 to more
-              than $100,000, depending on the specific injury and the extent of
-              medical treatment required.
+              Each type of accident case requires specific knowledge and
+              expertise. Our team of accident lawyers has the experience and
+              skills necessary to handle any type of accident case effectively.
             </Paragraph>
           </TextContent>
         </TextOnlySection>
 
         <SectionRight>
           <ImageContent>
-            <img src={Image1} alt='Car being evaluated for total loss' />
+            <img
+              src={AccidentLayerImage2}
+              alt="Accident attorney reviewing legal documents"
+            />
           </ImageContent>
           <TextContent>
-            <Title>
-              How can KR Injury Law Firm help you if you’ve been in an accident?
-            </Title>
+            <Title>Why Choose Our Law Firm for Your Accident Case</Title>
             <Paragraph>
-              If you've been in an accident and are looking for a law firm to
-              represent you, there are many reasons to consider KR Injury Law.
-              Here are just a few: Experience: The attorneys at KR Injury Law
-              have years of experience representing clients in a wide range of
-              personal injury cases, including car accidents, truck accidents,
-              slip and falls, and more. They have a deep understanding of the
-              law and the legal system and know how to build strong cases for
-              their clients.
+              When you choose our law firm to represent you in your accident
+              case, you are choosing a team of dedicated professionals who are
+              committed to your success. Here are some reasons why clients
+              choose us:
             </Paragraph>
             <Paragraph>
-              <strong>Personalized attention:</strong> At KR Injury Law, clients
-              are treated as individuals, not just case numbers. The attorneys
-              take the time to get to know their clients and understand their
-              unique circumstances and needs, and work closely with them
-              throughout the legal process.
+              <strong>Experience and Expertise:</strong> Our accident lawyers
+              have extensive experience handling all types of accident cases. We
+              understand the complexities of accident law and know how to build
+              strong cases for our clients.
             </Paragraph>
             <Paragraph>
-              <strong>Representation:</strong> KR Injury Law attorneys are
-              passionate about fighting for their clients and getting them the
-              compensation they deserve. They are not afraid to take on big
-              insurance companies and other powerful opponents and will work
-              tirelessly to ensure that their client's rights are protected.
+              <strong>Personalized Attention:</strong> We understand that every
+              accident case is unique, with its own set of circumstances and
+              challenges. That's why we provide personalized attention to each
+              client and tailor our approach to meet your specific needs.
             </Paragraph>
             <Paragraph>
-              <strong>Excellent reputation:</strong> KR Injury Law has a proven
-              track record of success, with numerous satisfied clients and
-              positive reviews. They are known for their professionalism,
-              integrity, and dedication to their clients. Overall, if you are
-              looking for an experienced, compassionate, and representative law
-              firm to represent you in your personal injury case, KR Injury Law
-              is an excellent choice.
+              <strong>Proven Track Record:</strong> Our law firm has a proven
+              track record of success in handling accident cases. We have helped
+              numerous clients secure the compensation they deserve.
+            </Paragraph>
+            <Paragraph>
+              <strong>No Fee Unless We Win:</strong> We work on a contingency
+              fee basis, which means you don't pay unless we win your case. This
+              allows you to pursue your claim without worrying about upfront
+              costs.
+            </Paragraph>
+            <Paragraph>
+              <strong>Compassionate Support:</strong> We understand that being
+              being involved in an accident can be traumatic. Our team provides
+              compassionate support throughout the legal process, keeping you
+              informed and involved every step of the way.
+            </Paragraph>
+            <Paragraph>
+              If you or a loved one has been injured in an accident, don't
+              hesitate to contact our law firm. We are here to help you navigate
+              this difficult time and fight for the compensation you deserve.
             </Paragraph>
           </TextContent>
         </SectionRight>

@@ -1,18 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image2 from '../../assets/services_imgs/img_02.webp';
-import Header from '../common/Header';
-import AwardsPage from '../common/AwardsPage';
-import ConsultationFormPage from '../common/ConsultationFormPage';
-import BannerPage from '../common/BannerPage';
-import CTABanner from '../common/CTABanner';
-import Footer from '../common/Footer';
+import React from "react";
+import styled from "styled-components";
+import wrongful_death from "../../assets/services_imgs/wrongful_death.webp";
+import wrongful_death001 from "../../assets/services_imgs/wrongful_death001.jpg";
+import Header from "../common/Header";
+import AwardsPage from "../common/AwardsPage";
+import ConsultationFormPage from "../common/ConsultationFormPage";
+import BannerPage from "../common/BannerPage";
+import CTABanner from "../common/CTABanner";
+import Footer from "../common/Footer";
 
 const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding: 80px 24px 100px;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 60px 24px 80px;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1d1d1f;
   line-height: 1.75;
   background-color: #fff;
@@ -27,33 +28,243 @@ const Title = styled.h1`
   margin-bottom: 15px;
 `;
 
-const Section = styled.div`
+const FormContainer = styled.div`
+  background: #212121;
+  padding: 30px;
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  height: auto;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 100px;
+  flex-direction: column;
+
+  @media (max-width: 1200px) {
+    padding: 25px;
+  }
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+`;
+
+const FormWrapper = styled.div`
+  width: 100%;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+`;
+
+const FormTitle = styled.h2`
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+  padding-bottom: 10px;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #ba0a02;
+  }
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+`;
+
+const Description = styled.p`
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #cccccc;
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 12px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`;
+
+const Input = styled.input`
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  color: white;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+  &::placeholder {
+    color: #999;
+    opacity: 0.7;
+  }
+  &:focus {
+    border-bottom-color: #ba0a02;
+  }
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 7px 0;
+  }
+`;
+
+const Select = styled.select`
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  color: white;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    border-bottom-color: #ba0a02;
+  }
+  option {
+    background: #333;
+    color: white;
+    padding: 5px;
+  }
 
   @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 7px 0;
+  }
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  color: white;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-family: "Spartan", sans-serif;
+  margin-bottom: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+  height: 70px;
+  resize: none;
+  &::placeholder {
+    color: #999;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-bottom-color: #ba0a02;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 7px 0;
+    height: 60px;
+  }
+`;
+
+const Button = styled.button`
+  width: 100%;
+  background: #ba0a02;
+  color: white;
+  font-size: 0.9rem;
+  padding: 10px 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  font-family: "Spartan", sans-serif;
+
+  &:hover {
+    background: #d01103;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(186, 10, 2, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 9px 0;
+  }
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`;
+
+const Row = styled.div`
+  display: flex;
+  gap: 12px;
+  ${FormGroup} {
+    flex: 1;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0;
+  }
+`;
+
+const Section = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-bottom: 40px;
   }
 `;
 
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
 
 const TextOnlySection = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -65,15 +276,47 @@ const ImageContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     width: 100%;
-    max-width: 420px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
   }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const ContentWithFormSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+`;
+
+const FormSide = styled.div`
+  flex: 1;
+  min-width: 320px;
+  align-self: flex-start;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
+
+const ContentSide = styled.div`
+  flex: 1.5;
 `;
 
 const Paragraph = styled.p`
@@ -89,12 +332,12 @@ const WrongfulPage = () => {
     <>
       <Header />
       <BannerPage
-        text='WRONGFUL DEATH ATTORNEY'
-        mainText='KR Law, APC'
-        otherText='Founded by Kathy Rabii'
+        text="WRONGFUL DEATH ATTORNEY"
+        mainText="KR Law, APC"
+        otherText="Founded by Kathy Rabii"
       />
       <Container>
-        <TextOnlySection>
+        <Section>
           <TextContent>
             <Title>WRONGFUL DEATH ATTORNEY</Title>
             <Paragraph>
@@ -107,7 +350,7 @@ const WrongfulPage = () => {
             <Paragraph>
               A wrongful death claim is a civil lawsuit that can be filed by the
               survivors of the deceased or by a personal representative of the
-              decedent’s estate. The purpose of this claim is to seek monetary
+              decedent's estate. The purpose of this claim is to seek monetary
               damages from the party responsible for the wrongful death. If
               successful, the court will order the defendant to pay damages to
               the family of the deceased.
@@ -123,22 +366,16 @@ const WrongfulPage = () => {
               Wrongful death can occur in a variety of situations, including
               driving-related fatalities, medical errors, workplace accidents,
               and other instances of negligence, gross negligence, recklessness,
-              or intentional acts. Some other examples include the death of
-              pedestrians, DUI accidents, drowning, slips or falls, murder,
-              assault, and the abuse of the elderly or children.
+              or intentional acts.
             </Paragraph>
-            <Paragraph>
-              According to the wrongful death statistics for the U.S. in 2017,
-              6% of total deaths amounted to 169,936 lives lost. This makes
-              wrongful death the fourth leading cause of death in the country.
-            </Paragraph>
-            <Paragraph>
-              If you have lost a loved one due to wrongful death, it is
-              important to seek the advice of an experienced wrongful death
-              attorney. They can help guide you through the legal process and
-              ensure that your rights are protected.
-            </Paragraph>
+          </TextContent>
+          <ImageContent>
+            <img src={wrongful_death} alt="Wrongful death legal assistance" />
+          </ImageContent>
+        </Section>
 
+        <ContentWithFormSection>
+          <ContentSide>
             <Title>HOW TO PROCEED IN CASE OF A WRONGFUL DEATH?</Title>
             <Paragraph>
               If you have lost a loved one due to wrongful death, there are
@@ -149,7 +386,7 @@ const WrongfulPage = () => {
             <Paragraph>
               <strong>
                 Consult with an experienced wrongful death attorney:
-              </strong>{' '}
+              </strong>{" "}
               The first step in pursuing a wrongful death claim is to seek the
               advice of an experienced attorney who specializes in this area of
               law. They can help you understand your legal rights, navigate the
@@ -174,201 +411,225 @@ const WrongfulPage = () => {
               initiate the legal process and allow you to seek compensation for
               your financial losses.
             </Paragraph>
-            <Paragraph>
-              <strong>Negotiate a settlement:</strong> In many cases, the liable
-              party may be willing to negotiate a settlement outside of court.
-              Your attorney can work with the other side to reach a fair and
-              reasonable settlement that compensates you for your losses.
-            </Paragraph>
-            <Paragraph>
-              <strong>Go to trial:</strong> If a settlement cannot be reached,
-              your attorney may recommend taking your case to trial. This can be
-              a lengthy and complex process, but with the right legal
-              representation, you can seek the compensation you deserve.
-            </Paragraph>
-            <Paragraph>
-              <strong>Accept the outcome:</strong> Once the legal process is
-              complete, you will need to accept the outcome, whether it is a
-              settlement or a court decision. Your attorney can help you
-              understand your options and make the best decision for your
-              situation.
-            </Paragraph>
-            <Paragraph>
-              Losing a loved one is never easy, but with the help of an
-              experienced wrongful death attorney, you can seek justice and hold
-              those responsible accountable for their actions.
-            </Paragraph>
+          </ContentSide>
 
-            <Title>
-              WHICH PARTIES ARE ALLOWED TO FILE A WRONGFUL DEATH CLAIM?
-            </Title>
+          <FormSide>
+            <FormContainer>
+              <FormWrapper>
+                <FormTitle>Contact Us Today!</FormTitle>
+                <Description>
+                  If you've been affected by a wrongful death, contact the
+                  personal injury lawyers at KR Law Group today for a FREE no
+                  obligation consultation. Remember, we don't get paid until you
+                  do.
+                </Description>
+                <StyledForm>
+                  <FormGroup>
+                    <Input type="text" placeholder="Full Name" />
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="email" placeholder="Email*" required />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="tel" placeholder="Phone*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Select required>
+                      <option value="" disabled selected>
+                        Select A Case Type*
+                      </option>
+                      <option value="car-accident">Car Accident</option>
+                      <option value="uber-lyft">Uber/Lyft Accident</option>
+                      <option value="pedestrian">Pedestrian Accident</option>
+                      <option value="scooter">Electric Scooter Accident</option>
+                      <option value="rental-car">Rental Car Accident</option>
+                      <option value="wrongful-death">Wrongful Death</option>
+                      <option value="airbnb">Airbnb Incident</option>
+                      <option value="others">Other</option>
+                    </Select>
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="text" placeholder="City" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="text" placeholder="State*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Address" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Postal Code" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <TextArea
+                      placeholder="Tell Us About Your Case*"
+                      required
+                    ></TextArea>
+                  </FormGroup>
+
+                  <Button type="submit">Claim My Free Case Review</Button>
+                </StyledForm>
+              </FormWrapper>
+            </FormContainer>
+          </FormSide>
+        </ContentWithFormSection>
+
+        <TextOnlySection>
+          <TextContent>
+            <Title>WHO CAN FILE A WRONGFUL DEATH CLAIM?</Title>
             <Paragraph>
-              In California, certain parties are allowed to file a wrongful
-              death claim on behalf of a deceased person. These parties include:
+              Under California law, only certain individuals are permitted to
+              file a wrongful death claim. These include:
             </Paragraph>
             <Paragraph>
-              <strong>Surviving spouse or domestic partner:</strong> If the
-              deceased person was married or in a registered domestic
-              partnership at the time of their death, their spouse or partner
-              has the right to file a wrongful death claim.
+              <strong>Surviving spouse or domestic partner:</strong> The spouse
+              or registered domestic partner of the deceased person has the
+              right to file a wrongful death claim.
             </Paragraph>
             <Paragraph>
-              <strong>Children:</strong> If the deceased person had children,
-              including biological or adopted children, they may file a wrongful
+              <strong>Surviving children:</strong> The children of the deceased
+              person, including adopted children, can file a wrongful death
+              claim. If the decedent has no surviving spouse or children, then
+              the claim can be brought by the persons who would be entitled to
+              the property of the decedent by intestate succession.
+            </Paragraph>
+            <Paragraph>
+              <strong>Dependents:</strong> Certain individuals who were
+              financially dependent on the deceased may be able to file a
+              wrongful death claim. This may include stepchildren or parents who
+              were financially dependent on the deceased.
+            </Paragraph>
+            <Paragraph>
+              <strong>Personal representative:</strong> The personal
+              representative of the deceased person's estate can file a wrongful
+              death claim on behalf of the estate and the surviving heirs.
+            </Paragraph>
+            <Paragraph>
+              It's important to note that California law has specific rules
+              regarding who can file a wrongful death claim and when. The
+              statute of limitations for filing a wrongful death claim in
+              California is generally two years from the date of death. However,
+              there are exceptions to this rule, so it's advisable to consult
+              with an attorney as soon as possible to ensure your claim is filed
+              within the required timeframe.
+            </Paragraph>
+          </TextContent>
+        </TextOnlySection>
+
+        <TextOnlySection>
+          <TextContent>
+            <Title>TYPES OF DAMAGES IN WRONGFUL DEATH CASES</Title>
+            <Paragraph>
+              In California, there are several types of damages that can be
+              recovered in a wrongful death case. These damages are intended to
+              compensate the surviving family members for their financial and
+              emotional losses resulting from the death of their loved one. The
+              types of damages that can be recovered include:
+            </Paragraph>
+            <Paragraph>
+              <strong>Economic damages:</strong> These are damages that have a
+              specific monetary value and can be calculated with relative
+              accuracy. Economic damages in a wrongful death case may include:
+            </Paragraph>
+            <Paragraph>
+              - Financial support that the deceased would have contributed to
+              the family during their expected lifetime
+              <br />
+              - Loss of gifts or benefits that the survivors would have expected
+              to receive from the deceased
+              <br />
+              - Funeral and burial expenses
+              <br />- The reasonable value of household services that the
+              deceased would have provided
+            </Paragraph>
+            <Paragraph>
+              <strong>Non-economic damages:</strong> These are damages that do
+              not have a specific monetary value and are more subjective in
+              nature. Non-economic damages in a wrongful death case may include:
+            </Paragraph>
+            <Paragraph>
+              - Loss of love, companionship, comfort, care, assistance,
+              protection, affection, society, and moral support
+              <br />
+              - Loss of enjoyment of sexual relations (for a surviving spouse or
+              domestic partner)
+              <br />- Loss of guidance and training that the deceased would have
+              provided to their children
+            </Paragraph>
+            <Paragraph>
+              It's important to note that punitive damages, which are designed
+              to punish the defendant for particularly egregious behavior, are
+              generally not available in wrongful death cases in California.
+              However, they may be available in a survival action, which is a
+              separate legal claim that can be brought alongside a wrongful
               death claim.
-            </Paragraph>
-            <Paragraph>
-              <strong>Grandchildren:</strong> If the deceased person's children
-              are no longer alive, their grandchildren may file a wrongful death
-              claim.
-            </Paragraph>
-            <Paragraph>
-              <strong>Other dependent family members:</strong> If the deceased
-              person did not have a surviving spouse, domestic partner, or
-              children, other dependent family members, such as parents or
-              siblings, may file a wrongful death claim.
-            </Paragraph>
-            <Paragraph>
-              <strong>Personal representative of the estate:</strong> If none of
-              the above parties are available to file a wrongful death claim,
-              the personal representative of the deceased person's estate may
-              file the claim on behalf of the estate and its beneficiaries.
-            </Paragraph>
-            <Paragraph>
-              It is important to note that only one wrongful death claim may be
-              filed for each deceased person, and all eligible parties must be
-              included in the claim. If there are multiple eligible parties,
-              they may need to negotiate and agree on how any damages awarded
-              will be divided.
-            </Paragraph>
-            <Paragraph>
-              If you have lost a loved one due to wrongful death, it is
-              important to seek the advice of an experienced wrongful death
-              attorney who can help you understand your legal rights and guide
-              you through the process of filing a claim.
-            </Paragraph>
-
-            <Title>RECOVERABLE DAMAGES</Title>
-            <Paragraph>
-              If you have lost a loved one due to wrongful death, you may be
-              eligible to recover a variety of damages under California law.
-              These damages may include:
-            </Paragraph>
-            <Paragraph>
-              <strong>Economic damages:</strong> This includes any financial
-              losses you have suffered as a result of your loved one's death,
-              such as loss of income, medical expenses, funeral and burial
-              expenses, and the value of household services that your loved one
-              provided.
-            </Paragraph>
-            <Paragraph>
-              <strong>Non-economic damages:</strong> This includes compensation
-              for the emotional pain and suffering, loss of companionship, and
-              other intangible losses that you have experienced as a result of
-              your loved one's death.
-            </Paragraph>
-            <Paragraph>
-              <strong>Punitive damages:</strong> In some cases, the court may
-              award punitive damages as a way of punishing the party responsible
-              for your loved one's death and deterring similar conduct in the
-              future. These damages are awarded in addition to any economic or
-              non-economic damages.
-            </Paragraph>
-            <Paragraph>
-              It is important to note that the amount of damages you may be
-              eligible to receive will depend on a variety of factors, including
-              the circumstances surrounding your loved one's death, the extent
-              of your financial losses, and the level of fault of the
-              responsible party. An experienced wrongful death attorney can help
-              you understand your legal rights and seek the maximum amount of
-              damages possible under the law. If you have lost a loved one due
-              to wrongful death, it is important to act quickly to protect your
-              legal rights. Contact an experienced attorney as soon as possible
-              to discuss your options and begin the process of seeking justice
-              and compensation for your losses.
-            </Paragraph>
-
-            <Title>STATUTE OF LIMITATIONS</Title>
-            <Paragraph>
-              In California, there is a statute of limitations for filing a
-              wrongful death lawsuit. The statute of limitations is the deadline
-              by which you must file your lawsuit, or else you may lose your
-              right to do so.
-            </Paragraph>
-            <Paragraph>
-              Under California law, a wrongful death lawsuit must generally be
-              filed within two years of the date of the deceased person's death.
-              However, there are some exceptions that can extend or shorten this
-              time period depending on the circumstances of the case. For
-              example, if the wrongful death was caused by medical malpractice,
-              the statute of limitations may be extended to three years from the
-              date of the injury or one year from the date the injury was
-              discovered or should have been discovered, whichever comes first.
-            </Paragraph>
-            <Paragraph>
-              It is important to note that the statute of limitations can be a
-              complex issue, and there may be other factors that could affect
-              your ability to file a lawsuit. For this reason, it is important
-              to contact an experienced wrongful death attorney as soon as
-              possible if you believe you may have a claim. An attorney can help
-              you understand your legal rights and options, and work with you to
-              ensure that your lawsuit is filed within the applicable statute of
-              limitations.
             </Paragraph>
           </TextContent>
         </TextOnlySection>
 
         <SectionRight>
           <ImageContent>
-            <img src={Image2} alt='Car being evaluated for total loss' />
+            <img
+              src={wrongful_death001}
+              alt="Attorney consulting with wrongful death client"
+            />
           </ImageContent>
           <TextContent>
-            <Title>
-              How can KR Injury Law Firm help you with a WRONGFUL DEATH?
-            </Title>
+            <Title>How Our Wrongful Death Attorneys Can Help You</Title>
             <Paragraph>
-              KR Injury Law Firm can help you with a wrongful death claim by
-              providing you with experienced legal representation and support
-              throughout the entire process. Here are some of the ways we can
-              help:
+              At KR Law, our experienced wrongful death attorneys can provide
+              invaluable assistance during this difficult time. Here's how we
+              can help:
             </Paragraph>
             <Paragraph>
-              <strong>Investigating the case:</strong> We will conduct a
-              thorough investigation into the circumstances surrounding your
-              loved one's death. This may involve gathering evidence,
-              interviewing witnesses, and consulting with experts to build a
-              strong case on your behalf.
+              <strong>Compassionate Legal Support:</strong> We understand the
+              emotional toll that a wrongful death can take on a family. Our
+              attorneys provide compassionate legal support, guiding you through
+              the legal process with sensitivity and understanding.
             </Paragraph>
             <Paragraph>
-              <strong>Handling communications:</strong> We will handle all
-              communications with insurance companies, other attorneys, and any
-              other parties involved in the case so that you can focus on
-              healing and moving forward.
+              <strong>Thorough Investigation:</strong> We conduct a
+              comprehensive investigation of the circumstances surrounding your
+              loved one's death, gathering evidence to establish liability and
+              build a strong case.
             </Paragraph>
             <Paragraph>
-              <strong>Calculating damages:</strong> We will work with financial
-              experts to accurately calculate the damages you are entitled to
-              under California law, including both economic and non-economic
-              damages.
+              <strong>Expert Case Evaluation:</strong> We evaluate the details
+              of your case to determine the potential value of your claim,
+              taking into account both economic and non-economic damages.
             </Paragraph>
             <Paragraph>
-              <strong>Negotiating a settlement:</strong> We will work to
-              negotiate a fair settlement with the responsible party or their
-              insurance company so that you can avoid the stress and uncertainty
-              of a trial.
+              <strong>Skilled Negotiation:</strong> Our attorneys are skilled
+              negotiators who can advocate effectively on your behalf with
+              insurance companies and other parties to secure a fair settlement.
             </Paragraph>
             <Paragraph>
-              <strong>Litigating the case:</strong> If necessary, we will
-              represent you in court and fight for your rights and interests at
-              trial.
+              <strong>Trial Representation:</strong> If a fair settlement cannot
+              be reached, our experienced trial attorneys are prepared to take
+              your case to court and fight for the compensation you deserve.
             </Paragraph>
             <Paragraph>
-              At KR Injury Law Firm, we understand that losing a loved one is
-              one of the most difficult experiences you can go through, and we
-              are committed to providing compassionate and personalized legal
-              representation to help you through this challenging time. Contact
-              us today to schedule a free consultation and learn more about how
-              we can help with your wrongful death claim.
+              <strong>No Upfront Costs:</strong> We handle wrongful death cases
+              on a contingency fee basis, which means you pay nothing unless we
+              win your case. This arrangement allows you to focus on healing
+              while we handle the legal aspects of your case.
+            </Paragraph>
+            <Paragraph>
+              If you have lost a loved one due to someone else's negligence or
+              wrongful act, don't navigate this challenging time alone. Contact
+              our experienced wrongful death attorneys today for a free
+              consultation and let us help you seek the justice and compensation
+              your family deserves.
             </Paragraph>
           </TextContent>
         </SectionRight>

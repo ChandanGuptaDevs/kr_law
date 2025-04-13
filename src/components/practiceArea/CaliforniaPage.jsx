@@ -1,19 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image1 from '../../assets/services_imgs/img_01.webp';
-import Image2 from '../../assets/services_imgs/img_02.webp';
-import Header from '../common/Header';
-import AwardsPage from '../common/AwardsPage';
-import ConsultationFormPage from '../common/ConsultationFormPage';
-import BannerPage from '../common/BannerPage';
-import CTABanner from '../common/CTABanner';
-import Footer from '../common/Footer';
+import React from "react";
+import styled from "styled-components";
+import Image1 from "../../assets/services_imgs/img_01.webp";
+import Image2 from "../../assets/services_imgs/img_02.webp";
+import Header from "../common/Header";
+import AwardsPage from "../common/AwardsPage";
+import ConsultationFormPage from "../common/ConsultationFormPage";
+import BannerPage from "../common/BannerPage";
+import CTABanner from "../common/CTABanner";
+import Footer from "../common/Footer";
 
 const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding: 80px 24px 100px;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 60px 24px 80px;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1d1d1f;
   line-height: 1.75;
   background-color: #fff;
@@ -50,26 +50,29 @@ const KeyTakeaways = styled.div`
 `;
 
 const FormContainer = styled.div`
-  flex: 1;
   background: #212121;
-  padding: 35px;
+  padding: 30px;
   color: white;
-  order: 1;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
   @media (max-width: 1200px) {
     padding: 25px;
   }
   @media (max-width: 768px) {
     padding: 20px;
-    order: 1;
   }
 `;
 
 const FormWrapper = styled.div`
   width: 100%;
-
-  max-width: 520px;
-  margin: 0 auto;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `;
 
 const FormTitle = styled.h2`
@@ -79,7 +82,7 @@ const FormTitle = styled.h2`
   position: relative;
   padding-bottom: 10px;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -95,7 +98,6 @@ const FormTitle = styled.h2`
 const Description = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
-
   margin-bottom: 20px;
   line-height: 1.5;
   color: #cccccc;
@@ -107,6 +109,10 @@ const Description = styled.p`
 
 const FormGroup = styled.div`
   margin-bottom: 12px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 const Input = styled.input`
@@ -115,10 +121,9 @@ const Input = styled.input`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -141,10 +146,9 @@ const Select = styled.select`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -172,10 +176,9 @@ const TextArea = styled.textarea`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -201,7 +204,6 @@ const Button = styled.button`
   width: 100%;
   background: #ba0a02;
   color: white;
-
   font-size: 0.9rem;
   padding: 10px 0;
   border: none;
@@ -210,9 +212,10 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 15px;
+  margin-bottom: 0;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 
   &:hover {
     background: #d01103;
@@ -230,11 +233,16 @@ const Button = styled.button`
   }
 `;
 
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`;
+
 const Row = styled.div`
   display: flex;
-
   gap: 12px;
-
   ${FormGroup} {
     flex: 1;
   }
@@ -247,22 +255,28 @@ const Row = styled.div`
 
 const Section = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-bottom: 40px;
   }
 `;
 
 const SectionLeft = styled(Section)`
   flex-direction: row;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
@@ -270,16 +284,16 @@ const SectionLeft = styled(Section)`
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
 
 const TextOnlySection = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -291,15 +305,47 @@ const ImageContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     width: 100%;
-    max-width: 420px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
   }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const ContentWithFormSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+`;
+
+const FormSide = styled.div`
+  flex: 1;
+  min-width: 320px;
+  align-self: flex-start;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
+
+const ContentSide = styled.div`
+  flex: 1.5;
 `;
 
 const Heading = styled.h2`
@@ -324,80 +370,12 @@ const CaliforniaPage = () => {
     <>
       <Header />
       <BannerPage
-        text='CALIFORNIA “AT FAULT” ACCIDENTS'
-        mainText='KR Law, APC'
-        otherText='Founded by Kathy Rabii'
+        text="CALIFORNIA “AT FAULT” ACCIDENTS"
+        mainText="KR Law, APC"
+        otherText="Founded by Kathy Rabii"
       />
       <Container>
-        <SectionRight>
-          <ImageContent>
-            <FormContainer>
-              <FormWrapper>
-                <FormTitle>Contact Us Today!</FormTitle>
-                <Description>
-                  If you've been injured, contact the personal injury lawyers at
-                  KR Law Group today for a FREE no obligation consultation.
-                  Remember, we don't get paid until you do.
-                </Description>
-                <form>
-                  <FormGroup>
-                    <Input type='text' placeholder='Full Name' />
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='email' placeholder='Email*' required />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='tel' placeholder='Phone*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Select required>
-                      <option value='' disabled selected>
-                        Select A Case Type*
-                      </option>
-                      <option value='car-accident'>Car Accident</option>
-                      <option value='uber-lyft'>Uber/Lyft Accident</option>
-                      <option value='pedestrian'>Pedestrian Accident</option>
-                      <option value='scooter'>Electric Scooter Accident</option>
-                      <option value='rental-car'>Rental Car Accident</option>
-                      <option value='wrongful-death'>Wrongful Death</option>
-                      <option value='airbnb'>Airbnb Incident</option>
-                      <option value='others'>Other</option>
-                    </Select>
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='text' placeholder='City' />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='text' placeholder='State*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Address' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Postal Code' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <TextArea
-                      placeholder='Tell Us About Your Case*'
-                      required
-                    ></TextArea>
-                  </FormGroup>
-
-                  <Button type='submit'>Claim My Free Case Review</Button>
-                </form>
-              </FormWrapper>
-            </FormContainer>
-          </ImageContent>
+        <Section>
           <TextContent>
             <Title>CALIFORNIA “AT FAULT” ACCIDENTS</Title>
             <Paragraph>
@@ -406,11 +384,11 @@ const CaliforniaPage = () => {
               accidents in the US every year – that’s 16,438 per day!
             </Paragraph>
             <Paragraph>
-              So even if you’re a safe driver, it’s likely that you’ll be
+              So even if you're a safe driver, it's likely that you'll be
               involved in an accident at some point.
             </Paragraph>
             <Paragraph>
-              If you do find yourself in an accident, it’s important to know
+              If you do find yourself in an accident, it's important to know
               what to do next. The following information will help you stay safe
               and protect your interests.
             </Paragraph>
@@ -438,9 +416,14 @@ const CaliforniaPage = () => {
               level of fault in the accident.
             </Paragraph>
           </TextContent>
-        </SectionRight>
-        <TextOnlySection>
-          <TextContent>
+
+          <ImageContent>
+            <img src={Image1} alt="Car accident scene in California" />
+          </ImageContent>
+        </Section>
+
+        <ContentWithFormSection>
+          <ContentSide>
             <Title>Do I need to prove property damage to my vehicle?</Title>
             <Paragraph>
               Yes, if you are involved in a California "at-fault" accident that
@@ -476,7 +459,6 @@ const CaliforniaPage = () => {
             </Paragraph>
 
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
                 <p>– A police report</p>
                 <p>
@@ -509,8 +491,8 @@ const CaliforniaPage = () => {
                   happened
                 </p>
                 <Paragraph>
-                  ​It's also important to exchange insurance information with
-                  the other driver and to report the accident to your insurance
+                  It's also important to exchange insurance information with the
+                  other driver and to report the accident to your insurance
                   company as soon as possible. If you are injured in an
                   accident, seek medical attention right away and keep a record
                   of all medical treatment and expenses. By gathering this
@@ -550,14 +532,81 @@ const CaliforniaPage = () => {
               accident, it's best to consult with an attorney who can help you
               navigate the claims process and protect your legal rights.
             </Paragraph>
-          </TextContent>
-        </TextOnlySection>
-        <SectionLeft>
-          <ImageContent>
-            <img src={Image1} alt='Mechanic checking car damage' />
-          </ImageContent>
+          </ContentSide>
+
+          <FormSide>
+            <FormContainer>
+              <FormWrapper>
+                <FormTitle>Contact Us Today!</FormTitle>
+                <Description>
+                  If you've been injured, contact the personal injury lawyers at
+                  KR Law Group today for a FREE no obligation consultation.
+                  Remember, we don't get paid until you do.
+                </Description>
+                <StyledForm>
+                  <FormGroup>
+                    <Input type="text" placeholder="Full Name" />
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="email" placeholder="Email*" required />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="tel" placeholder="Phone*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Select required>
+                      <option value="" disabled selected>
+                        Select A Case Type*
+                      </option>
+                      <option value="car-accident">Car Accident</option>
+                      <option value="uber-lyft">Uber/Lyft Accident</option>
+                      <option value="pedestrian">Pedestrian Accident</option>
+                      <option value="scooter">Electric Scooter Accident</option>
+                      <option value="rental-car">Rental Car Accident</option>
+                      <option value="wrongful-death">Wrongful Death</option>
+                      <option value="airbnb">Airbnb Incident</option>
+                      <option value="others">Other</option>
+                    </Select>
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="text" placeholder="City" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="text" placeholder="State*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Address" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Postal Code" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <TextArea
+                      placeholder="Tell Us About Your Case*"
+                      required
+                    ></TextArea>
+                  </FormGroup>
+
+                  <Button type="submit">Claim My Free Case Review</Button>
+                </StyledForm>
+              </FormWrapper>
+            </FormContainer>
+          </FormSide>
+        </ContentWithFormSection>
+
+        <TextOnlySection>
           <TextContent>
-            <Heading>How does an insurer determine who was at fault?</Heading>
+            <Title>How does an insurer determine who was at fault?</Title>
             <Paragraph>
               In California, the insurance company will determine who is at
               fault for an accident by conducting an investigation into the
@@ -573,27 +622,27 @@ const CaliforniaPage = () => {
             </Paragraph>
             <Paragraph>
               Once the investigation is complete, the insurance company will
-              make a determination of fault. California uses a “pure comparative
-              negligence” system, which allows you to recover compensation even
+              make a determination of fault. California uses a "pure comparative
+              negligence" system, which allows you to recover compensation even
               if you are partially at fault. However, your compensation will be
               reduced proportionally to the degree of your fault.
             </Paragraph>
             <Paragraph>
-              It’s important that the insurance company’s determination of fault
+              It's important that the insurance company's determination of fault
               be based on a thorough and well-recorded investigation.
             </Paragraph>
             <Paragraph>
-              It’s important to note that in case the insurance company
-              determines you were not at fault for the accident, it’s best to
+              It's important to note that in case the insurance company
+              determines you were not at fault for the accident, it's best to
               consult with an attorney who can help you navigate the claims
               process and protect your legal rights.
             </Paragraph>
           </TextContent>
-        </SectionLeft>
+        </TextOnlySection>
 
         <TextOnlySection>
           <TextContent>
-            <Title>What happens if my car is ruled a “total loss?”</Title>
+            <Title>What happens if my car is ruled a "total loss?"</Title>
             <Paragraph>
               If your car is ruled a "total loss", it means that the cost of
               repairing your car exceeds its actual cash value. In this case,
@@ -629,11 +678,11 @@ const CaliforniaPage = () => {
 
         <SectionRight>
           <ImageContent>
-            <img src={Image2} alt='Car being evaluated for total loss' />
+            <img src={Image2} alt="Car being evaluated for total loss" />
           </ImageContent>
           <TextContent>
             <Title>
-              How can KR Injury Law Firm help you if you’ve been in an accident?
+              How can KR Injury Law Firm help you if you've been in an accident?
             </Title>
             <Paragraph>
               We can provide legal assistance if you are involved in a car
@@ -645,17 +694,25 @@ const CaliforniaPage = () => {
               firm can communicate with the insurance companies on your behalf
               and help you navigate the claims process. We can ensure that you
               are not taken advantage of by the insurance companies and that
-              your rights are protected. Investigation: Our law firm can
-              investigate the accident by interviewing witnesses, examining
-              physical evidence, and analyzing any available photographs or
-              videos of the accident. This can help establish liability and
-              ensure that you receive the compensation you deserve. Negotiation:
-              Our law firm can negotiate with insurance companies to ensure that
-              you receive a fair settlement for your damages, including medical
-              expenses, lost wages, and pain and suffering. Litigation: If
-              necessary, our law firm can file a lawsuit and represent you in
-              court. We can argue on your behalf and help you receive
-              compensation for your damages.
+              your rights are protected.
+            </Paragraph>
+            <Paragraph>
+              <strong>Investigation:</strong> Our law firm can investigate the
+              accident by interviewing witnesses, examining physical evidence,
+              and analyzing any available photographs or videos of the accident.
+              This can help establish liability and ensure that you receive the
+              compensation you deserve.
+            </Paragraph>
+            <Paragraph>
+              <strong>Negotiation:</strong> Our law firm can negotiate with
+              insurance companies to ensure that you receive a fair settlement
+              for your damages, including medical expenses, lost wages, and pain
+              and suffering.
+            </Paragraph>
+            <Paragraph>
+              <strong>Litigation:</strong> If necessary, our law firm can file a
+              lawsuit and represent you in court. We can argue on your behalf
+              and help you receive compensation for your damages.
             </Paragraph>
             <Paragraph>
               In summary, our law firm can provide invaluable assistance if you

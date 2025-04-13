@@ -1,18 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image2 from '../../assets/services_imgs/img_02.webp';
-import Header from '../common/Header';
-import AwardsPage from '../common/AwardsPage';
-import ConsultationFormPage from '../common/ConsultationFormPage';
-import BannerPage from '../common/BannerPage';
-import CTABanner from '../common/CTABanner';
-import Footer from '../common/Footer';
+import React from "react";
+import styled from "styled-components";
+import rental_car_accident from "../../assets/services_imgs/rental_car_accident.jpg";
+import rental_car_accident001 from "../../assets/services_imgs/rental_car_accident001.jpg";
+import Header from "../common/Header";
+import AwardsPage from "../common/AwardsPage";
+import ConsultationFormPage from "../common/ConsultationFormPage";
+import BannerPage from "../common/BannerPage";
+import CTABanner from "../common/CTABanner";
+import Footer from "../common/Footer";
 
 const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding: 80px 24px 100px;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 60px 24px 80px;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1d1d1f;
   line-height: 1.75;
   background-color: #fff;
@@ -28,26 +29,30 @@ const Title = styled.h1`
 `;
 
 const FormContainer = styled.div`
-  flex: 1;
   background: #212121;
-  padding: 35px;
+  padding: 30px;
   color: white;
-  order: 1;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
   @media (max-width: 1200px) {
     padding: 25px;
   }
   @media (max-width: 768px) {
     padding: 20px;
-    order: 1;
   }
 `;
 
 const FormWrapper = styled.div`
   width: 100%;
 
-  max-width: 520px;
-  margin: 0 auto;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `;
 
 const FormTitle = styled.h2`
@@ -57,7 +62,7 @@ const FormTitle = styled.h2`
   position: relative;
   padding-bottom: 10px;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -73,7 +78,6 @@ const FormTitle = styled.h2`
 const Description = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
-
   margin-bottom: 20px;
   line-height: 1.5;
   color: #cccccc;
@@ -85,6 +89,10 @@ const Description = styled.p`
 
 const FormGroup = styled.div`
   margin-bottom: 12px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 const Input = styled.input`
@@ -93,10 +101,9 @@ const Input = styled.input`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -119,10 +126,9 @@ const Select = styled.select`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -150,10 +156,9 @@ const TextArea = styled.textarea`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -179,7 +184,6 @@ const Button = styled.button`
   width: 100%;
   background: #ba0a02;
   color: white;
-
   font-size: 0.9rem;
   padding: 10px 0;
   border: none;
@@ -188,9 +192,10 @@ const Button = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 15px;
+  margin-bottom: 0;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 
   &:hover {
     background: #d01103;
@@ -208,11 +213,16 @@ const Button = styled.button`
   }
 `;
 
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+`;
+
 const Row = styled.div`
   display: flex;
-
   gap: 12px;
-
   ${FormGroup} {
     flex: 1;
   }
@@ -225,31 +235,36 @@ const Row = styled.div`
 
 const Section = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 60px;
-  margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  gap: 50px;
+  margin-bottom: 70px;
+  @media (max-width: 992px) {
     flex-direction: column;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    margin-bottom: 40px;
   }
 `;
 
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
 
 const TextOnlySection = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -261,15 +276,47 @@ const ImageContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     width: 100%;
-    max-width: 420px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
   }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const ContentWithFormSection = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 70px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+`;
+
+const FormSide = styled.div`
+  flex: 1;
+  min-width: 320px;
+  align-self: flex-start;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
+
+const ContentSide = styled.div`
+  flex: 1.5;
 `;
 
 const Paragraph = styled.p`
@@ -285,80 +332,12 @@ const RentalPage = () => {
     <>
       <Header />
       <BannerPage
-        text='RENTAL CAR ACCIDENT ATTORNEY'
-        mainText='KR Law, APC'
-        otherText='Founded by Kathy Rabii'
+        text="RENTAL CAR ACCIDENT"
+        mainText="KR Law, APC"
+        otherText="Founded by Kathy Rabii"
       />
       <Container>
-        <SectionRight>
-          <ImageContent>
-            <FormContainer>
-              <FormWrapper>
-                <FormTitle>Contact Us Today!</FormTitle>
-                <Description>
-                  If you've been injured, contact the personal injury lawyers at
-                  KR Law Group today for a FREE no obligation consultation.
-                  Remember, we don't get paid until you do.
-                </Description>
-                <form>
-                  <FormGroup>
-                    <Input type='text' placeholder='Full Name' />
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='email' placeholder='Email*' required />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='tel' placeholder='Phone*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Select required>
-                      <option value='' disabled selected>
-                        Select A Case Type*
-                      </option>
-                      <option value='car-accident'>Car Accident</option>
-                      <option value='uber-lyft'>Uber/Lyft Accident</option>
-                      <option value='pedestrian'>Pedestrian Accident</option>
-                      <option value='scooter'>Electric Scooter Accident</option>
-                      <option value='rental-car'>Rental Car Accident</option>
-                      <option value='wrongful-death'>Wrongful Death</option>
-                      <option value='airbnb'>Airbnb Incident</option>
-                      <option value='others'>Other</option>
-                    </Select>
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='text' placeholder='City' />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='text' placeholder='State*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Address' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Postal Code' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <TextArea
-                      placeholder='Tell Us About Your Case*'
-                      required
-                    ></TextArea>
-                  </FormGroup>
-
-                  <Button type='submit'>Claim My Free Case Review</Button>
-                </form>
-              </FormWrapper>
-            </FormContainer>
-          </ImageContent>
+        <Section>
           <TextContent>
             <Title>RENTAL CAR ACCIDENT ATTORNEY</Title>
             <Paragraph>
@@ -379,7 +358,26 @@ const RentalPage = () => {
               of a rental car accident attorney and how we can assist you in
               your case.
             </Paragraph>
+            <Paragraph>
+              With years of experience in handling rental car accidents, our
+              team of expert attorneys can guide you through the legal process
+              and help you get the compensation you deserve for your injuries
+              and damages.
+            </Paragraph>
+            <Paragraph>
+              We understand how stressful and overwhelming rental car accidents
+              can be. That's why we are dedicated to providing compassionate and
+              personalized legal representation to each and every one of our
+              clients.
+            </Paragraph>
+          </TextContent>
+          <ImageContent>
+            <img src={rental_car_accident} alt="Rental car after accident" />
+          </ImageContent>
+        </Section>
 
+        <ContentWithFormSection>
+          <ContentSide>
             <Title>Who Is Liable in a Rental Car Accident?</Title>
             <Paragraph>
               No two rental car accidents are the same. If you are determined to
@@ -392,115 +390,245 @@ const RentalPage = () => {
             <Paragraph>
               You may also be liable for costs to the rental company, such as
               loss of use fees, diminution of value of the car, and
-              administrative expenses. Depending on the rental company’s
+              administrative expenses. Depending on the rental company's
               agreement, you may be responsible for these additional funds.
             </Paragraph>
             <Paragraph>
               Even if you are not at fault, the rental car company may not want
               to wait for the claims process to finish to repair its vehicle and
               may charge you for repairs. In this case, you may have to file a
-              claim against the other driver’s insurance for reimbursement.
+              claim against the other driver's insurance for reimbursement.
             </Paragraph>
-          </TextContent>
-        </SectionRight>
+            <Paragraph>
+              Understanding the complex liability issues in rental car accidents
+              requires expert legal guidance. Our attorneys can help determine
+              who is liable and how to proceed with your claim to ensure you
+              don't pay unnecessary costs.
+            </Paragraph>
+          </ContentSide>
+
+          <FormSide>
+            <FormContainer>
+              <FormWrapper>
+                <FormTitle>Contact Us Today!</FormTitle>
+                <Description>
+                  If you've been injured, contact the personal injury lawyers at
+                  KR Law Group today for a FREE no obligation consultation.
+                  Remember, we don't get paid until you do.
+                </Description>
+                <StyledForm>
+                  <FormGroup>
+                    <Input type="text" placeholder="Full Name" />
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="email" placeholder="Email*" required />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="tel" placeholder="Phone*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Select required>
+                      <option value="" disabled selected>
+                        Select A Case Type*
+                      </option>
+                      <option value="car-accident">Car Accident</option>
+                      <option value="uber-lyft">Uber/Lyft Accident</option>
+                      <option value="pedestrian">Pedestrian Accident</option>
+                      <option value="scooter">Electric Scooter Accident</option>
+                      <option value="rental-car">Rental Car Accident</option>
+                      <option value="wrongful-death">Wrongful Death</option>
+                      <option value="airbnb">Airbnb Incident</option>
+                      <option value="others">Other</option>
+                    </Select>
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="text" placeholder="City" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="text" placeholder="State*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Address" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Postal Code" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <TextArea
+                      placeholder="Tell Us About Your Case*"
+                      required
+                    ></TextArea>
+                  </FormGroup>
+
+                  <Button type="submit">Claim My Free Case Review</Button>
+                </StyledForm>
+              </FormWrapper>
+            </FormContainer>
+          </FormSide>
+        </ContentWithFormSection>
+
         <TextOnlySection>
           <TextContent>
-            <Title>
-              What to do if you’re involved in a collision while you are renting
-              a car
-            </Title>
+            <Title>Insurance Coverage in Rental Car Accidents</Title>
             <Paragraph>
-              If you are involved in a collision while renting a car, there are
-              several steps you should take to protect your legal rights and
-              ensure your safety. Here are some suggestions:
+              Understanding insurance coverage in rental car accidents can be
+              complex. There are several types of insurance that may apply to
+              your case:
             </Paragraph>
             <Paragraph>
-              <strong>Check for injuries:</strong> First and foremost, check
-              yourself and others involved in the accident for any injuries. If
-              anyone is hurt, call for medical attention immediately.
+              <strong>Personal Auto Insurance:</strong> Your personal auto
+              insurance policy may provide coverage for rental cars. Many
+              policies include collision coverage, which pays for damage to the
+              rental car, and liability coverage, which covers damage you cause
+              to other vehicles or injuries to other people.
             </Paragraph>
             <Paragraph>
-              <strong>Contact the rental car company:</strong> Call the rental
-              car company's emergency phone number to report the accident. They
-              will provide further instructions on what to do next.
+              <strong>Credit Card Insurance:</strong> Many credit cards offer
+              rental car insurance as a benefit if you use the card to pay for
+              the rental. This is typically secondary coverage, meaning it
+              applies after your personal auto insurance has been exhausted.
             </Paragraph>
             <Paragraph>
-              <strong>Contact the police:</strong> Call the police to report the
-              accident and get a police report. Make sure to get the name and
-              badge number of the responding officer.
+              <strong>Rental Car Insurance:</strong> Rental car companies offer
+              various insurance options, such as collision damage waiver (CDW),
+              supplemental liability protection, personal accident insurance,
+              and personal effects coverage. These can provide additional
+              protection beyond what your personal auto insurance covers.
             </Paragraph>
             <Paragraph>
-              <strong>Document the accident scene:</strong> Take photos of the
-              accident scene, including any damage to the vehicles involved.
+              <strong>Third-Party Insurance:</strong> If you were not at fault
+              for the accident, the other driver's insurance should cover your
+              damages and injuries. However, if the other driver is uninsured or
+              underinsured, you may need to rely on your own coverage.
             </Paragraph>
             <Paragraph>
-              <strong>Gather information:</strong> Collect contact information
-              from any witnesses and exchange insurance information with the
-              other driver.
+              Our attorneys can help you navigate these complex insurance issues
+              and ensure that all applicable policies are utilized to provide
+              you with maximum coverage for your damages and injuries.
             </Paragraph>
-            <Paragraph>
-              <strong>Contact your insurance company:</strong> Notify your
-              insurance company about the accident. They will advise you on what
-              to do next and provide further instructions.
-            </Paragraph>
-            <Paragraph>
-              <strong>Contact a rental car accident attorney:</strong> If you
-              believe you may have a legal claim, contact a rental car accident
-              attorney to protect your rights and assist you in navigating the
-              complex legal issues involved in these types of cases.
-            </Paragraph>
+          </TextContent>
+        </TextOnlySection>
 
-            <Title>What Happens If You Crash Someone Else’s Rental Car?</Title>
+        <TextOnlySection>
+          <TextContent>
+            <Title>Steps to Take After a Rental Car Accident</Title>
             <Paragraph>
-              When a person rents a car from a rental company, the contract
-              typically states that only the renter and certain other people are
-              allowed to drive the vehicle. If the renter violates this
-              agreement and allows an unnamed person to drive the car, the
-              rental contract and the insurance provided within it are void. In
-              this case, the renter is responsible for paying for any damage to
-              the rental car. Insurance from the renter's credit card or primary
-              insurance company might cover this damage.
+              If you are involved in a rental car accident, there are several
+              important steps you should take to protect your rights and
+              strengthen your potential claim:
             </Paragraph>
             <Paragraph>
-              If anyone was injured during the accident, the renter’s insurance
-              is likely liable for paying compensation for those injuries. Just
-              like any other accident, though, if insurance is not enough to
-              cover the cost of injuries, the renter may be personally liable.
+              <strong>Check for Injuries:</strong> First and foremost, check
+              yourself and others for injuries. If there are any injuries, call
+              911 immediately to get medical help.
+            </Paragraph>
+            <Paragraph>
+              <strong>Report the Accident:</strong> Call the police to report
+              the accident. A police report can be valuable evidence for your
+              insurance claim or lawsuit. Also notify the rental car company as
+              soon as possible.
+            </Paragraph>
+            <Paragraph>
+              <strong>Exchange Information:</strong> Exchange contact and
+              insurance information with the other driver(s) involved in the
+              accident. Get their name, address, phone number, license plate
+              number, and insurance details.
+            </Paragraph>
+            <Paragraph>
+              <strong>Document the Scene:</strong> Take photos of the accident
+              scene, including damage to all vehicles, the surrounding area,
+              road conditions, traffic signs, and any visible injuries. This
+              evidence can be crucial for your claim.
+            </Paragraph>
+            <Paragraph>
+              <strong>Gather Witness Information:</strong> If there were
+              witnesses to the accident, get their contact information. Their
+              statements can support your account of what happened.
+            </Paragraph>
+            <Paragraph>
+              <strong>Seek Medical Attention:</strong> Even if you feel fine,
+              see a doctor as soon as possible. Some injuries may not be
+              immediately apparent, and having documentation of your medical
+              condition shortly after the accident can be important for your
+              claim.
+            </Paragraph>
+            <Paragraph>
+              <strong>Contact Your Insurance:</strong> Notify your insurance
+              company about the accident, even if you believe you weren't at
+              fault. Be honest and provide all the facts, but avoid making
+              statements that could be interpreted as admitting fault.
+            </Paragraph>
+            <Paragraph>
+              <strong>Consult an Attorney:</strong> Contact a rental car
+              accident attorney to discuss your case. An experienced attorney
+              can guide you through the complex legal and insurance issues
+              involved in rental car accidents.
             </Paragraph>
           </TextContent>
         </TextOnlySection>
 
         <SectionRight>
           <ImageContent>
-            <img src={Image2} alt='Car being evaluated for total loss' />
+            <img
+              src={rental_car_accident001}
+              alt="Attorney reviewing rental car accident case"
+            />
           </ImageContent>
           <TextContent>
-            <Title>
-              How can KR Injury Law Firm help you if you’ve been in an accident?
-            </Title>
+            <Title>How Our Rental Car Accident Attorneys Can Help</Title>
             <Paragraph>
-              With years of experience in handling rental car accidents, our
-              team of expert attorneys can guide you through the legal process
-              and help you get the compensation you deserve.
+              At KR Law, our experienced rental car accident attorneys can
+              provide valuable assistance in several ways:
             </Paragraph>
             <Paragraph>
-              First, we'll work with you to gather all the necessary
-              information, including police reports and witness statements.
-              We'll also communicate with the rental car company and their
-              insurance company to negotiate a fair settlement.
+              <strong>Case Evaluation:</strong> We will review your case in
+              detail, helping you understand your legal rights and options. We
+              can identify potential sources of liability and insurance coverage
+              to maximize your recovery.
             </Paragraph>
             <Paragraph>
-              In cases where a settlement cannot be reached, we are fully
-              prepared to take your case to trial. Our experienced trial
-              attorneys will fight for your rights in court and do everything we
-              can to ensure a successful outcome.
+              <strong>Insurance Negotiations:</strong> We can handle all
+              communications and negotiations with insurance companies, ensuring
+              that your rights are protected and that you don't accept a
+              settlement that is less than what you deserve.
             </Paragraph>
             <Paragraph>
-              We understand how stressful and overwhelming rental car accidents
-              can be. That's why we are dedicated to providing compassionate and
-              personalized legal representation to each and every one of our
-              clients. If you've been in a rental car accident, don't hesitate
-              to contact us today for a free consultation.
+              <strong>Evidence Collection:</strong> Our team will gather and
+              preserve all necessary evidence to support your claim, including
+              police reports, witness statements, medical records, and rental
+              agreements.
+            </Paragraph>
+            <Paragraph>
+              <strong>Liability Determination:</strong> We will conduct a
+              thorough investigation to determine who was at fault for the
+              accident and hold all responsible parties accountable.
+            </Paragraph>
+            <Paragraph>
+              <strong>Damage Calculation:</strong> We will accurately calculate
+              all of your damages, including medical expenses, lost wages, pain
+              and suffering, and property damage, to ensure you receive full
+              compensation.
+            </Paragraph>
+            <Paragraph>
+              <strong>Litigation Representation:</strong> If a fair settlement
+              cannot be reached, we are prepared to take your case to court and
+              provide aggressive representation to protect your interests.
+            </Paragraph>
+            <Paragraph>
+              If you have been involved in a rental car accident, don't navigate
+              this complex situation alone. Contact our experienced rental car
+              accident attorneys today for a free consultation and let us help
+              you get the compensation you deserve.
             </Paragraph>
           </TextContent>
         </SectionRight>

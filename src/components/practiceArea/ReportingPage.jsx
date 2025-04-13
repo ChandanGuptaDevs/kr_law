@@ -1,18 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image2 from '../../assets/services_imgs/img_02.webp';
-import Header from '../common/Header';
-import AwardsPage from '../common/AwardsPage';
-import ConsultationFormPage from '../common/ConsultationFormPage';
-import BannerPage from '../common/BannerPage';
-import CTABanner from '../common/CTABanner';
-import Footer from '../common/Footer';
+import React from "react";
+import styled from "styled-components";
+import car_accident from "../../assets/services_imgs/car_accident.jpg";
+import car_accident001 from "../../assets/services_imgs/car_accident001.jpg";
+import car_accident002 from "../../assets/services_imgs/car_accident002.jpg";
+import Header from "../common/Header";
+import AwardsPage from "../common/AwardsPage";
+import ConsultationFormPage from "../common/ConsultationFormPage";
+import BannerPage from "../common/BannerPage";
+import CTABanner from "../common/CTABanner";
+import Footer from "../common/Footer";
 
 const Container = styled.div`
   max-width: 1500px;
   margin: 0 auto;
-  padding: 80px 24px 100px;
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 24px;
+
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #1d1d1f;
   line-height: 1.75;
   background-color: #fff;
@@ -49,26 +52,28 @@ const KeyTakeaways = styled.div`
 `;
 
 const FormContainer = styled.div`
-  flex: 1;
   background: #212121;
   padding: 35px;
   color: white;
-  order: 1;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+
+  height: 100%;
+
   @media (max-width: 1200px) {
     padding: 25px;
   }
   @media (max-width: 768px) {
     padding: 20px;
-    order: 1;
+    margin-top: 30px;
   }
 `;
 
 const FormWrapper = styled.div`
   width: 100%;
-
   max-width: 520px;
   margin: 0 auto;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 `;
 
 const FormTitle = styled.h2`
@@ -78,7 +83,7 @@ const FormTitle = styled.h2`
   position: relative;
   padding-bottom: 10px;
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -94,7 +99,6 @@ const FormTitle = styled.h2`
 const Description = styled.p`
   font-size: 0.9rem;
   font-weight: 400;
-
   margin-bottom: 20px;
   line-height: 1.5;
   color: #cccccc;
@@ -114,10 +118,9 @@ const Input = styled.input`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -140,10 +143,9 @@ const Select = styled.select`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -171,10 +173,9 @@ const TextArea = styled.textarea`
   border: none;
   border-bottom: 2px solid #444;
   color: white;
-
   padding: 8px 0;
   font-size: 0.9rem;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   margin-bottom: 4px;
   outline: none;
   transition: all 0.3s ease;
@@ -200,7 +201,6 @@ const Button = styled.button`
   width: 100%;
   background: #ba0a02;
   color: white;
-
   font-size: 0.9rem;
   padding: 10px 0;
   border: none;
@@ -211,7 +211,7 @@ const Button = styled.button`
   margin-top: 15px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 
   &:hover {
     background: #d01103;
@@ -231,9 +231,7 @@ const Button = styled.button`
 
 const Row = styled.div`
   display: flex;
-
   gap: 12px;
-
   ${FormGroup} {
     flex: 1;
   }
@@ -246,13 +244,16 @@ const Row = styled.div`
 
 const Section = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 60px;
   margin-bottom: 100px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
     gap: 30px;
     margin-bottom: 60px;
   }
@@ -261,16 +262,16 @@ const Section = styled.div`
 const SectionRight = styled(Section)`
   flex-direction: row-reverse;
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column;
   }
 `;
 
 const TextOnlySection = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 
   @media (max-width: 768px) {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 `;
 
@@ -282,15 +283,43 @@ const ImageContent = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   img {
     width: 100%;
-    max-width: 420px;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
   }
+  @media (max-width: 992px) {
+    width: 100%;
+    max-width: 100%;
+  }
+`;
+
+const ContentWithFormSection = styled.div`
+  display: flex;
+  align-items: stretch;
+  gap: 60px;
+  margin-bottom: 50px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+
+const FormSide = styled.div`
+  flex: 1;
+  min-width: 320px;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+`;
+
+const ContentSide = styled.div`
+  flex: 1.5;
 `;
 
 const Subheading = styled.h2`
@@ -311,85 +340,17 @@ const ReportingPage = () => {
     <>
       <Header />
       <BannerPage
-        text='REPORTING CAR ACCIDENTS IN CALIFORNIA'
-        mainText='KR Law, APC'
-        otherText='Founded by Kathy Rabii'
+        text="CAR ACCIDENTS"
+        mainText="KR Law, APC"
+        otherText="Founded by Kathy Rabii"
       />
       <Container>
-        <SectionRight>
-          <ImageContent>
-            <FormContainer>
-              <FormWrapper>
-                <FormTitle>Contact Us Today!</FormTitle>
-                <Description>
-                  If you've been injured, contact the personal injury lawyers at
-                  KR Law Group today for a FREE no obligation consultation.
-                  Remember, we don't get paid until you do.
-                </Description>
-                <form>
-                  <FormGroup>
-                    <Input type='text' placeholder='Full Name' />
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='email' placeholder='Email*' required />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='tel' placeholder='Phone*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Select required>
-                      <option value='' disabled selected>
-                        Select A Case Type*
-                      </option>
-                      <option value='car-accident'>Car Accident</option>
-                      <option value='uber-lyft'>Uber/Lyft Accident</option>
-                      <option value='pedestrian'>Pedestrian Accident</option>
-                      <option value='scooter'>Electric Scooter Accident</option>
-                      <option value='rental-car'>Rental Car Accident</option>
-                      <option value='wrongful-death'>Wrongful Death</option>
-                      <option value='airbnb'>Airbnb Incident</option>
-                      <option value='others'>Other</option>
-                    </Select>
-                  </FormGroup>
-
-                  <Row>
-                    <FormGroup>
-                      <Input type='text' placeholder='City' />
-                    </FormGroup>
-                    <FormGroup>
-                      <Input type='text' placeholder='State*' required />
-                    </FormGroup>
-                  </Row>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Address' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <Input type='text' placeholder='Postal Code' />
-                  </FormGroup>
-
-                  <FormGroup>
-                    <TextArea
-                      placeholder='Tell Us About Your Case*'
-                      required
-                    ></TextArea>
-                  </FormGroup>
-
-                  <Button type='submit'>Claim My Free Case Review</Button>
-                </form>
-              </FormWrapper>
-            </FormContainer>
-          </ImageContent>
+        <Section>
           <TextContent>
             <Title>REPORTING CAR ACCIDENTS IN CALIFORNIA</Title>
             <Paragraph>
-              If you’re driving around California and are involved in a car
-              accident, you have a lot on your “to-do” list. In California,
+              If you're driving around California and are involved in a car
+              accident, you have a lot on your "to-do" list. In California,
               drivers are required by law to report a car accident to the
               California Highway Patrol or local police within 24 hours if it
               involves bodily injury or death.
@@ -415,7 +376,14 @@ const ReportingPage = () => {
               It is also advisable to seek the services of an attorney after any
               car accident, regardless of the situation.
             </Paragraph>
+          </TextContent>
+          <ImageContent>
+            <img src={car_accident} alt="Car accident scene" />
+          </ImageContent>
+        </Section>
 
+        <SectionRight>
+          <TextContent>
             <Title>Reporting Off-Highway Accidents</Title>
             <Paragraph>
               Drivers are required by law to report car accidents to the
@@ -445,9 +413,16 @@ const ReportingPage = () => {
               street/highway or off-highway.
             </Paragraph>
           </TextContent>
+          <ImageContent>
+            <img
+              src={car_accident001}
+              alt="Off-highway accident reporting process"
+            />
+          </ImageContent>
         </SectionRight>
-        <TextOnlySection>
-          <TextContent>
+
+        <ContentWithFormSection>
+          <ContentSide>
             <Title>What is Form SR-1?</Title>
             <Paragraph>
               Form SR-1 is an official document provided by the California DMV.
@@ -456,7 +431,6 @@ const ReportingPage = () => {
               days of an accident that results in:
             </Paragraph>
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
                 <p>– Property damage exceeding $1,000</p>
                 <p>– Personal injury, however slight, and/or death</p>
@@ -476,6 +450,89 @@ const ReportingPage = () => {
               certain information for everyone involved.
             </Paragraph>
 
+            <Title>Consequences of Not Completing Form SR-1</Title>
+            <Subheading>License Suspension</Subheading>
+            <Paragraph>
+              What happens if you do not complete and submit Form SR-1 to the
+              DMV within 10 days of an accident? California Vehicle Code §16004
+              permits the state to suspend your driver's license and take other
+              necessary administrative actions concerning your driving
+              privileges.
+            </Paragraph>
+          </ContentSide>
+
+          <FormSide>
+            <FormContainer>
+              <FormWrapper>
+                <FormTitle>Contact Us Today!</FormTitle>
+                <Description>
+                  If you've been injured, contact the personal injury lawyers at
+                  KR Law Group today for a FREE no obligation consultation.
+                  Remember, we don't get paid until you do.
+                </Description>
+                <form>
+                  <FormGroup>
+                    <Input type="text" placeholder="Full Name" />
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="email" placeholder="Email*" required />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="tel" placeholder="Phone*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Select required>
+                      <option value="" disabled selected>
+                        Select A Case Type*
+                      </option>
+                      <option value="car-accident">Car Accident</option>
+                      <option value="uber-lyft">Uber/Lyft Accident</option>
+                      <option value="pedestrian">Pedestrian Accident</option>
+                      <option value="scooter">Electric Scooter Accident</option>
+                      <option value="rental-car">Rental Car Accident</option>
+                      <option value="wrongful-death">Wrongful Death</option>
+                      <option value="airbnb">Airbnb Incident</option>
+                      <option value="others">Other</option>
+                    </Select>
+                  </FormGroup>
+
+                  <Row>
+                    <FormGroup>
+                      <Input type="text" placeholder="City" />
+                    </FormGroup>
+                    <FormGroup>
+                      <Input type="text" placeholder="State*" required />
+                    </FormGroup>
+                  </Row>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Address" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Input type="text" placeholder="Postal Code" />
+                  </FormGroup>
+
+                  <FormGroup>
+                    <TextArea
+                      placeholder="Tell Us About Your Case*"
+                      required
+                    ></TextArea>
+                  </FormGroup>
+
+                  <Button type="submit">Claim My Free Case Review</Button>
+                </form>
+              </FormWrapper>
+            </FormContainer>
+          </FormSide>
+        </ContentWithFormSection>
+
+        <TextOnlySection>
+          <TextContent>
             <Title>General Accident Information</Title>
             <Paragraph>
               When completing Form SR-1 you must provide the following
@@ -483,7 +540,6 @@ const ReportingPage = () => {
             </Paragraph>
 
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
                 <p>– The time when the accident took place</p>
                 <p>– Date of the accident</p>
@@ -501,14 +557,13 @@ const ReportingPage = () => {
             </Paragraph>
 
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
                 <p>– Name of the insurance company</p>
                 <p>– Insurance policy number</p>
                 <p>– Insurance policy period, and</p>
                 <p>– Name of the policyholder</p>
                 <Paragraph>
-                  ​You must also indicate whether each policy was in effect at
+                  You must also indicate whether each policy was in effect at
                   the time of the accident.
                 </Paragraph>
               </div>
@@ -524,7 +579,6 @@ const ReportingPage = () => {
             </Paragraph>
 
             <KeyTakeaways>
-              {/* <h3>Key Takeaways</h3> */}
               <div>
                 <p>– Name and address of the victim</p>
                 <p>– Type of harm (injury, death, property damage)</p>
@@ -535,26 +589,19 @@ const ReportingPage = () => {
                 </p>
               </div>
             </KeyTakeaways>
-
-            <Title>Consequences of Not Completing Form SR-1</Title>
-            <Subheading>License Suspension</Subheading>
-            <Paragraph>
-              What happens if you do not complete and submit Form SR-1 to the
-              DMV within 10 days of an accident? California Vehicle Code §16004
-              permits the state to suspend your driver’s license and take other
-              necessary administrative actions concerning your driving
-              privileges.
-            </Paragraph>
           </TextContent>
         </TextOnlySection>
 
         <SectionRight>
           <ImageContent>
-            <img src={Image2} alt='Car being evaluated for total loss' />
+            <img
+              src={car_accident002}
+              alt="Car accident documentation process"
+            />
           </ImageContent>
           <TextContent>
             <Title>
-              How can KR Injury Law Firm help you if you’ve been in an accident?
+              How can KR Injury Law Firm help you if you've been in an accident?
             </Title>
             <Paragraph>
               We can provide legal assistance if you are involved in a car
