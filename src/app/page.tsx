@@ -1,0 +1,40 @@
+import HeroSection from "@/components/home/HeroSection";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import OurAchievements from "@/components/home/OurAchievements";
+import PracticeAreas from "@/components/home/PracticeAreas";
+import OurServices from "@/components/home/OurServices";
+import SouthernCaliforniaSection from "@/components/home/SouthernCaliforniaSection";
+import Testimonials from "@/components/home/Testimonials";
+import BlogNewsSection from "@/components/home/BlogNewsSection";
+import FAQ from "@/components/home/FAQ";
+import SchemaOrg from "@/components/common/SchemaOrg";
+
+export const metadata = {
+  title: "KR Law Group | Kathy Rabii Law Firm | Los Angeles Legal Services",
+  description:
+    "KR Law Group led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!",
+  keywords:
+    "KR Law Group, Kathy Rabii, law firm, legal services, Los Angeles attorney, accident lawyer, arrest attorney, free consultation",
+};
+
+export default function Home() {
+  return (
+    <main>
+      <SchemaOrg
+        title="KR Law Group | Kathy Rabii Law Firm | Los Angeles Legal Services"
+        description="KR Law Group led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!"
+        url="https://krlaw.com/" // Replace with your actual domain
+        imageUrl="https://krlaw.com/images/lady-justice.jpg" // Replace with your actual image
+      />
+      <HeroSection />
+      <WhyChooseUs />
+      <OurAchievements />
+      <PracticeAreas />
+      <OurServices />
+      <SouthernCaliforniaSection />
+      <Testimonials />
+      <BlogNewsSection />
+      <FAQ />
+    </main>
+  );
+}
