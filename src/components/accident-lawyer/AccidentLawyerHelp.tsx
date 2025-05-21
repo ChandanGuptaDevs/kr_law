@@ -1,4 +1,3 @@
-// src/components/california-at-fault-accidents/HowWeCanHelpSection.tsx
 "use client";
 import styled from "styled-components";
 
@@ -170,6 +169,15 @@ const ServiceCard = styled.div`
   }
 `;
 
+// Add special styling for the 5th card (index 4)
+const CenteredServiceCard = styled(ServiceCard)`
+  @media (min-width: 769px) {
+    grid-column: 1 / -1; /* Span across all columns */
+    max-width: 540px; /* Limit width to make it look centered */
+    margin: 0 auto; /* Center the card */
+  }
+`;
+
 const ServiceTitle = styled.h3`
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -224,27 +232,32 @@ interface ServiceProps {
   description: string;
 }
 
-export default function HowWeCanHelpSection() {
+export default function CarAccidentHelpSection() {
   const services: ServiceProps[] = [
     {
-      title: "Communication with insurance companies",
+      title: "Experience and Expertise",
       description:
-        "Our law firm can communicate with the insurance companies on your behalf and help you navigate the claims process. We can ensure that you are not taken advantage of by the insurance companies and that your rights are protected.",
+        "Our accident lawyers have extensive experience handling all types of accident cases. We understand the complexities of accident law and know how to build strong cases for our clients.",
     },
     {
-      title: "Investigation",
+      title: "No Fee Unless We Win",
       description:
-        "Our law firm can investigate the accident by interviewing witnesses, examining physical evidence, and analyzing any available photographs or videos of the accident. This can help establish liability and ensure that you receive the compensation you deserve.",
+        "We work on a contingency fee basis, which means you don't pay unless we win your case. This allows you to pursue your claim without worrying about upfront costs.",
     },
     {
-      title: "Negotiation",
+      title: "Compassionate Support",
       description:
-        "Our law firm can negotiate with insurance companies to ensure that you receive a fair settlement for your damages, including medical expenses, lost wages, and pain and suffering.",
+        "We understand that being involved in an accident can be traumatic. Our team provides compassionate support throughout the legal process, keeping you informed and involved every step of the way.",
     },
     {
-      title: "Litigation",
+      title: "Personalized Attention",
       description:
-        "If necessary, our law firm can file a lawsuit and represent you in court. We can argue on your behalf and help you receive compensation for your damages.",
+        "We understand that every accident case is unique, with its own set of circumstances and challenges. That's why we provide personalized attention to each client and tailor our approach to meet your specific needs.",
+    },
+    {
+      title: "Proven Track Record",
+      description:
+        "Our law firm has a proven track record of success in handling accident cases. We have helped numerous clients secure the compensation they deserve.",
     },
   ];
 
@@ -261,19 +274,27 @@ export default function HowWeCanHelpSection() {
         </Introduction>
 
         <ServicesGrid>
-          {services.map((service, index) => (
-            <ServiceCard key={index}>
-              <ServiceTitle>{service.title}</ServiceTitle>
-              <ServiceDescription>{service.description}</ServiceDescription>
-            </ServiceCard>
-          ))}
+          {services.map((service, index) =>
+            index === 4 ? (
+              // Use the centered card for "Proven Track Record" (5th item)
+              <CenteredServiceCard key={index}>
+                <ServiceTitle>{service.title}</ServiceTitle>
+                <ServiceDescription>{service.description}</ServiceDescription>
+              </CenteredServiceCard>
+            ) : (
+              // Use regular card for all other items
+              <ServiceCard key={index}>
+                <ServiceTitle>{service.title}</ServiceTitle>
+                <ServiceDescription>{service.description}</ServiceDescription>
+              </ServiceCard>
+            )
+          )}
         </ServicesGrid>
 
         <Conclusion>
-          In summary, our law firm can provide invaluable assistance if you are
-          involved in a California car accident. We can help you navigate the
-          legal system, protect your rights, and ensure that you receive the
-          compensation you deserve.
+          If you or a loved one has been injured in an accident, don't hesitate
+          to contact our law firm. We are here to help you navigate this
+          difficult time and fight for the compensation you deserve.
         </Conclusion>
       </ContentWrapper>
     </SectionContainer>
