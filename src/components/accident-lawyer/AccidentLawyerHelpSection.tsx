@@ -6,7 +6,9 @@ const SectionContainer = styled.section`
   position: relative;
   width: 100%;
   background: #ffffff;
+
   padding: 40px 0 40px;
+
   overflow: hidden;
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -109,6 +111,7 @@ const ListItem = styled.div`
   color: #000000;
   padding-left: 20px;
   position: relative;
+
   &:before {
     content: "–";
     position: absolute;
@@ -133,15 +136,15 @@ const TwoColumnGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   margin: 30px 0 50px;
+
   @media (min-width: 769px) and (max-width: 1024px) {
     grid-template-columns: 1fr; // Stack vertically on tablet
     gap: 30px;
     margin: 25px 0 40px;
   }
+
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; // Stack vertically on mobile
-    gap: 20px;
-    margin: 20px 0 30px;
+    display: none; // Hide the main grid completely on mobile
   }
 `;
 
@@ -188,6 +191,7 @@ const ImageSection = styled.div`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   width: 100%;
+
   @media (min-width: 1025px) {
     height: 428px;
   }

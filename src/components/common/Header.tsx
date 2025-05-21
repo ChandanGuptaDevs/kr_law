@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const HeaderContainer = styled.header`
   position: absolute;
@@ -268,6 +269,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPracticeDropdownOpen, setIsPracticeDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   // List of practice areas for the dropdown menu
   const practiceAreas: PracticeAreaItem[] = [
@@ -316,6 +318,12 @@ export default function Header() {
     };
   }, []);
 
+  // Handler to close menu when a navigation link is clicked
+  const handleNavLinkClick = () => {
+    setIsMenuOpen(false);
+    setIsPracticeDropdownOpen(false);
+  };
+
   return (
     <HeaderContainer>
       <Logo href="/">
@@ -357,16 +365,27 @@ export default function Header() {
             <DropdownList>
               {practiceAreas.map((area, index) => (
                 <DropdownItem key={index}>
-                  <DropdownLink href={area.path}>{area.name}</DropdownLink>
+                  <DropdownLink
+                    href={area.path}
+                    onClick={handleNavLinkClick} // Close menu when a link is clicked
+                  >
+                    {area.name}
+                  </DropdownLink>
                 </DropdownItem>
               ))}
             </DropdownList>
           </DropdownMenu>
         </NavItem>
 
-        <NavLink href="/about">About Us</NavLink>
-        <NavLink href="/blog">Blog</NavLink>
-        <PhoneLink href="tel:+12138338361">+1 213-833-8361</PhoneLink>
+        <NavLink href="/about" onClick={handleNavLinkClick}>
+          About Us
+        </NavLink>
+        <NavLink href="/blog" onClick={handleNavLinkClick}>
+          Blog
+        </NavLink>
+        <PhoneLink href="tel:+12138338361" onClick={handleNavLinkClick}>
+          +1 213-833-8361
+        </PhoneLink>
       </Navigation>
     </HeaderContainer>
   );

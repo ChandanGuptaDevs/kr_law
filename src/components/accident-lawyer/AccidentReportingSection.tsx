@@ -13,15 +13,15 @@ const SectionContainer = styled.section`
   }
 
   @media (min-width: 1025px) {
-    padding: 80px 0;
+    padding: 50px 0;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   @media (max-width: 768px) {
-    padding: 40px 0;
+    padding: 20px 0;
     /* No background color for mobile */
   }
 `;
