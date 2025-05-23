@@ -334,7 +334,7 @@ const ButtonText = styled.span`
   }
 
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 24px;
   }
 `;
