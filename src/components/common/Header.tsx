@@ -280,7 +280,7 @@ export default function Header() {
     { name: "Car Accidents", path: "/car-accidents" },
     { name: "Accident Lawyer", path: "/accident-lawyer" },
     { name: "Rental Car Accident", path: "/rental-car-accident" },
-    { name: "Pedestrian Accident", path: "/pedestrial-accident" },
+    { name: "Pedestrian Accident", path: "/pedestrian-accident" },
     { name: "Airbnb Attorney", path: "/airbnb-attorney" },
     { name: "Uber Accident Lawyer", path: "/uber-accident-lawyers" },
     { name: "Wrongful Death Attorney", path: "/wrongful-death-attorney" },
