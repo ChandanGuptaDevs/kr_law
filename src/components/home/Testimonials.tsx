@@ -316,13 +316,13 @@ const NavButton = styled.button`
   }
 `;
 
-const PrevButton = styled(NavButton)`
-  left: 5px;
-`;
+// const PrevButton = styled(NavButton)`
+//   left: 5px;
+// `;
 
-const NextButton = styled(NavButton)`
-  right: 5px;
-`;
+// const NextButton = styled(NavButton)`
+//   right: 5px;
+// `;
 
 // Interface for testimonial items
 interface TestimonialItem {
@@ -352,6 +352,9 @@ const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // Auto-scroll timer ref
+  const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const addAnimation = () => {
       if (containerRef.current && scrollerRef.current) {
@@ -370,16 +373,56 @@ const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
     addAnimation();
   }, []);
 
+  // Auto-rotation for mobile carousel
+  useEffect(() => {
+    // Define how often to rotate slides (in milliseconds)
+    // Using much longer intervals to match desktop's slow motion effect
+    const getRotationInterval = () => {
+      if (speed === "fast") return 8000; // 8 seconds
+      if (speed === "normal") return 12000; // 12 seconds
+      return 15000; // 15 seconds for slow (much slower)
+    };
+
+    const rotationInterval = getRotationInterval();
+    // Start the auto-rotation
+    autoScrollTimerRef.current = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, rotationInterval);
+
+    // Clean up the timer when component unmounts
+    return () => {
+      if (autoScrollTimerRef.current) {
+        clearInterval(autoScrollTimerRef.current);
+      }
+    };
+  }, [speed, items.length]);
+
   const goToSlide = (index: number) => {
+    // Reset the auto-rotation timer when manually navigating
+    if (autoScrollTimerRef.current) {
+      clearInterval(autoScrollTimerRef.current);
+    }
+
     setActiveIndex(index);
+
+    // Restart the timer after manual navigation with the appropriate slow interval
+    const getRotationInterval = () => {
+      if (speed === "fast") return 8000; // 8 seconds
+      if (speed === "normal") return 12000; // 12 seconds
+      return 15000; // 15 seconds for slow
+    };
+
+    autoScrollTimerRef.current = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, getRotationInterval());
   };
 
   const goToNextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % items.length);
+    goToSlide((activeIndex + 1) % items.length);
   };
 
   const goToPrevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + items.length) % items.length);
+    goToSlide((activeIndex - 1 + items.length) % items.length);
   };
 
   return (
