@@ -469,7 +469,7 @@ export default function WhyChooseUs() {
         </AchievementCardContainer>
 
         {/* Know More button - only visible on desktop */}
-        <DesktopKnowMoreButton href="/about-us">
+        <DesktopKnowMoreButton href="/about">
           <ButtonText>Know About US</ButtonText>
           <ArrowImage
             src="/images/Arrow_white.svg"
