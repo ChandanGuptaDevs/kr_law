@@ -190,7 +190,7 @@ export default function OurAchievements() {
         ))}
       </AchievementGrid>
 
-      <KnowMoreButton href="/about-us">
+      <KnowMoreButton href="/about">
         <ButtonText>Know About US</ButtonText>
         <ArrowImage
           src="/images/Arrow_white.svg"
