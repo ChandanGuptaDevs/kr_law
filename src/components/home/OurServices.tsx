@@ -278,6 +278,8 @@ const ExploreButton = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative; /* Ensure it has a position */
+  z-index: 10; /* Increase z-index to ensure it's above other elements */
 
   &:hover {
     background: #2a3c4d;
@@ -288,7 +290,6 @@ const ExploreButton = styled(Link)`
     position: absolute;
     width: 254px;
     height: 58px;
-
     left: 586px;
     top: 729px;
   }
@@ -346,24 +347,29 @@ const ArrowWhite = styled(Image)`
 `;
 
 export default function OurServices() {
-  // List of services
+  // Updated list of services with correct link paths and services
   const services: ServiceItemType[] = [
-    { name: "Car Accidents", link: "/practice-areas/car-accidents" },
+    { name: "Car Accidents", link: "/car-accidents" },
     {
       name: "Motorcycle Accidents",
-      link: "/practice-areas/motorcycle-accidents",
-    },
+
+      link: "/accident-lawyer",
+    }, // This might need to be updated if you have a specific page
     {
       name: "Uber and Lyft Accidents",
-      link: "/practice-areas/uber-accident-lawyers",
+      link: "/uber-accident-lawyers",
     },
-    { name: "Truck Accidents", link: "/practice-areas/truck-accidents" },
+    { name: "Airbnb Attorney", link: "/airbnb-attorney" }, // Changed from Truck Accidents
     {
       name: "Pedestrian Accidents",
-      link: "/practice-areas/pedestrial-accident",
+      link: "/pedestrian-accident",
     },
-    { name: "Dog Bites", link: "/practice-areas/dog-bites" },
-    { name: "Wrongful Death", link: "/practice-areas/wrongful-death-attorney" },
+
+    { name: "Electric Scooter Accident", link: "/electric-scooter-accident" }, // Changed from Dog Bites
+    {
+      name: "Wrongful Death",
+      link: "/wrongful-death-attorney",
+    },
   ];
 
   return (
@@ -400,8 +406,7 @@ export default function OurServices() {
           />
         ))}
       </ServicesListContainer>
-
-      <ExploreButton href="/practice-areas">
+      <ExploreButton href="/california-at-fault-accidents">
         <ButtonText>Explore Our Services</ButtonText>
         <ArrowWhite
           src="/images/Arrow_white.svg"
