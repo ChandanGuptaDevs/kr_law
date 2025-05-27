@@ -476,7 +476,7 @@ export default function BlogNewsSection() {
       title: "TOP 5 MISTAKES WHEN HIRING A PERSONAL INJURY LAWYER",
       excerpt:
         "Finding the right legal help or personal injury lawyer can be a daunting prospect. You often have to find a lawyer for your injuries at a time when...",
-      slug: "top-5-mistakes-when-hiring-a-personal-injury-lawyer",
+      slug: "hiring-lawyer",
       imagePath: "/images/blog_news_top_mistakes.jpg",
     },
     {
@@ -484,7 +484,7 @@ export default function BlogNewsSection() {
       title: "WHO PAYS YOUR MEDICAL BILLS IN A PERSONAL INJURY LAWSUIT?",
       excerpt:
         "When you're involved in an accident resulting in personal injury, the confusion of the situation can make it difficult to think through a personal...",
-      slug: "who-pays-your-medical-bills-in-a-personal-injury-lawsuit",
+      slug: "medical-bills",
       imagePath: "/images/blog_news_medical_bills.jpg",
     },
     {
@@ -493,7 +493,7 @@ export default function BlogNewsSection() {
         "WHAT MAKES A PERSONAL INJURY CASE (OR PERSONAL INJURY LAWSUIT) GO TO TRIAL?",
       excerpt:
         "Personal injury cases can be complicated, but the law doesn't have to be. A personal injury lawsuit is a civil lawsuit that centers on one person...",
-      slug: "what-makes-a-personal-injury-case-go-to-trial",
+      slug: "personal-injury-trial",
       imagePath: "/images/blog_news_go_to_trail.jpg",
     },
   ];

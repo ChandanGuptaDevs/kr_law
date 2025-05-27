@@ -1,25 +1,48 @@
 import BlogHero from "@/components/blog/BlogHero";
-import SchemaOrg from "@/components/common/SchemaOrg";
+import BlogListing from "@/components/blog/BlogListing";
 
 export const metadata = {
-  title: "Blog & Resources | KR Law Group | Legal Insights",
+  title: "Blog | KR Law Group | Personal Injury Law Insights",
   description:
-    "Explore legal insights, news, and resources from KR Law Group. Learn about personal injury law, accident claims, and your rights.",
-  keywords:
-    "law blog, legal resources, personal injury insights, KR Law Group, legal news, accident claim tips",
+    "Explore expert insights on personal injury law, accident claims, and legal advice from the attorneys at KR Law Group.",
 };
 
 export default function BlogPage() {
+  const blogPosts = [
+    {
+      title: "Top 5 Mistakes When Hiring a Personal Injury Lawyer",
+      slug: "hiring-lawyer",
+
+      excerpt:
+        "Finding the right legal help or personal injury lawyer can be a daunting prospect. You often have to find a lawyer at a time when you are already experiencing a significant amount of stress and anxiety.",
+      imagePath:
+        "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.jpg",
+    },
+    {
+      title: "Who Pays Your Medical Bills in a Personal Injury Lawsuit?",
+      slug: "medical-bills",
+
+      excerpt:
+        "When you're involved in an accident resulting in personal injury, the confusion of the situation can make it difficult to think through who is responsible for your medical expenses.",
+      imagePath:
+        "/images/who-pays-your-medical-bills-in-a-personal-injury-lawsuit.jpg",
+    },
+    {
+      title: "What Makes A Personal Injury Case Go To Trial?",
+      slug: "personal-injury-trial",
+
+      excerpt:
+        "Personal injury cases can be complicated, but the law doesn't have to be. Learn what factors lead to a case going to trial instead of settling out of court.",
+      imagePath: "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg",
+    },
+    // Add more blog posts here as you create them
+  ];
+
   return (
     <main>
-      <SchemaOrg
-        title="Blog & Resources | KR Law Group | Legal Insights"
-        description="Explore legal insights, news, and resources from KR Law Group. Learn about personal injury law, accident claims, and your rights."
-        url="https://krlaw.com/blog"
-        imageUrl="https://krlaw.com/images/blog-banner.jpg"
-      />
       <BlogHero />
-      {/* Add other blog-related components here */}
+
+      <BlogListing posts={blogPosts} />
     </main>
   );
 }
