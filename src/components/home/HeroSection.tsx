@@ -150,7 +150,7 @@ export default function HeroSection() {
         <PayNothing>PAY NOTHING UNTIL YOU WIN !</PayNothing>
       </HeroContent>
 
-      <FormContainer>
+      <FormContainer id="hero-contact-form">
         <ContactForm />
       </FormContainer>
     </HeroContainer>

@@ -298,7 +298,7 @@ const LawyerImage = styled(Image)`
   }
 `;
 
-const CTAButton = styled(Link)`
+const CTAButton = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -310,8 +310,10 @@ const CTAButton = styled(Link)`
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   text-decoration: none;
+  border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10; /* Add a base z-index */
 
   &:hover {
     background: #2a3c4d;
@@ -325,7 +327,7 @@ const CTAButton = styled(Link)`
     left: 0px;
     top: 530px;
   }
-  /* Tablet specific styling - significantly reduced gap */
+  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 390px;
@@ -334,6 +336,10 @@ const CTAButton = styled(Link)`
     transform: translateX(-50%);
     top: 860px;
     margin: 0;
+
+    &:hover {
+      transform: translateX(-50%) translateY(-2px);
+    }
   }
 
   @media (max-width: 768px) {
@@ -345,6 +351,11 @@ const CTAButton = styled(Link)`
     transform: translateX(-50%);
     top: 1050px;
     margin: 0;
+    z-index: 20; /* Higher z-index for mobile to ensure it's above other elements */
+
+    &:hover {
+      transform: translateX(-50%) translateY(-2px);
+    }
   }
 `;
 
@@ -396,6 +407,38 @@ const ArrowImage = styled(Image)`
 `;
 
 export default function SouthernCaliforniaSection() {
+  // Improved scroll function for better cross-device compatibility
+  const scrollToContactForm = () => {
+    // Try to find the contact form by ID
+    const contactForm = document.getElementById("hero-contact-form");
+
+    if (contactForm) {
+      // Use both methods for maximum compatibility
+      contactForm.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // Add a short timeout and also use window.scrollTo as a fallback
+      // This helps on some mobile browsers
+      setTimeout(() => {
+        const formRect = contactForm.getBoundingClientRect();
+        const absoluteTop = window.pageYOffset + formRect.top;
+
+        window.scrollTo({
+          top: absoluteTop,
+          behavior: "smooth",
+        });
+      }, 100);
+    } else {
+      // If we can't find the form, scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+
+        behavior: "smooth",
+      });
+
+      console.log("Contact form element not found");
+    }
+  };
+
   return (
     <SectionContainer>
       <SectionTitle>
@@ -429,7 +472,10 @@ export default function SouthernCaliforniaSection() {
         />
       </PhotoContainer>
 
-      <CTAButton href="/contact">
+      <CTAButton
+        onClick={scrollToContactForm}
+        aria-label="Schedule a free consultation"
+      >
         <ButtonText>Schedule A Free Consultation Now</ButtonText>
         <ArrowImage
           src="/images/Arrow_white.svg"
