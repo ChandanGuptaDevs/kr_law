@@ -51,7 +51,7 @@ export default function BlogPage() {
 
       excerpt:
         "Personal injury law is a highly specialized field, and cases can vary depending on the circumstances. Learn what elements create a strong case for compensation.",
-      imagePath: "/images/what-makes-a-good-personal-injury-case.jpg",
+      imagePath: "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg",
     },
     {
       title: "What Is The Timeline For A Personal Injury Case?",

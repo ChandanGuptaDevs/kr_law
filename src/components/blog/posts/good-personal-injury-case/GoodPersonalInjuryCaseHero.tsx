@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/what-makes-a-good-personal-injury-case.jpg");
+  background-image: url("/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
