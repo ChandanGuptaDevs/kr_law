@@ -33,7 +33,33 @@ export default function BlogPage() {
 
       excerpt:
         "Personal injury cases can be complicated, but the law doesn't have to be. Learn what factors lead to a case going to trial instead of settling out of court.",
-      imagePath: "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg",
+      imagePath:
+        "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpeg",
+    },
+    {
+      title: "How to Get the Accident Report for Your Personal Injury Case",
+      slug: "accident-report",
+
+      excerpt:
+        "Car accident reports are a critical part of the process when it comes to getting insurance, filing a claim, or dealing with personal injury cases. Learn how to obtain one.",
+      imagePath:
+        "/images/how-to-get-the-accident-report-for-your-personal-injury-case.jpg",
+    },
+    {
+      title: "What Makes A Good Personal Injury Case?",
+      slug: "good-personal-injury-case",
+
+      excerpt:
+        "Personal injury law is a highly specialized field, and cases can vary depending on the circumstances. Learn what elements create a strong case for compensation.",
+      imagePath: "/images/what-makes-a-good-personal-injury-case.jpg",
+    },
+    {
+      title: "What Is The Timeline For A Personal Injury Case?",
+      slug: "personal-injury-timeline",
+
+      excerpt:
+        "The timeline for personal injury cases depends on many factors including the nature of injuries and case complexity. Learn what to expect at each stage.",
+      imagePath: "/images/what-is-the-limeline-for-a-personal-injury-case.jpg",
     },
     // Add more blog posts here as you create them
   ];

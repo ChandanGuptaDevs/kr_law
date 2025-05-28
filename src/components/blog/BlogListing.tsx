@@ -45,11 +45,14 @@ const BlogGrid = styled.div`
 `;
 
 const BlogCard = styled.article`
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 90%;
 
   &:hover {
     transform: translateY(-5px);
@@ -60,12 +63,20 @@ const BlogCard = styled.article`
 const CardImageContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 240px;
+  }
 `;
 
 const CardContent = styled.div`
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 65%;
 `;
 
 const CardTitle = styled.h2`
@@ -88,6 +99,7 @@ const CardExcerpt = styled.p`
   line-height: 1.6;
   color: #333333;
   margin: 0 0 24px;
+  flex-grow: 1;
 `;
 
 const ReadMoreLink = styled(Link)`
@@ -101,6 +113,7 @@ const ReadMoreLink = styled(Link)`
   padding: 8px 0;
   position: relative;
   transition: color 0.3s ease;
+  margin-top: auto;
 
   &::after {
     content: "";

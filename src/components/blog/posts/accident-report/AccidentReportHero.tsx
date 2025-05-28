@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpeg");
+  background-image: url("/images/how-to-get-the-accident-report-for-your-personal-injury-case.jpg");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
@@ -102,15 +102,15 @@ const TitleSecondPart = styled.span`
   }
 `;
 
-export default function PersonalInjuryTrialHero() {
+export default function AccidentReportHero() {
   return (
     <HeroContainer>
       <Overlay />
       <ContentWrapper>
         <HeroContent>
           <HeroTitle>
-            <TitleFirstPart>What Makes A Personal Injury Case</TitleFirstPart>{" "}
-            <TitleSecondPart>Go To Trial?</TitleSecondPart>
+            <TitleFirstPart>How to Get the Accident Report</TitleFirstPart>{" "}
+            <TitleSecondPart>for Your Personal Injury Case</TitleSecondPart>
           </HeroTitle>
         </HeroContent>
       </ContentWrapper>
