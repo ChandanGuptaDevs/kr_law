@@ -541,7 +541,7 @@ export default function ContactForm() {
   return (
     <>
       {/* Desktop/Tablet Form */}
-      <FormSection>
+      <FormSection id="contact-form">
         <FormContainer>
           <FormHeader>
             <FormTitle>Book Your Free Consultation Today</FormTitle>
@@ -639,7 +639,7 @@ export default function ContactForm() {
       </FormSection>
 
       {/* Mobile Form (Compact Version) */}
-      <MobileFormContainer>
+      <MobileFormContainer id="contact-form-mobile">
         <MobileFormTitle>Book Your Free Consultation Today</MobileFormTitle>
         <MobileFormSubtitle>
           We are not your average law firm call us now to get the compensation

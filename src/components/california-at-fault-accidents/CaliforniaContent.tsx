@@ -241,6 +241,13 @@ export default function CaliforniaContent() {
 
       {/* Mobile and tablet version of the form - appears at the bottom */}
       <MobileFormContainer>
+        <div
+          id="mobile-form-marker"
+          style={{
+            height: "1px",
+            visibility: "hidden",
+          }}
+        ></div>
         <PracticeAreaContactForm />
       </MobileFormContainer>
     </>

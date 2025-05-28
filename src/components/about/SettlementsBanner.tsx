@@ -242,6 +242,25 @@ export default function SettlementsBanner() {
     },
   ];
 
+  const handleConsultationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    // Get window width to determine which form to target
+    const windowWidth = window.innerWidth;
+
+    // Use different IDs based on screen size
+    let targetId = windowWidth <= 768 ? "contact-form-mobile" : "contact-form";
+
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Fallback
+      window.location.href = "#contact-form";
+    }
+  };
+
   return (
     <BannerContainer>
       <ContentWrapper>
@@ -252,8 +271,10 @@ export default function SettlementsBanner() {
             <TotalText>{settlement.text}</TotalText>
           </SettlementItem>
         ))}
-
-        <ConsultationButton href="/contact">
+        <ConsultationButton
+          href="#contact-form"
+          onClick={handleConsultationClick}
+        >
           <ButtonText>Free Consultation</ButtonText>
           <ArrowIcon
             src="/images/Arrow_white.svg"
