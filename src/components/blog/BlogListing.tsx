@@ -21,7 +21,7 @@ const ListingContainer = styled.section`
   }
 
   @media (max-width: 768px) {
-    padding: 40px 16px;
+    padding: 30px 16px;
   }
 `;
 
@@ -40,7 +40,7 @@ const BlogGrid = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 10px;
   }
 `;
 
