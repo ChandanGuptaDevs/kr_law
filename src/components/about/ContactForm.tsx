@@ -1,6 +1,6 @@
 // src/components/about/ContactForm.tsx
 "use client";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -101,7 +101,6 @@ const PayNothingText = styled.p`
   text-align: center;
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 32px;
-
     margin-bottom: 35px;
   }
 
@@ -110,6 +109,30 @@ const PayNothingText = styled.p`
     margin-bottom: 30px;
     padding: 0 10px;
   }
+`;
+
+const SuccessMessage = styled.div`
+  background: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  width: 60%;
+`;
+
+const ErrorMessage = styled.div`
+  background: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  width: 60%;
 `;
 
 const Form = styled.form`
@@ -178,6 +201,16 @@ const Input = styled.input`
     font-size: 14px;
   }
 
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 30px #1b2632 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 17px;
     padding: 8px 0;
@@ -222,7 +255,7 @@ const Textarea = styled.textarea`
   }
 `;
 
-const Label = styled.label`
+const Label = styled.label<{ $hasValue: boolean }>`
   position: absolute;
   left: 0;
   top: 10px;
@@ -238,6 +271,13 @@ const Label = styled.label`
   pointer-events: none;
   transition: 0.3s ease all;
 
+  ${(props) =>
+    props.$hasValue &&
+    `
+    transform: translateY(-20px);
+    font-size: 14px;
+  `}
+
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 17px;
     top: 8px;
@@ -249,7 +289,7 @@ const Label = styled.label`
   }
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled.button<{ disabled?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -258,19 +298,22 @@ const SubmitButton = styled.button`
   gap: 10px;
   width: 263px;
   height: 58px;
-  background: #ffffff;
+  background: ${(props) => (props.disabled ? "#666" : "#ffffff")};
   box-shadow: 7px 9px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: none;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   margin: 0 auto;
   transition: all 0.3s ease;
+  opacity: ${(props) => (props.disabled ? 0.6 : 1)};
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 7px 12px 8px rgba(0, 0, 0, 0.3),
-      inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: ${(props) => (props.disabled ? "none" : "translateY(-2px)")};
+    box-shadow: ${(props) =>
+      props.disabled
+        ? "7px 9px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
+        : "7px 12px 8px rgba(0, 0, 0, 0.3), inset 0px 4px 4px rgba(0, 0, 0, 0.25)"};
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -325,6 +368,7 @@ const ArrowIcon = styled(Image)`
     height: 18px !important;
   }
 `;
+
 // Compact version for mobile screens that shows in the mobile view
 const MobileFormContainer = styled.div`
   display: none;
@@ -419,8 +463,7 @@ const MobileTextarea = styled.textarea`
     font-size: 12px;
   }
 `;
-
-const MobileLabel = styled.label`
+const MobileLabel = styled.label<{ $hasValue: boolean }>`
   position: absolute;
   left: 0;
   top: 8px;
@@ -437,7 +480,7 @@ const MobileLabel = styled.label`
   transition: 0.3s ease all;
 `;
 
-const MobileSubmitButton = styled.button`
+const MobileSubmitButton = styled.button<{ disabled?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -446,19 +489,22 @@ const MobileSubmitButton = styled.button`
   gap: 8px;
   width: 208px;
   height: 49px;
-  background: #ffffff;
+  background: ${(props) => (props.disabled ? "#666" : "#ffffff")};
   box-shadow: 7px 9px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   border: none;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   margin: 20px auto 0;
   transition: all 0.3s ease;
+  opacity: ${(props) => (props.disabled ? 0.6 : 1)};
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 7px 12px 8px rgba(0, 0, 0, 0.3),
-      inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: ${(props) => (props.disabled ? "none" : "translateY(-2px)")};
+    box-shadow: ${(props) =>
+      props.disabled
+        ? "7px 9px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25)"
+        : "7px 12px 8px rgba(0, 0, 0, 0.3), inset 0px 4px 4px rgba(0, 0, 0, 0.25)"};
   }
 `;
 
@@ -477,6 +523,14 @@ const MobileButtonText = styled.span`
 
   ${MobileSubmitButton}:hover & {
     opacity: 1;
+  }
+`;
+
+const MobileArrowIcon = styled(Image)`
+  transition: transform 0.3s ease;
+
+  ${MobileSubmitButton}:hover & {
+    transform: translateX(3px);
   }
 `;
 
@@ -506,6 +560,38 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+  const [mobileSubmitStatus, setMobileSubmitStatus] = useState<
+    "success" | "error" | null
+  >(null);
+  const [isMobileSubmitting, setIsMobileSubmitting] = useState(false);
+
+  // Auto-hide success messages after 3 seconds
+  useEffect(() => {
+    if (submitStatus === "success") {
+      const timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
+
+  // Auto-hide mobile success messages after 3 seconds
+  useEffect(() => {
+    if (mobileSubmitStatus === "success") {
+      const timer = setTimeout(() => {
+        setMobileSubmitStatus(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [mobileSubmitStatus]);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -526,16 +612,87 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Desktop form submitted:", formValues);
-    // Here you would typically send the form data to your backend
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          fullName: `${formValues.firstName} ${formValues.lastName}`,
+          email: formValues.email,
+          phone: formValues.phone,
+          message: formValues.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormValues({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleMobileSubmit = (e: FormEvent) => {
+  const handleMobileSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Mobile form submitted:", mobileFormValues);
-    // Here you would typically send the form data to your backend
+    setIsMobileSubmitting(true);
+    setMobileSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          fullName: mobileFormValues.fullName,
+          email: mobileFormValues.email,
+          phone: mobileFormValues.phone,
+          message: mobileFormValues.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setMobileSubmitStatus("success");
+        setMobileFormValues({
+          fullName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setMobileSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting mobile form:", error);
+      setMobileSubmitStatus("error");
+    } finally {
+      setIsMobileSubmitting(false);
+    }
   };
 
   return (
@@ -553,6 +710,20 @@ export default function ContactForm() {
 
           <PayNothingText>Pay Nothing Until YOU Win !</PayNothingText>
 
+          {submitStatus === "success" && (
+            <SuccessMessage>
+              Thank you! Your message has been sent successfully. We'll get back
+              to you soon.
+            </SuccessMessage>
+          )}
+
+          {submitStatus === "error" && (
+            <ErrorMessage>
+              Sorry, there was an error sending your message. Please try again
+              or call us directly.
+            </ErrorMessage>
+          )}
+
           <Form onSubmit={handleSubmit}>
             <FormRow>
               <FormGroup>
@@ -565,7 +736,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-                <Label htmlFor="firstName">First Name</Label>
+
+                <Label
+                  htmlFor="firstName"
+                  $hasValue={formValues.firstName !== ""}
+                >
+                  First Name
+                </Label>
               </FormGroup>
 
               <FormGroup>
@@ -578,7 +755,13 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-                <Label htmlFor="lastName">Last name</Label>
+
+                <Label
+                  htmlFor="lastName"
+                  $hasValue={formValues.lastName !== ""}
+                >
+                  Last name
+                </Label>
               </FormGroup>
             </FormRow>
 
@@ -593,7 +776,10 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-                <Label htmlFor="phone">Phone Number</Label>
+
+                <Label htmlFor="phone" $hasValue={formValues.phone !== ""}>
+                  Phone Number
+                </Label>
               </FormGroup>
 
               <FormGroup>
@@ -606,7 +792,10 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                 />
-                <Label htmlFor="email">Email address</Label>
+
+                <Label htmlFor="email" $hasValue={formValues.email !== ""}>
+                  Email address
+                </Label>
               </FormGroup>
             </FormRow>
 
@@ -620,13 +809,15 @@ export default function ContactForm() {
                 rows={1}
                 required
               ></Textarea>
-              <Label htmlFor="message">
+              <Label htmlFor="message" $hasValue={formValues.message !== ""}>
                 Tell us about your accident or arrest...
               </Label>
             </FullWidthFormGroup>
 
-            <SubmitButton type="submit">
-              <ButtonText>Free Case Evaluation</ButtonText>
+            <SubmitButton type="submit" disabled={isSubmitting}>
+              <ButtonText>
+                {isSubmitting ? "Sending..." : "Free Case Evaluation"}
+              </ButtonText>
               <ArrowIcon
                 src="/images/Arrow.svg"
                 alt="Arrow"
@@ -646,6 +837,20 @@ export default function ContactForm() {
           that you deserve.
         </MobileFormSubtitle>
 
+        {mobileSubmitStatus === "success" && (
+          <SuccessMessage>
+            Thank you! Your message has been sent successfully. We'll get back
+            to you soon.
+          </SuccessMessage>
+        )}
+
+        {mobileSubmitStatus === "error" && (
+          <ErrorMessage>
+            Sorry, there was an error sending your message. Please try again or
+            call us directly.
+          </ErrorMessage>
+        )}
+
         <form onSubmit={handleMobileSubmit}>
           <MobileFormGroup>
             <MobileInput
@@ -657,7 +862,13 @@ export default function ContactForm() {
               onChange={handleMobileChange}
               required
             />
-            <MobileLabel htmlFor="mobile-fullName">Full Name</MobileLabel>
+
+            <MobileLabel
+              htmlFor="mobile-fullName"
+              $hasValue={mobileFormValues.fullName !== ""}
+            >
+              Full Name
+            </MobileLabel>
           </MobileFormGroup>
 
           <MobileFormGroup>
@@ -670,7 +881,13 @@ export default function ContactForm() {
               onChange={handleMobileChange}
               required
             />
-            <MobileLabel htmlFor="mobile-phone">Phone number</MobileLabel>
+
+            <MobileLabel
+              htmlFor="mobile-phone"
+              $hasValue={mobileFormValues.phone !== ""}
+            >
+              Phone number
+            </MobileLabel>
           </MobileFormGroup>
 
           <MobileFormGroup>
@@ -683,7 +900,13 @@ export default function ContactForm() {
               onChange={handleMobileChange}
               required
             />
-            <MobileLabel htmlFor="mobile-email">Email Address</MobileLabel>
+
+            <MobileLabel
+              htmlFor="mobile-email"
+              $hasValue={mobileFormValues.email !== ""}
+            >
+              Email Address
+            </MobileLabel>
           </MobileFormGroup>
 
           <MobileFormGroup>
@@ -696,14 +919,20 @@ export default function ContactForm() {
               rows={1}
               required
             ></MobileTextarea>
-            <MobileLabel htmlFor="mobile-message">
+
+            <MobileLabel
+              htmlFor="mobile-message"
+              $hasValue={mobileFormValues.message !== ""}
+            >
               Tell us about your accident or arrest...
             </MobileLabel>
           </MobileFormGroup>
 
-          <MobileSubmitButton type="submit">
-            <MobileButtonText>FREE CASE EVALUATION</MobileButtonText>
-            <ArrowIcon
+          <MobileSubmitButton type="submit" disabled={isMobileSubmitting}>
+            <MobileButtonText>
+              {isMobileSubmitting ? "SENDING..." : "FREE CASE EVALUATION"}
+            </MobileButtonText>
+            <MobileArrowIcon
               src="/images/Arrow.svg"
               alt="Arrow"
               width={21}

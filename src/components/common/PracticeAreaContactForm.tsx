@@ -1,6 +1,6 @@
 // src/components/common/PracticeAreaContactForm.tsx
 "use client";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -183,6 +183,16 @@ const Input = styled.input`
     color: transparent;
   }
 
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 30px #1b2632 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
   @media (max-width: 768px) {
     font-size: 15px;
     margin-top: 18px;
@@ -209,6 +219,16 @@ const Textarea = styled.textarea`
 
   &::placeholder {
     color: transparent;
+  }
+
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 30px #1b2632 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
   }
 
   @media (max-width: 768px) {
@@ -271,7 +291,7 @@ const Select = styled.select`
   cursor: pointer;
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled.button<{ disabled?: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -280,20 +300,24 @@ const SubmitButton = styled.button`
   gap: 10px;
   width: 325px;
   height: 58px;
-  background: #ffffff;
+  background: ${(props) => (props.disabled ? "#666" : "#ffffff")};
   box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.2),
     inset 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   border: none;
   margin: 30px auto 0; /* Reduced from 35px */
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   transition: all 0.3s ease;
+  opacity: ${(props) => (props.disabled ? 0.6 : 1)};
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 7px 10px 20px rgba(0, 0, 0, 0.25),
-      inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+    transform: ${(props) => (props.disabled ? "none" : "translateY(-2px)")};
+    box-shadow: ${(props) =>
+      props.disabled
+        ? "5px 8px 15px rgba(0, 0, 0, 0.2), inset 0px 4px 4px rgba(0, 0, 0, 0.1)"
+        : "7px 10px 20px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.1)"};
   }
+
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 290px;
     height: 50px;
@@ -339,6 +363,26 @@ const ButtonText = styled.span`
   }
 `;
 
+const SuccessMessage = styled.div`
+  background: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+`;
+
+const ErrorMessage = styled.div`
+  background: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+`;
+
 // Form field interfaces
 interface FormData {
   fullName: string;
@@ -364,6 +408,20 @@ export default function PracticeAreaContactForm() {
     caseType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+
+  useEffect(() => {
+    if (submitStatus === "success") {
+      const timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -374,11 +432,45 @@ export default function PracticeAreaContactForm() {
       [name]: value,
     }));
   };
-
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Here you would typically submit the form data to your backend
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "practice-area",
+          ...formData,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          city: "",
+          state: "",
+          address: "",
+          postalCode: "",
+          caseType: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const caseTypes = [
@@ -400,6 +492,20 @@ export default function PracticeAreaContactForm() {
         Group today for a FREE no obligation consultation. Remember, we don't
         get paid until you do.
       </FormDescription>
+
+      {submitStatus === "success" && (
+        <SuccessMessage>
+          Thank you! Your consultation request has been sent successfully. We'll
+          contact you soon.
+        </SuccessMessage>
+      )}
+
+      {submitStatus === "error" && (
+        <ErrorMessage>
+          Sorry, there was an error sending your request. Please try again or
+          call us directly.
+        </ErrorMessage>
+      )}
 
       <Form onSubmit={handleSubmit}>
         <FormGroup>
@@ -528,8 +634,10 @@ export default function PracticeAreaContactForm() {
           />
         </FormGroup>
 
-        <SubmitButton type="submit">
-          <ButtonText>Claim My Free Case Review</ButtonText>
+        <SubmitButton type="submit" disabled={isSubmitting}>
+          <ButtonText>
+            {isSubmitting ? "Sending..." : "Claim My Free Case Review"}
+          </ButtonText>
           <Image
             src="/images/Arrow.svg"
             alt="Arrow"

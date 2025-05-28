@@ -1,5 +1,5 @@
 "use client";
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
@@ -124,6 +124,18 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
 
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+  }
+
   &:focus + ${Label} {
     top: -20px;
     font-size: 12px;
@@ -142,20 +154,32 @@ const Textarea = styled.textarea`
   outline: none;
   resize: none;
 
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    box-shadow: 0 0 0 1000px transparent inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
+  }
+
   &:focus + ${Label} {
     top: -20px;
     font-size: 12px;
   }
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled.button<{ disabled: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 14px 16px;
   gap: 10px;
-  background: #ffffff;
+  background: ${(props) => (props.disabled ? "#666" : "#ffffff")};
   box-shadow: 7px 9px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
@@ -169,13 +193,14 @@ const SubmitButton = styled.button`
   align-items: center;
   letter-spacing: -0.02em;
   color: #1b2632;
-  opacity: 0.8;
-  cursor: pointer;
+
+  opacity: ${(props) => (props.disabled ? 0.6 : 0.8)};
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   margin: 40px auto;
   transition: opacity 0.3s;
 
   &:hover {
-    opacity: 1;
+    opacity: ${(props) => (props.disabled ? 0.6 : 1)};
   }
 
   @media (max-width: 768px) {
@@ -186,6 +211,26 @@ const SubmitButton = styled.button`
 
 const ButtonText = styled.span`
   margin-right: 0px;
+`;
+
+const SuccessMessage = styled.div`
+  background: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+`;
+
+const ErrorMessage = styled.div`
+  background: #f44336;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 `;
 
 interface FormData {
@@ -202,6 +247,25 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
+    null
+  );
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+
+    if (submitStatus === "success") {
+      timer = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 3000);
+    }
+
+    // Clean up function to clear the timeout if component unmounts
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [submitStatus]); // This dependency array ensures effect runs when submitStatus changes
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -213,10 +277,40 @@ export default function ContactForm() {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Form submission logic here - will connect to Strapi API
-    console.log("Form submitted:", formData);
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "contact",
+          ...formData,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -227,6 +321,20 @@ export default function ContactForm() {
         that you deserve.
       </FormSubtitle>
       <PayNothingText>Pay Nothing Until YOU Win !</PayNothingText>
+
+      {submitStatus === "success" && (
+        <SuccessMessage>
+          Thank you! Your message has been sent successfully. We'll get back to
+          you soon.
+        </SuccessMessage>
+      )}
+
+      {submitStatus === "error" && (
+        <ErrorMessage>
+          Sorry, there was an error sending your message. Please try again or
+          call us directly.
+        </ErrorMessage>
+      )}
 
       <form onSubmit={handleSubmit}>
         <InputGroup>
@@ -285,8 +393,10 @@ export default function ContactForm() {
           </Label>
         </InputGroup>
 
-        <SubmitButton type="submit">
-          <ButtonText>Contact Us Today</ButtonText>
+        <SubmitButton type="submit" disabled={isSubmitting}>
+          <ButtonText>
+            {isSubmitting ? "Sending..." : "Contact Us Today"}
+          </ButtonText>
           <Image src="/images/Arrow.svg" alt="Arrow" width={40} height={19} />
         </SubmitButton>
       </form>
