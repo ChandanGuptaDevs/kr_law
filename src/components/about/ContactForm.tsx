@@ -645,10 +645,24 @@ export default function ContactForm() {
         });
       } else {
         setSubmitStatus("error");
+        setFormValues({
+          firstName: "",
+          lastName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
+      setFormValues({
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -686,10 +700,22 @@ export default function ContactForm() {
         });
       } else {
         setMobileSubmitStatus("error");
+        setMobileFormValues({
+          fullName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
       }
     } catch (error) {
       console.error("Error submitting mobile form:", error);
       setMobileSubmitStatus("error");
+      setMobileFormValues({
+        fullName: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
     } finally {
       setIsMobileSubmitting(false);
     }

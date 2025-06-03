@@ -464,10 +464,32 @@ export default function PracticeAreaContactForm() {
         });
       } else {
         setSubmitStatus("error");
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          city: "",
+          state: "",
+          address: "",
+          postalCode: "",
+          caseType: "",
+          message: "",
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        city: "",
+        state: "",
+        address: "",
+        postalCode: "",
+        caseType: "",
+        message: "",
+      });
     } finally {
       setIsSubmitting(false);
     }
