@@ -305,10 +305,22 @@ export default function ContactForm() {
         });
       } else {
         setSubmitStatus("error");
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          message: "",
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
     } finally {
       setIsSubmitting(false);
     }
