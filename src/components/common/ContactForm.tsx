@@ -255,7 +255,8 @@ export default function ContactForm() {
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    if (submitStatus === "success") {
+    // Check for both success AND error messages
+    if (submitStatus === "success" || submitStatus === "error") {
       timer = setTimeout(() => {
         setSubmitStatus(null);
       }, 3000);

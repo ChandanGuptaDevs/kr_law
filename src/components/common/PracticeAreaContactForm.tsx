@@ -414,7 +414,7 @@ export default function PracticeAreaContactForm() {
   );
 
   useEffect(() => {
-    if (submitStatus === "success") {
+    if (submitStatus === "success" || submitStatus === "error") {
       const timer = setTimeout(() => {
         setSubmitStatus(null);
       }, 3000);

@@ -570,9 +570,9 @@ export default function ContactForm() {
   >(null);
   const [isMobileSubmitting, setIsMobileSubmitting] = useState(false);
 
-  // Auto-hide success messages after 3 seconds
+  // Auto-hide both success and error messages after 3 seconds
   useEffect(() => {
-    if (submitStatus === "success") {
+    if (submitStatus === "success" || submitStatus === "error") {
       const timer = setTimeout(() => {
         setSubmitStatus(null);
       }, 3000);
@@ -581,9 +581,9 @@ export default function ContactForm() {
     }
   }, [submitStatus]);
 
-  // Auto-hide mobile success messages after 3 seconds
+  // Auto-hide mobile success and error messages after 3 seconds
   useEffect(() => {
-    if (mobileSubmitStatus === "success") {
+    if (mobileSubmitStatus === "success" || mobileSubmitStatus === "error") {
       const timer = setTimeout(() => {
         setMobileSubmitStatus(null);
       }, 3000);
