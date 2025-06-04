@@ -15,7 +15,7 @@ export default function HiringLawyerBlog() {
         title="Top 5 Mistakes When Hiring a Personal Injury Lawyer | KR Law Group"
         description="Avoid these common mistakes when hiring a personal injury lawyer. Learn how to find the right attorney for your case and maximize your compensation."
         url="https://krlaw.com/blog/hiring-lawyer"
-        imageUrl="https://krlaw.com/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.jpg"
+        imageUrl="https://krlaw.com/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.webp"
       />
       <HiringLawyerHero />
       <HiringLawyerContent />

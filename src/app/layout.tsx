@@ -5,14 +5,12 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import { ReactNode } from "react";
 
-// Load Poppins font
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "600"],
 });
 
-// Add this new viewport export
 export const viewport = {
   themeColor: "#1b2632",
 };
@@ -25,7 +23,6 @@ export const metadata = {
   keywords:
     "personal injury lawyer, auto accident attorney, Los Angeles attorney, KR Law Group, car accident lawyer, premises liability, wrongful death",
 
-  // Favicon and icon configuration
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -49,10 +46,8 @@ export const metadata = {
     ],
   },
 
-  // Web manifest
   manifest: "/site.webmanifest",
 
-  // Open Graph / social sharing
   openGraph: {
     title: "KR Law Group | Personal Injury Attorneys",
     description:
@@ -71,7 +66,6 @@ export const metadata = {
     type: "website",
   },
 
-  // Twitter card
   twitter: {
     card: "summary_large_image",
     title: "KR Law Group | Personal Injury Attorneys",

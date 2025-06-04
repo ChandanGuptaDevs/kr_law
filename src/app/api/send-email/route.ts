@@ -1,4 +1,3 @@
-// src/app/api/send-email/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -7,7 +6,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { type, ...formData } = body;
 
-    // Create transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -19,7 +17,6 @@ export async function POST(request: NextRequest) {
     let emailContent = "";
     let subject = "";
 
-    // Different email templates based on form type
     if (type === "contact") {
       subject = "New Contact Form Submission - KR Law Group";
       emailContent = `
@@ -67,7 +64,6 @@ export async function POST(request: NextRequest) {
       `;
     }
 
-    // Send email
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_TO,
