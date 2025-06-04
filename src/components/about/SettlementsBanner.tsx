@@ -1,4 +1,3 @@
-// src/components/about/SettlementsBanner.tsx
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
@@ -245,10 +244,8 @@ export default function SettlementsBanner() {
   const handleConsultationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    // Get window width to determine which form to target
     const windowWidth = window.innerWidth;
 
-    // Use different IDs based on screen size
     let targetId = windowWidth <= 768 ? "contact-form-mobile" : "contact-form";
 
     const targetElement = document.getElementById(targetId);
@@ -256,7 +253,6 @@ export default function SettlementsBanner() {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Fallback
       window.location.href = "#contact-form";
     }
   };

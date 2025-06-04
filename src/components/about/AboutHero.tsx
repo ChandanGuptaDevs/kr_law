@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/about-us-banner.jpg");
+  background-image: url("/images/about-us-banner.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(30, 29, 29, 0.7);

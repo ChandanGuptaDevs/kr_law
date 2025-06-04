@@ -55,7 +55,7 @@ const LawyerImageSection = styled.div`
   @media (min-width: 1025px) {
     width: 45%;
     max-width: 500px;
-    margin-top: 120px; /* Moved down slightly as requested */
+    margin-top: 120px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -99,7 +99,7 @@ const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 35px;
-  overflow: visible; /* Changed from hidden to visible */
+  overflow: visible;
 `;
 
 const LawyerName = styled.h3`
@@ -133,7 +133,7 @@ const ContentSection = styled.div`
   @media (min-width: 1025px) {
     width: 55%;
     padding-left: 40px;
-    padding-top: 50px; /* Adjusted to align with image */
+    padding-top: 50px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -187,15 +187,15 @@ const StyledImage = styled(Image)`
   transform-origin: center bottom;
 
   @media (min-width: 1025px) {
-    transform: scale(1.7) translateY(18%); /* Increased translateY to show more of the head */
+    transform: scale(1.7) translateY(18%);
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    transform: scale(1.7) translateY(18%); /* Consistent with desktop */
+    transform: scale(1.7) translateY(18%);
   }
 
   @media (max-width: 768px) {
-    transform: scale(1.4) translateY(22%); /* Smaller scale for mobile but same vertical adjustment */
+    transform: scale(1.4) translateY(22%);
   }
 `;
 
@@ -207,7 +207,7 @@ export default function AboutPartner() {
           <ImageFrame>
             <ImageWrapper>
               <StyledImage
-                src="/images/lawyer-image-4.png"
+                src="/images/lawyer-image-4.webp"
                 alt="Kathy Rabii - Founder of KR Law Group"
                 fill
                 priority

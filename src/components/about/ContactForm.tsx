@@ -1,4 +1,3 @@
-// src/components/about/ContactForm.tsx
 "use client";
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styled from "styled-components";
@@ -15,7 +14,7 @@ const FormSection = styled.section`
   }
 
   @media (max-width: 768px) {
-    display: none; /* Hide the desktop form on mobile */
+    display: none;
   }
 `;
 
@@ -201,7 +200,6 @@ const Input = styled.input`
     font-size: 14px;
   }
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -369,7 +367,6 @@ const ArrowIcon = styled(Image)`
   }
 `;
 
-// Compact version for mobile screens that shows in the mobile view
 const MobileFormContainer = styled.div`
   display: none;
   position: relative;
@@ -440,7 +437,6 @@ const MobileInput = styled.input`
     font-size: 12px;
   }
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -473,7 +469,6 @@ const MobileTextarea = styled.textarea`
     font-size: 12px;
   }
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -590,7 +585,6 @@ export default function ContactForm() {
   >(null);
   const [isMobileSubmitting, setIsMobileSubmitting] = useState(false);
 
-  // Auto-hide both success and error messages after 3 seconds
   useEffect(() => {
     if (submitStatus === "success" || submitStatus === "error") {
       const timer = setTimeout(() => {
@@ -601,7 +595,6 @@ export default function ContactForm() {
     }
   }, [submitStatus]);
 
-  // Auto-hide mobile success and error messages after 3 seconds
   useEffect(() => {
     if (mobileSubmitStatus === "success" || mobileSubmitStatus === "error") {
       const timer = setTimeout(() => {
@@ -744,7 +737,6 @@ export default function ContactForm() {
 
   return (
     <>
-      {/* Desktop/Tablet Form */}
       <FormSection id="contact-form">
         <FormContainer>
           <FormHeader>
@@ -876,7 +868,6 @@ export default function ContactForm() {
         </FormContainer>
       </FormSection>
 
-      {/* Mobile Form (Compact Version) */}
       <MobileFormContainer id="contact-form-mobile">
         <MobileFormTitle>Book Your Free Consultation Today</MobileFormTitle>
         <MobileFormSubtitle>

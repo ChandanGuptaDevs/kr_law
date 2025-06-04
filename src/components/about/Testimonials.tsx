@@ -1,4 +1,3 @@
-// src/components/about/Testimonials.tsx
 "use client";
 import styled from "styled-components";
 
@@ -223,7 +222,6 @@ const Star = styled.div<{ $darkMode?: boolean }>`
   }
 `;
 
-// For mobile view - to show testimonials in a carousel-like display
 const MobileCarouselControls = styled.div`
   display: none;
 
@@ -310,13 +308,9 @@ export default function Testimonials() {
           ))}
         </TestimonialsContainer>
 
-        {/* Mobile Carousel Controls */}
         <MobileCarouselControls>
           {testimonials.map((_, index) => (
-            <CarouselDot
-              key={`dot-${index}`}
-              $active={index === 0} // First one is active by default
-            />
+            <CarouselDot key={`dot-${index}`} $active={index === 0} />
           ))}
         </MobileCarouselControls>
       </ContentContainer>
