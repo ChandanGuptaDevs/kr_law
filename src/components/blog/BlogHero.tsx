@@ -1,4 +1,3 @@
-// src/components/blog/BlogHero.tsx
 "use client";
 import styled from "styled-components";
 
@@ -6,7 +5,7 @@ const HeroContainer = styled.section`
   position: relative;
   width: 100%;
 
-  background-image: url("/images/blog-banner.jpg");
+  background-image: url("/images/blog-banner.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
@@ -91,7 +90,6 @@ const HeroTitle = styled.h1`
   }
 `;
 
-// Title parts for responsive layout
 const TitleFirstPart = styled.span`
   @media (max-width: 768px) {
     display: block;
@@ -102,7 +100,7 @@ const TitleFirstPart = styled.span`
 const TitleSecondPart = styled.span`
   @media (max-width: 768px) {
     display: block;
-    white-space: nowrap; /* Prevents the second part from breaking into two lines */
+    white-space: nowrap;
   }
 `;
 
