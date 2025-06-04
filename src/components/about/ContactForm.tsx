@@ -439,6 +439,16 @@ const MobileInput = styled.input`
     transform: translateY(-16px);
     font-size: 12px;
   }
+
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 30px #1b2632 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 `;
 
 const MobileTextarea = styled.textarea`
@@ -461,6 +471,16 @@ const MobileTextarea = styled.textarea`
   &:not(:placeholder-shown) + label {
     transform: translateY(-16px);
     font-size: 12px;
+  }
+
+  /* Override autofill styles */
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0 30px #1b2632 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
   }
 `;
 const MobileLabel = styled.label<{ $hasValue: boolean }>`
@@ -712,6 +732,7 @@ export default function ContactForm() {
       setMobileSubmitStatus("error");
       setMobileFormValues({
         fullName: "",
+
         phone: "",
         email: "",
         message: "",
