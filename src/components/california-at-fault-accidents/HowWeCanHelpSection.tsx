@@ -1,4 +1,3 @@
-// src/components/california-at-fault-accidents/HowWeCanHelpSection.tsx
 "use client";
 import styled from "styled-components";
 

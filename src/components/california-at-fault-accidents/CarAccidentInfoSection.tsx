@@ -1,4 +1,3 @@
-// src/components/california-at-fault-accidents/CarAccidentInfoSection.tsx
 "use client";
 import styled from "styled-components";
 
