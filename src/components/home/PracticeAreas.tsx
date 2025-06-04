@@ -5,7 +5,7 @@ const SectionContainer = styled.section`
   position: relative;
   width: 100%;
   background: #1b2632;
-  background-image: url("/images/lawPracticeArea.jpg");
+  background-image: url("/images/lawPracticeArea.webp");
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
@@ -16,7 +16,6 @@ const SectionContainer = styled.section`
     margin-top: 0;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     height: 300px;
     margin-top: 50px;
@@ -43,7 +42,6 @@ const ContentWrapper = styled.div`
     padding: 0 100px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     padding: 0 50px;
   }
@@ -71,7 +69,6 @@ const SectionTitle = styled.h2`
     margin-top: 0;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 32px;
     line-height: 48px;
@@ -101,12 +98,11 @@ const HorizontalLine = styled.div`
       top: 72px;
     }
 
-    /* Tablet specific styling - updated with precise iPad Air values */
     @media (min-width: 769px) and (max-width: 1024px) {
       width: 22%;
 
-      left: 25px; /* Changed from 40px to 25px */
-      top: 62px; /* Changed from 57px to 62px */
+      left: 25px;
+      top: 62px;
     }
 
     @media (max-width: 768px) {
@@ -125,12 +121,11 @@ const HorizontalLine = styled.div`
       top: 72px;
     }
 
-    /* Tablet specific styling - updated with your exact iPad Air values */
     @media (min-width: 769px) and (max-width: 1024px) {
       width: 22%;
 
-      right: 25px; /* Changed from 40px to 25px */
-      top: 62px; /* Changed from 57px to 62px */
+      right: 25px;
+      top: 62px;
     }
 
     @media (max-width: 768px) {
@@ -158,7 +153,6 @@ const Description = styled.p`
     margin-top: 90px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 16px;
     line-height: 24px;
