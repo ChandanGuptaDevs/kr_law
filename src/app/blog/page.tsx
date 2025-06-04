@@ -16,7 +16,7 @@ export default function BlogPage() {
       excerpt:
         "Finding the right legal help or personal injury lawyer can be a daunting prospect. You often have to find a lawyer at a time when you are already experiencing a significant amount of stress and anxiety.",
       imagePath:
-        "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.jpg",
+        "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.webp",
     },
     {
       title: "Who Pays Your Medical Bills in a Personal Injury Lawsuit?",
@@ -25,7 +25,7 @@ export default function BlogPage() {
       excerpt:
         "When you're involved in an accident resulting in personal injury, the confusion of the situation can make it difficult to think through who is responsible for your medical expenses.",
       imagePath:
-        "/images/who-pays-your-medical-bills-in-a-personal-injury-lawsuit.jpg",
+        "/images/who-pays-your-medical-bills-in-a-personal-injury-lawsuit.webp",
     },
     {
       title: "What Makes A Personal Injury Case Go To Trial?",
@@ -33,8 +33,7 @@ export default function BlogPage() {
 
       excerpt:
         "Personal injury cases can be complicated, but the law doesn't have to be. Learn what factors lead to a case going to trial instead of settling out of court.",
-      imagePath:
-        "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpeg",
+      imagePath: "/images/what-makes-a-good-personal-injury-case.webp",
     },
     {
       title: "How to Get the Accident Report for Your Personal Injury Case",
@@ -43,7 +42,7 @@ export default function BlogPage() {
       excerpt:
         "Car accident reports are a critical part of the process when it comes to getting insurance, filing a claim, or dealing with personal injury cases. Learn how to obtain one.",
       imagePath:
-        "/images/how-to-get-the-accident-report-for-your-personal-injury-case.jpg",
+        "/images/how-to-get-the-accident-report-for-your-personal-injury-case.webp",
     },
     {
       title: "What Makes A Good Personal Injury Case?",
@@ -51,7 +50,8 @@ export default function BlogPage() {
 
       excerpt:
         "Personal injury law is a highly specialized field, and cases can vary depending on the circumstances. Learn what elements create a strong case for compensation.",
-      imagePath: "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg",
+      imagePath:
+        "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.webp",
     },
     {
       title: "What Is The Timeline For A Personal Injury Case?",
@@ -59,9 +59,8 @@ export default function BlogPage() {
 
       excerpt:
         "The timeline for personal injury cases depends on many factors including the nature of injuries and case complexity. Learn what to expect at each stage.",
-      imagePath: "/images/what-is-the-limeline-for-a-personal-injury-case.jpg",
+      imagePath: "/images/what-is-the-timeline-for-a-personal-injury-case.webp",
     },
-    // Add more blog posts here as you create them
   ];
 
   return (
