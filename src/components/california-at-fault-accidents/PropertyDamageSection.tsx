@@ -278,7 +278,7 @@ export default function PropertyDamageSection() {
 
         <ImageContainer>
           <ResponsiveImage
-            src="/images/damage-my-vehicle.png"
+            src="/images/damage-my-vehicle.webp"
             alt="Two men inspecting vehicle damage after an accident"
             fill
             sizes="(min-width: 1025px) 473px, (min-width: 769px) 600px, 370px"
