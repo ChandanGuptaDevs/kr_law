@@ -1,4 +1,3 @@
-// src/components/rental-car-accident/RentalCarLiabilitySection.tsx
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
@@ -8,7 +7,6 @@ const SectionContainer = styled.section`
   width: 100%;
   overflow: hidden;
 
-  /* Apply background color only for tablet and desktop */
   @media (min-width: 769px) {
     background: #f5f5f5;
   }
@@ -23,7 +21,6 @@ const SectionContainer = styled.section`
 
   @media (max-width: 768px) {
     padding: 20px 0;
-    /* No background color for mobile */
   }
 `;
 
@@ -120,9 +117,9 @@ const ArrowContainer = styled.div`
   @media (max-width: 768px) {
     margin-right: 15px;
     margin-top: 8px;
-    /* Make the arrow container take up less space horizontally */
-    width: 30px; /* Limit the width to contain the smaller arrow */
-    margin-left: -10px; /* Move arrow more to the left in mobile version */
+
+    width: 30px;
+    margin-left: -10px;
   }
 `;
 
@@ -130,8 +127,8 @@ const ArrowImage = styled(Image)`
   display: block;
 
   @media (max-width: 768px) {
-    width: 45px !important; /* Further reduced from 40px to 30px */
-    height: 6px !important; /* Further reduced from 6px to 4px */
+    width: 45px !important;
+    height: 6px !important;
   }
 `;
 
@@ -193,7 +190,6 @@ const ImageContainer = styled.div`
   }
 `;
 
-// Use a different approach for the image to ensure it scales properly
 const ResponsiveImage = styled(Image)`
   object-fit: cover;
   object-position: center center;
@@ -284,7 +280,7 @@ export default function RentalCarLiabilitySection() {
 
         <ImageContainer>
           <ResponsiveImage
-            src="/images/rental-car-accident-liable.jpg"
+            src="/images/rental-car-accident-liable.webp"
             alt="Rental car accident liability concept showing damaged car and insurance documents"
             fill
             sizes="(min-width: 1025px) 473px, (min-width: 769px) 600px, 370px"

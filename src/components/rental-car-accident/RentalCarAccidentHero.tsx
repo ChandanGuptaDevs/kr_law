@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/rental-car-accident-banner.jpg");
+  background-image: url("/images/rental-car-accident-banner.webp");
   background-color: rgba(27, 38, 50, 0.7);
   background-blend-mode: overlay;
   display: flex;
@@ -92,7 +92,6 @@ const HeroTitle = styled.h1`
   }
 `;
 
-// Styled components for the title parts
 const TitleFirstPart = styled.span`
   @media (max-width: 768px) {
     display: block;
@@ -103,7 +102,7 @@ const TitleFirstPart = styled.span`
 const TitleSecondPart = styled.span`
   @media (max-width: 768px) {
     display: block;
-    white-space: nowrap; /* Prevents the second part from breaking into two lines */
+    white-space: nowrap;
   }
 `;
 

@@ -1,4 +1,3 @@
-// src/components/rental-car-accident/RentalCarHelpSection.tsx
 "use client";
 import styled from "styled-components";
 
