@@ -15,13 +15,12 @@ const SectionContainer = styled.section`
     padding: 0;
   }
 
-  /* Tablet specific styling - adjusted padding like OurServices */
   @media (min-width: 769px) and (max-width: 1024px) {
     height: auto;
 
     min-height: 800px;
     margin-top: 60px;
-    padding: 0; /* Changed from 0 16px to 0 */
+    padding: 0;
     position: relative;
   }
 
@@ -53,7 +52,6 @@ const SectionTitle = styled.h2`
     top: 40px;
   }
 
-  /* Tablet specific styling - adjusted like OurServices */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 100%;
@@ -61,7 +59,7 @@ const SectionTitle = styled.h2`
     max-width: 600px;
     height: auto;
 
-    left: 0px; /* Changed from relative/centered to absolute left */
+    left: 0px;
     top: 0px;
     font-size: 28px;
 
@@ -101,7 +99,7 @@ const FirstParagraph = styled.p`
     left: 0px;
     top: 235px;
   }
-  /* Tablet specific styling - adjusted like OurServices */
+
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 100%;
@@ -109,7 +107,7 @@ const FirstParagraph = styled.p`
     height: auto;
 
     min-height: 108px;
-    left: 0px; /* Changed from center aligned to left aligned */
+    left: 0px;
     top: 70px;
     font-size: 17px;
     line-height: 26px;
@@ -146,14 +144,14 @@ const SecondParagraph = styled.p`
     left: 0px;
     top: 375px;
   }
-  /* Tablet specific styling - adjusted like OurServices */
+
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 100%;
 
     height: auto;
 
-    left: 0px; /* Changed from center aligned to left aligned */
+    left: 0px;
     top: 180px;
     font-size: 17px;
     line-height: 26px;
@@ -184,14 +182,13 @@ const PhotoContainer = styled.div`
     overflow: visible;
   }
 
-  /* Tablet specific styling - positioning adjusted */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 550px;
     height: 580px;
     left: 50%;
     transform: translateX(-50%);
-    top: 320px; /* Adjusted to accommodate the text above */
+    top: 320px;
     overflow: visible;
   }
 
@@ -218,7 +215,6 @@ const DarkRectangle = styled.div`
     top: 50px;
   }
 
-  /* Tablet specific styling - adjusted for centered layout */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 400px;
     height: 400px;
@@ -250,7 +246,6 @@ const LightRectangle = styled.div`
     top: 80px;
   }
 
-  /* Tablet specific styling - adjusted for centered layout */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 400px;
     height: 400px;
@@ -280,7 +275,6 @@ const LawyerImage = styled(Image)`
     top: -120px;
   }
 
-  /* Tablet specific styling - now centered like mobile */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 650px;
     height: 725px;
@@ -313,7 +307,7 @@ const CTAButton = styled.button`
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 10; /* Add a base z-index */
+  z-index: 10;
 
   &:hover {
     background: #2a3c4d;
@@ -327,7 +321,7 @@ const CTAButton = styled.button`
     left: 0px;
     top: 530px;
   }
-  /* Tablet specific styling */
+
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 390px;
@@ -351,7 +345,7 @@ const CTAButton = styled.button`
     transform: translateX(-50%);
     top: 1050px;
     margin: 0;
-    z-index: 20; /* Higher z-index for mobile to ensure it's above other elements */
+    z-index: 20;
 
     &:hover {
       transform: translateX(-50%) translateY(-2px);
@@ -382,7 +376,6 @@ const ButtonText = styled.span`
     font-size: 20px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 290px;
     height: 27px;
@@ -407,17 +400,12 @@ const ArrowImage = styled(Image)`
 `;
 
 export default function SouthernCaliforniaSection() {
-  // Improved scroll function for better cross-device compatibility
   const scrollToContactForm = () => {
-    // Try to find the contact form by ID
     const contactForm = document.getElementById("hero-contact-form");
 
     if (contactForm) {
-      // Use both methods for maximum compatibility
       contactForm.scrollIntoView({ behavior: "smooth", block: "start" });
 
-      // Add a short timeout and also use window.scrollTo as a fallback
-      // This helps on some mobile browsers
       setTimeout(() => {
         const formRect = contactForm.getBoundingClientRect();
         const absoluteTop = window.pageYOffset + formRect.top;
@@ -428,7 +416,6 @@ export default function SouthernCaliforniaSection() {
         });
       }, 100);
     } else {
-      // If we can't find the form, scroll to the top of the page
       window.scrollTo({
         top: 0,
 
@@ -464,7 +451,7 @@ export default function SouthernCaliforniaSection() {
         <DarkRectangle />
         <LightRectangle />
         <LawyerImage
-          src="/images/lawyer-image-3.png"
+          src="/images/lawyer-image-3.webp"
           alt="Kathy Rabii - Southern California Personal Injury Attorney"
           width={550}
           height={600}
