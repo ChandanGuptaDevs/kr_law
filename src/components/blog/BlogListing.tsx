@@ -187,7 +187,7 @@ export default function BlogListing({ posts }: BlogListingProps) {
               <CardTitle>{post.title}</CardTitle>
               <CardExcerpt>{post.excerpt}</CardExcerpt>
               <ReadMoreLink href={`/blog/${post.slug}`}>
-                Read More... <ArrowIcon>→</ArrowIcon>
+                Read More<ArrowIcon>→</ArrowIcon>
               </ReadMoreLink>
             </CardContent>
           </BlogCard>
