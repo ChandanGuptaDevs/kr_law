@@ -137,7 +137,7 @@ export default function HeroSection() {
   return (
     <HeroContainer>
       <BackgroundImage
-        src="/images/lady-justice.jpg"
+        src="/images/lady-justice.webp"
         alt="Lady Justice statue symbolizing legal representation and justice at KR Law Group"
         fill
         priority
