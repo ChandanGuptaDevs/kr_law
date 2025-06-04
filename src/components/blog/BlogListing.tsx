@@ -152,14 +152,13 @@ interface BlogListingProps {
 }
 
 export default function BlogListing({ posts }: BlogListingProps) {
-  // Image paths for blog posts without defined imagePath
   const defaultImagePaths = {
     "hiring-lawyer":
-      "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.jpg",
+      "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.webp",
     "medical-bills":
-      "/images/who-pays-your-medical-bills-in-a-personal-injury-lawsuit.jpg",
+      "/images/who-pays-your-medical-bills-in-a-personal-injury-lawsuit.webp",
     "personal-injury-trial":
-      "/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg",
+      "/images/what-makes-a-good-personal-injury-case.webp",
   };
 
   return (
@@ -174,7 +173,7 @@ export default function BlogListing({ posts }: BlogListingProps) {
                   defaultImagePaths[
                     post.slug as keyof typeof defaultImagePaths
                   ] ||
-                  "/images/default-blog-image.jpg"
+                  "/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.webp"
                 }
                 alt={post.title}
                 fill

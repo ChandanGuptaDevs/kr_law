@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.jpg");
+  background-image: url("/images/top-5-mistakes-when-hiring-a-personal-injury-lawyer.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);

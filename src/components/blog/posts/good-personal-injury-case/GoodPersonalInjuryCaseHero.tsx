@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  background-image: url("/images/what-makes-a-personal-injury-lawsuit-go-to-trial.jpg");
+  background-image: url("/images/what-makes-a-personal-injury-lawsuit-go-to-trial.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
@@ -88,7 +88,6 @@ const HeroTitle = styled.h1`
   }
 `;
 
-// New styled components for the title parts
 const TitleFirstPart = styled.span`
   @media (max-width: 768px) {
     display: block;
