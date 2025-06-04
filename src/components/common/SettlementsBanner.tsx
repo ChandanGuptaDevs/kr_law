@@ -1,4 +1,3 @@
-// src/components/common/SettlementsBanner.tsx
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
@@ -253,14 +252,10 @@ export default function SettlementsBanner() {
     },
   ];
 
-  // Add a function to handle the consultation button click
   const handleConsultationClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
-    // Get window width to determine which form to target
     const windowWidth = window.innerWidth;
-
-    // Use different markers based on screen size
 
     let targetId =
       windowWidth > 1024 ? "consultation-form" : "mobile-form-marker";
@@ -270,7 +265,6 @@ export default function SettlementsBanner() {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Fallback to the main form
       const formElement = document.getElementById("consultation-form");
       if (formElement) {
         formElement.scrollIntoView({ behavior: "smooth" });

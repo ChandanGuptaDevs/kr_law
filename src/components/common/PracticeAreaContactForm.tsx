@@ -1,4 +1,3 @@
-// src/components/common/PracticeAreaContactForm.tsx
 "use client";
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import styled from "styled-components";
@@ -17,7 +16,7 @@ const FormContainer = styled.div`
 
   @media (min-width: 1025px) {
     height: auto;
-    min-height: 500px; /* Further reduced to make it even shorter */
+    min-height: 450px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -25,7 +24,7 @@ const FormContainer = styled.div`
     max-width: 600px;
     padding: 25px 22px;
     height: auto;
-    min-height: 400px; /* Further reduced height for tablet */
+    min-height: 400px;
   }
 
   @media (max-width: 768px) {
@@ -33,8 +32,8 @@ const FormContainer = styled.div`
     max-width: 500px;
     padding: 22px 18px;
     height: auto;
-    min-height: 350px; /* Further reduced height for mobile */
-    border-radius: 0; /* Explicitly set to 0 to ensure no border radius */
+    min-height: 350px;
+    border-radius: 0;
   }
 `;
 
@@ -72,11 +71,11 @@ const FormDescription = styled.p`
   align-items: center;
   letter-spacing: -0.02em;
   color: #ffffff;
-  margin-bottom: 20px; /* Reduced from 30px */
+  margin-bottom: 20px;
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 15px;
     line-height: 140%;
-    margin-bottom: 15px; /* Further reduced */
+    margin-bottom: 15px;
   }
 
   @media (max-width: 768px) {
@@ -84,7 +83,7 @@ const FormDescription = styled.p`
     text-align: center;
     justify-content: center;
     line-height: 140%;
-    margin-bottom: 15px; /* Further reduced */
+    margin-bottom: 15px;
   }
 `;
 
@@ -117,17 +116,17 @@ const FormGroup = styled.div`
   margin-bottom: 20px;
 
   @media (max-width: 1024px) {
-    margin-bottom: 15px; /* Reduced for both tablet and mobile */
+    margin-bottom: 15px;
   }
 `;
 
 const FullWidthFormGroup = styled.div`
   position: relative;
   width: 100%;
-  margin-bottom: 20px; /* Reduced from 25px */
+  margin-bottom: 20px;
 
   @media (max-width: 768px) {
-    margin-bottom: 15px; /* Reduced from 20px */
+    margin-bottom: 15px;
   }
 `;
 
@@ -183,7 +182,6 @@ const Input = styled.input`
     color: transparent;
   }
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -221,7 +219,6 @@ const Textarea = styled.textarea`
     color: transparent;
   }
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -305,7 +302,7 @@ const SubmitButton = styled.button<{ disabled?: boolean }>`
     inset 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   border: none;
-  margin: 30px auto 0; /* Reduced from 35px */
+  margin: 30px auto 0;
   cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   transition: all 0.3s ease;
   opacity: ${(props) => (props.disabled ? 0.6 : 1)};
@@ -321,7 +318,7 @@ const SubmitButton = styled.button<{ disabled?: boolean }>`
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 290px;
     height: 50px;
-    margin-top: 20px; /* Further reduced */
+    margin-top: 20px;
   }
 
   @media (max-width: 768px) {
@@ -329,7 +326,7 @@ const SubmitButton = styled.button<{ disabled?: boolean }>`
 
     max-width: 260px;
     height: 48px;
-    margin-top: 20px; /* Further reduced */
+    margin-top: 20px;
     padding: 10px 12px;
   }
 `;
@@ -383,7 +380,6 @@ const ErrorMessage = styled.div`
   font-family: "Poppins", sans-serif;
 `;
 
-// Form field interfaces
 interface FormData {
   fullName: string;
   phone: string;

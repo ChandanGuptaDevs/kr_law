@@ -60,7 +60,6 @@ const CardContainer = styled.div<StyledCardProps>`
     }}
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: ${(props) => (props.$isDesktop ? "relative" : "relative")};
     padding: 12px 10px 8px;
@@ -71,7 +70,6 @@ const CardContainer = styled.div<StyledCardProps>`
     margin: ${(props) => (props.$isDesktop ? "15px auto" : "10px auto 0")};
     display: ${(props) => (props.$isDesktop ? "inline-flex" : "flex")};
 
-    /* Create a 2x2 grid layout for tablet */
     ${(props) => {
       if (props.$isDesktop && props.$cardIndex !== undefined) {
         return `
@@ -114,7 +112,6 @@ const AwardAmount = styled.span`
   width: 100%;
   height: 44px;
 
-  /* Different styling for 2nd and 3rd card */
   ${(props) => {
     const cardIndex = props.className?.split("-")[1];
     if (cardIndex === "1" || cardIndex === "2") {
@@ -123,7 +120,6 @@ const AwardAmount = styled.span`
     return "";
   }}
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 36px;
     height: 40px;
@@ -154,7 +150,6 @@ const AwardDescription = styled.span`
   overflow: hidden;
   padding: 5px 0;
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 18px;
     min-height: 50px;

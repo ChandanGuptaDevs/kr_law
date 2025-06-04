@@ -1,4 +1,3 @@
-// src/components/common/Header.tsx
 "use client";
 import Link from "next/link";
 import styled from "styled-components";
@@ -122,7 +121,6 @@ const Navigation = styled.nav<NavigationProps>`
 const NavItem = styled.div`
   position: relative;
 
-  /* For desktop hover functionality */
   @media (min-width: 769px) {
     &:hover > div {
       display: block;
@@ -152,7 +150,6 @@ const NavLink = styled(Link)`
   }
 `;
 
-// Modify the DropdownButton to maintain consistent icon positioning
 const DropdownButton = styled.button`
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -176,21 +173,21 @@ const DropdownButton = styled.button`
   @media (max-width: 768px) {
     font-size: 16px;
     width: 100%;
-    /* Remove justify-content: space-between */
-    justify-content: flex-start; /* Align items to the start */
+
+    justify-content: flex-start;
   }
 `;
-// Modify the DropdownIcon to align vertically with the text
+
 const DropdownIcon = styled.div<{ $isOpen: boolean }>`
-  display: none; /* Hidden on desktop */
+  display: none;
   @media (max-width: 768px) {
-    display: flex; /* Changed from block to flex for better alignment */
-    align-items: center; /* Center items vertically */
-    margin-left: 10px; /* Gap between text and icon */
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
     width: 16px;
     height: 16px;
     position: relative;
-    top: 0px; /* Slight upward adjustment to align with text */
+    top: 0px;
   }
 `;
 
@@ -208,10 +205,8 @@ const DropdownMenu = styled.div<DropdownMenuProps>`
   z-index: 5;
   padding: 20px 0;
 
-  /* For desktop, we'll use display none by default but show on hover via NavItem */
   display: none;
 
-  /* For mobile, we'll explicitly control display via the $isOpen prop */
   @media (max-width: 768px) {
     display: ${(props) => (props.$isOpen ? "block" : "none")};
     position: relative;
@@ -271,7 +266,6 @@ export default function Header() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // List of practice areas for the dropdown menu
   const practiceAreas: PracticeAreaItem[] = [
     {
       name: "California At Fault Accident Reporting",
@@ -287,7 +281,6 @@ export default function Header() {
     { name: "Electric Scooter Accident", path: "/electric-scooter-accident" },
   ];
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -304,7 +297,6 @@ export default function Header() {
     };
   }, []);
 
-  // Close dropdown when window is resized
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -318,7 +310,6 @@ export default function Header() {
     };
   }, []);
 
-  // Handler to close menu when a navigation link is clicked
   const handleNavLinkClick = () => {
     setIsMenuOpen(false);
     setIsPracticeDropdownOpen(false);
@@ -341,7 +332,6 @@ export default function Header() {
             onClick={() => setIsPracticeDropdownOpen(!isPracticeDropdownOpen)}
           >
             Practice Areas
-            {/* Use the SVG images for mobile */}
             <DropdownIcon $isOpen={isPracticeDropdownOpen}>
               {isPracticeDropdownOpen ? (
                 <Image
@@ -365,10 +355,7 @@ export default function Header() {
             <DropdownList>
               {practiceAreas.map((area, index) => (
                 <DropdownItem key={index}>
-                  <DropdownLink
-                    href={area.path}
-                    onClick={handleNavLinkClick} // Close menu when a link is clicked
-                  >
+                  <DropdownLink href={area.path} onClick={handleNavLinkClick}>
                     {area.name}
                   </DropdownLink>
                 </DropdownItem>

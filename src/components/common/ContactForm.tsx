@@ -124,7 +124,6 @@ const Input = styled.input`
   font-size: 16px;
   outline: none;
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -154,7 +153,6 @@ const Textarea = styled.textarea`
   outline: none;
   resize: none;
 
-  /* Override autofill styles */
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
@@ -255,18 +253,16 @@ export default function ContactForm() {
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    // Check for both success AND error messages
     if (submitStatus === "success" || submitStatus === "error") {
       timer = setTimeout(() => {
         setSubmitStatus(null);
       }, 3000);
     }
 
-    // Clean up function to clear the timeout if component unmounts
     return () => {
       if (timer) clearTimeout(timer);
     };
-  }, [submitStatus]); // This dependency array ensures effect runs when submitStatus changes
+  }, [submitStatus]);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

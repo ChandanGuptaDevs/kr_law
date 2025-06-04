@@ -28,7 +28,6 @@ const ServiceItemContainer = styled.div`
     padding-left: 10px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     margin-bottom: 14px;
   }
@@ -66,7 +65,6 @@ const ServiceName = styled.span`
     font-weight: 500;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 18px;
     line-height: 28px;
@@ -89,7 +87,6 @@ const ArrowIcon = styled(Image)`
     opacity: 1;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 33px;
     height: 9px;
