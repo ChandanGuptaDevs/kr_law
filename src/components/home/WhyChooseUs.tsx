@@ -19,7 +19,6 @@ const SectionContainer = styled.section`
     padding: 0 0 50px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     height: auto;
     margin-top: 0;
@@ -42,7 +41,6 @@ const ContentWrapper = styled.div`
     top: 15px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
@@ -69,7 +67,6 @@ const SectionTitle = styled.h2`
     line-height: 48px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
     max-width: 600px;
@@ -110,7 +107,6 @@ const Description = styled.p`
     top: 113px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
     max-width: 700px;
@@ -129,8 +125,6 @@ const Description = styled.p`
     line-height: 24px;
   }
 `;
-
-// Award cards placeholder - not needed since using AchievementCard component
 
 const KnowMoreButton = styled(Link)`
   display: flex;
@@ -160,7 +154,6 @@ const KnowMoreButton = styled(Link)`
     z-index: 10;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 220px;
     height: 58px;
@@ -201,7 +194,6 @@ const ArrowImage = styled(Image)`
   }
 `;
 
-// Photo section
 const PhotoContainer = styled.div`
   position: relative;
 
@@ -213,7 +205,6 @@ const PhotoContainer = styled.div`
     top: 0;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
     max-width: 500px;
@@ -225,7 +216,7 @@ const PhotoContainer = styled.div`
     width: 100%;
     max-width: 370px;
     height: 500px;
-    margin: -10px auto 10px; /* Using NEGATIVE margin to pull it up */
+    margin: -10px auto 10px;
     position: relative;
     overflow: visible;
   }
@@ -243,7 +234,6 @@ const DarkRectangle = styled.div`
     top: 77px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 400px;
     height: 500px;
@@ -254,12 +244,12 @@ const DarkRectangle = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 340px; /* Adjusted width */
-    height: 410px; /* Increased height slightly */
-    left: 52%; /* Moved slightly to the right */
+    width: 340px;
+    height: 410px;
+    left: 52%;
     transform: translateX(-50%);
-    top: 65px; /* Adjusted top position */
-    z-index: 1; /* Ensure proper layering */
+    top: 65px;
+    z-index: 1;
   }
 `;
 
@@ -275,7 +265,6 @@ const LightRectangle = styled.div`
     top: 101px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 400px;
     height: 470px;
@@ -286,12 +275,12 @@ const LightRectangle = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 340px; /* Adjusted width to match dark rectangle */
-    height: 380px; /* Increased height slightly */
-    left: 48%; /* Moved slightly to the left to create offset */
+    width: 340px;
+    height: 380px;
+    left: 48%;
     transform: translateX(-50%);
     top: 82px;
-    z-index: 2; /* Above dark rectangle */
+    z-index: 2;
   }
 `;
 
@@ -306,7 +295,6 @@ const LawyerImage = styled(Image)`
     top: 0;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 380px;
     height: 570px;
@@ -322,7 +310,7 @@ const LawyerImage = styled(Image)`
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    z-index: 3; /* Above both rectangles */
+    z-index: 3;
   }
 `;
 
@@ -344,7 +332,6 @@ const FounderName = styled.p`
     top: 651px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 340px;
@@ -380,14 +367,12 @@ const FounderName = styled.p`
   }
 `;
 
-// Add this new component to control achievement cards visibility
 const AchievementCardContainer = styled.div`
   @media (max-width: 1024px) {
-    display: none; /* Hide achievement cards on tablet and mobile */
+    display: none;
   }
 `;
 
-// Add this new component to control button visibility
 const DesktopKnowMoreButton = styled(Link)`
   display: flex;
   flex-direction: row;
@@ -418,12 +403,11 @@ const DesktopKnowMoreButton = styled(Link)`
   }
 
   @media (max-width: 1024px) {
-    display: none; /* Hide on tablet and mobile */
+    display: none;
   }
 `;
 
 export default function WhyChooseUs() {
-  // Define awards data using the LawCaseAward type
   const awards: LawCaseAward[] = [
     {
       amount: "$1,000,000",
@@ -484,7 +468,7 @@ export default function WhyChooseUs() {
           <DarkRectangle />
           <LightRectangle />
           <LawyerImage
-            src="/images/lawyer-image-2.png"
+            src="/images/lawyer-image-2.webp"
             alt="Kathy Rabii - Founder of KR Law Group"
             width={410}
             height={616}
@@ -492,8 +476,6 @@ export default function WhyChooseUs() {
           />
           <FounderName>Kathy Rabii | Founder- KR Law, APC</FounderName>
         </PhotoContainer>
-
-        {/* Mobile-specific styles added via CSS media queries */}
       </ContentWrapper>
     </SectionContainer>
   );
