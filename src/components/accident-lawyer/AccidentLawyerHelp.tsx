@@ -169,12 +169,11 @@ const ServiceCard = styled.div`
   }
 `;
 
-// Add special styling for the 5th card (index 4)
 const CenteredServiceCard = styled(ServiceCard)`
   @media (min-width: 769px) {
-    grid-column: 1 / -1; /* Span across all columns */
-    max-width: 540px; /* Limit width to make it look centered */
-    margin: 0 auto; /* Center the card */
+    grid-column: 1 / -1;
+    max-width: 540px;
+    margin: 0 auto;
   }
 `;
 
@@ -276,13 +275,11 @@ export default function CarAccidentHelpSection() {
         <ServicesGrid>
           {services.map((service, index) =>
             index === 4 ? (
-              // Use the centered card for "Proven Track Record" (5th item)
               <CenteredServiceCard key={index}>
                 <ServiceTitle>{service.title}</ServiceTitle>
                 <ServiceDescription>{service.description}</ServiceDescription>
               </CenteredServiceCard>
             ) : (
-              // Use regular card for all other items
               <ServiceCard key={index}>
                 <ServiceTitle>{service.title}</ServiceTitle>
                 <ServiceDescription>{service.description}</ServiceDescription>

@@ -7,7 +7,6 @@ const SectionContainer = styled.section`
   width: 100%;
   overflow: hidden;
 
-  /* Apply background color only for tablet and desktop */
   @media (min-width: 769px) {
     background: #f5f5f5;
   }
@@ -22,7 +21,6 @@ const SectionContainer = styled.section`
 
   @media (max-width: 768px) {
     padding: 20px 0;
-    /* No background color for mobile */
   }
 `;
 
@@ -119,9 +117,9 @@ const ArrowContainer = styled.div`
   @media (max-width: 768px) {
     margin-right: 15px;
     margin-top: 8px;
-    /* Make the arrow container take up less space horizontally */
-    width: 30px; /* Limit the width to contain the smaller arrow */
-    margin-left: -10px; /* Move arrow more to the left in mobile version */
+
+    width: 30px;
+    margin-left: -10px;
   }
 `;
 
@@ -129,8 +127,8 @@ const ArrowImage = styled(Image)`
   display: block;
 
   @media (max-width: 768px) {
-    width: 45px !important; /* Further reduced from 40px to 30px */
-    height: 6px !important; /* Further reduced from 6px to 4px */
+    width: 45px !important;
+    height: 6px !important;
   }
 `;
 
@@ -292,7 +290,7 @@ export default function AccidentReportingSection() {
 
         <ImageContainer>
           <ResponsiveImage
-            src="/images/highway-accident-lawyer-reporting-off.png"
+            src="/images/highway-accident-lawyer-reporting-off.webp"
             alt="Off-highway accident reporting"
             fill
             sizes="(min-width: 1025px) 473px, (min-width: 769px) 600px, 370px"

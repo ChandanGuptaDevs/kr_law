@@ -130,7 +130,6 @@ const ListItem = styled.div`
   }
 `;
 
-// New two-column grid for the entire Types section
 const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,29 +137,28 @@ const TwoColumnGrid = styled.div`
   margin: 30px 0 50px;
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    grid-template-columns: 1fr; // Stack vertically on tablet
+    grid-template-columns: 1fr;
     gap: 30px;
     margin: 25px 0 40px;
   }
 
   @media (max-width: 768px) {
-    display: none; // Hide the main grid completely on mobile
+    display: none;
   }
 `;
 
 const TextColumn = styled.div`
   @media (max-width: 768px) {
-    order: 1; // Ensure text appears before image on mobile
+    order: 1;
   }
 `;
 
 const ImageColumn = styled.div`
   @media (max-width: 768px) {
-    order: 2; // Ensure image appears after text on mobile
+    order: 2;
   }
 `;
 
-// Two-column grid for the list of accident types
 const TypesGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -173,14 +171,13 @@ const TypesGrid = styled.div`
   }
 
   @media (max-width: 768px) {
-    display: none; // Hide on mobile, we'll use the single column list instead
+    display: none;
   }
 `;
 
-// Mobile list (vertical layout)
 const MobileList = styled.div`
   @media (min-width: 769px) {
-    display: none; /* Hide on tablet and desktop */
+    display: none;
   }
 `;
 
@@ -217,7 +214,6 @@ const ResponsiveImage = styled(Image)`
 `;
 
 export default function AccidentLawyerHelpSection() {
-  // Array of accident case types for the list
   const accidentTypes = [
     "Car accidents",
     "Truck accidents",
@@ -273,9 +269,7 @@ export default function AccidentLawyerHelpSection() {
           needs.
         </Paragraph>
 
-        {/* Two-column layout for Types section - visible on desktop and tablet */}
         <TwoColumnGrid>
-          {/* Text column with heading, paragraph, and list */}
           <TextColumn>
             <Heading>Types of Accident Cases We Handle</Heading>
 
@@ -283,7 +277,6 @@ export default function AccidentLawyerHelpSection() {
               Our law firm handles a wide range of accident cases, including:
             </Paragraph>
 
-            {/* Two-column grid for accident types list */}
             <TypesGrid>
               {accidentTypes.map((type, index) => (
                 <ListItem key={`grid-list-${index}`}>{type}</ListItem>
@@ -291,16 +284,15 @@ export default function AccidentLawyerHelpSection() {
             </TypesGrid>
           </TextColumn>
 
-          {/* Image column */}
           <ImageColumn>
             <ImageSection>
               <ResponsiveImage
-                src="/images/accident-lawyer-help.jpg"
+                src="/images/accident-lawyer-help.webp"
                 alt="Accident lawyer helping clients"
                 fill
                 sizes="(min-width: 1025px) 473px, (min-width: 769px) 600px, 370px"
                 style={{
-                  filter: "brightness(0.6)", // This creates the dark overlay effect
+                  filter: "brightness(0.6)",
                 }}
                 priority
               />
@@ -308,7 +300,6 @@ export default function AccidentLawyerHelpSection() {
           </ImageColumn>
         </TwoColumnGrid>
 
-        {/* Mobile section - visible only on mobile */}
         <MobileList>
           <Heading>Types of Accident Cases We Handle</Heading>
 
@@ -316,19 +307,18 @@ export default function AccidentLawyerHelpSection() {
             Our law firm handles a wide range of accident cases, including:
           </Paragraph>
 
-          {/* List of accident types for mobile */}
           {accidentTypes.map((type, index) => (
             <ListItem key={`mobile-list-${index}`}>{type}</ListItem>
           ))}
 
           <ImageSection>
             <ResponsiveImage
-              src="/images/accident-lawyer-help.jpg"
+              src="/images/accident-lawyer-help.webp"
               alt="Accident lawyer helping clients"
               fill
               sizes="370px"
               style={{
-                filter: "brightness(0.6)", // This creates the dark overlay effect
+                filter: "brightness(0.6)",
               }}
               priority
             />
