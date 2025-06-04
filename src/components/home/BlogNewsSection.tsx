@@ -145,14 +145,14 @@ const MainBlogPost = styled.article`
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    height: 620px; /* Fixed height for tablet to prevent excessive space */
+    height: 620px;
     margin-bottom: 10px;
   }
 
   @media (max-width: 768px) {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: auto; /* Let height adjust to content */
+    height: auto;
     margin: 0;
   }
 `;
@@ -170,7 +170,7 @@ const MainImageContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    height: 280px; /* Slightly increased height for mobile */
+    height: 280px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -187,13 +187,13 @@ const MainContent = styled.div`
 
   @media (min-width: 769px) and (max-width: 1024px) {
     padding: 20px;
-    padding-bottom: 0; /* Remove bottom padding completely */
-    height: auto; /* Let it size to content */
-    position: relative; /* For absolute positioning of the button */
+    padding-bottom: 0;
+    height: auto;
+    position: relative;
   }
 
   @media (max-width: 768px) {
-    padding: 20px 16px 20px; /* 20px padding at bottom as requested */
+    padding: 20px 16px 20px;
     border-top: none;
     height: auto;
   }
@@ -213,14 +213,14 @@ const MainTitle = styled.h3`
 
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 20px;
-    margin-bottom: 10px; /* Reduced spacing */
+    margin-bottom: 10px;
   }
 
   @media (max-width: 768px) {
     font-size: 18px;
     text-align: left;
     min-height: unset;
-    margin-bottom: 10px; /* Reduced spacing for mobile */
+    margin-bottom: 10px;
   }
 `;
 
@@ -239,17 +239,17 @@ const MainExcerpt = styled.p`
 
   @media (min-width: 769px) and (max-width: 1024px) {
     line-height: 140%;
-    margin-bottom: 10px; /* Minimized margin */
-    font-size: 16px; /* Slightly smaller font */
+    margin-bottom: 10px;
+    font-size: 16px;
   }
 
   @media (max-width: 768px) {
     text-align: left;
     line-height: 140%;
     min-height: unset;
-    margin-bottom: 15px; /* Reduced margin for mobile */
-    font-size: 14px; /* Slightly smaller font for mobile */
-    flex-grow: 0; /* Prevent expanding in mobile */
+    margin-bottom: 15px;
+    font-size: 14px;
+    flex-grow: 0;
   }
 `;
 
@@ -290,7 +290,7 @@ const SideBlogPost = styled.article`
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-height: none;
     margin: 0;
-    height: auto; /* Let height adjust to content */
+    height: auto;
   }
 `;
 
@@ -335,7 +335,7 @@ const SideContent = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 20px 16px 20px; /* 20px padding at bottom as requested */
+    padding: 20px 16px 20px;
     border-top: none;
     height: auto;
   }
@@ -366,7 +366,7 @@ const SideTitle = styled.h3`
     font-size: 18px;
     text-align: left;
     min-height: unset;
-    margin-bottom: 10px; /* Reduced spacing for mobile */
+    margin-bottom: 10px;
   }
 `;
 
@@ -392,8 +392,8 @@ const SideExcerpt = styled.p`
     text-align: left;
     min-height: unset;
     line-height: 140%;
-    margin-bottom: 15px; /* Reduced margin for mobile */
-    flex-grow: 0; /* Prevent expanding in mobile */
+    margin-bottom: 15px;
+    flex-grow: 0;
   }
 `;
 
@@ -416,14 +416,14 @@ const ReadMoreButton = styled(Link)`
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    padding: 8px 14px; /* Smaller padding */
-    margin: 20px; /* No margins */
+    padding: 8px 14px;
+    margin: 20px;
   }
 
   @media (max-width: 768px) {
     padding: 8px 14px;
     align-self: flex-start;
-    margin-bottom: 0; /* No bottom margin on button - padding on container instead */
+    margin-bottom: 0;
   }
 `;
 
@@ -453,7 +453,6 @@ const ArrowImage = styled(Image)`
   }
 `;
 
-// For side post images - control border radius with CSS instead of JS
 const StyledSideImage = styled(Image)`
   object-fit: cover;
   margin: 0;
@@ -469,7 +468,6 @@ const StyledSideImage = styled(Image)`
 `;
 
 export default function BlogNewsSection() {
-  // Sample blog post data
   const blogPosts: BlogPost[] = [
     {
       id: "post-1",
@@ -477,7 +475,7 @@ export default function BlogNewsSection() {
       excerpt:
         "Finding the right legal help or personal injury lawyer can be a daunting prospect. You often have to find a lawyer for your injuries at a time when...",
       slug: "hiring-lawyer",
-      imagePath: "/images/blog_news_top_mistakes.jpg",
+      imagePath: "/images/blog_news_top_mistakes.webp",
     },
     {
       id: "post-2",
@@ -485,7 +483,7 @@ export default function BlogNewsSection() {
       excerpt:
         "When you're involved in an accident resulting in personal injury, the confusion of the situation can make it difficult to think through a personal...",
       slug: "medical-bills",
-      imagePath: "/images/blog_news_medical_bills.jpg",
+      imagePath: "/images/blog_news_medical_bills.webp",
     },
     {
       id: "post-3",
@@ -494,7 +492,7 @@ export default function BlogNewsSection() {
       excerpt:
         "Personal injury cases can be complicated, but the law doesn't have to be. A personal injury lawsuit is a civil lawsuit that centers on one person...",
       slug: "personal-injury-trial",
-      imagePath: "/images/blog_news_go_to_trail.jpg",
+      imagePath: "/images/blog_news_go_to_trail.webp",
     },
   ];
 

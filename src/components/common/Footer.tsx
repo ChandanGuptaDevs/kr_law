@@ -12,7 +12,7 @@ const FooterContainer = styled.footer`
       rgba(27, 38, 50, 0.9),
       rgba(27, 38, 50, 0.9)
     ),
-    url("/images/ourServices.jpg");
+    url("/images/ourServices.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -64,7 +64,7 @@ const AddressSection = styled.div`
   @media (max-width: 1024px) {
     margin: 40px 0 30px;
     align-items: center;
-    order: 3; /* Move address section down according to sequence */
+    order: 3;
   }
 `;
 
@@ -74,7 +74,6 @@ const LocationWrapper = styled.div`
   margin-bottom: 16px;
 
   @media (max-width: 1024px) {
-    /* Changed from column to row to keep icon beside address */
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
@@ -92,7 +91,7 @@ const LocationIcon = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-right: 12px; /* Slightly less margin for mobile */
+    margin-right: 12px;
   }
 `;
 
@@ -110,7 +109,7 @@ const LocationIconImage = styled(Image)`
 
 const AddressContent = styled.div`
   @media (max-width: 1024px) {
-    text-align: left; /* Changed from center to left for better alignment with icon */
+    text-align: left;
   }
 `;
 
@@ -189,7 +188,7 @@ const ContactCard = styled.div`
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
-    order: 1; /* Move to top according to sequence */
+    order: 1;
   }
 `;
 
@@ -200,12 +199,12 @@ const LogoContainer = styled.div`
 
   @media (min-width: 1025px) {
     margin: 0;
-    order: 2; /* Within CallAndLogoContainer */
+    order: 2;
   }
 
   @media (max-width: 1024px) {
     margin-bottom: 20px;
-    order: 1; /* First item in the sequence */
+    order: 1;
   }
 `;
 
@@ -293,7 +292,6 @@ const ConsultText = styled.p`
   }
 `;
 
-// New container for call button and logo in desktop only
 const CallAndLogoContainer = styled.div`
   @media (min-width: 1025px) {
     display: flex;
@@ -334,7 +332,7 @@ const CallButton = styled(Link)`
     margin-bottom: 0;
     padding: 14px 12px;
     min-width: 210px;
-    order: 1; /* Within CallAndLogoContainer */
+    order: 1;
   }
 
   @media (max-width: 1024px) {
@@ -342,7 +340,7 @@ const CallButton = styled(Link)`
     max-width: 302px;
     background: #ffffff;
     margin: 0 auto 30px;
-    order: 3; /* After consult text according to sequence */
+    order: 3;
   }
 `;
 
@@ -386,7 +384,7 @@ const EmailContainer = styled.div`
     justify-content: center;
     margin-top: 0;
     margin-bottom: 30px;
-    order: 4; /* After call button according to sequence */
+    order: 4;
   }
 `;
 
@@ -445,7 +443,7 @@ const FooterBottom = styled.div`
 
   @media (max-width: 1024px) {
     margin-top: 20px;
-    order: 4; /* Last section according to sequence */
+    order: 4;
   }
 `;
 
@@ -457,13 +455,13 @@ const LegalLinks = styled.div`
   @media (min-width: 1025px) {
     margin-bottom: 0;
     justify-content: flex-end;
-    order: 2; /* Within FooterBottom */
+    order: 2;
     flex-wrap: wrap;
   }
   @media (max-width: 1024px) {
     margin-bottom: 20px;
-    order: 1; /* First within FooterBottom according to sequence */
-    flex-wrap: nowrap; /* Keep all links on a single line */
+    order: 1;
+    flex-wrap: nowrap;
     width: 100%;
     justify-content: center;
   }
@@ -519,21 +517,21 @@ const Copyright = styled.p`
 
   @media (min-width: 1025px) {
     text-align: left;
-    order: 1; /* Within FooterBottom */
+    order: 1;
   }
 
   @media (max-width: 1024px) {
     font-size: 12px;
     line-height: 18px;
     text-align: center;
-    flex-direction: column; /* Stack the text on mobile/tablet */
-    order: 2; /* After legal links within FooterBottom */
+    flex-direction: column;
+    order: 2;
   }
 `;
 
 const AllRightsReserved = styled.span`
   @media (max-width: 1024px) {
-    margin-top: 5px; /* Add space between the copyright year and "All rights reserved" */
+    margin-top: 5px;
   }
 `;
 
@@ -577,20 +575,16 @@ export default function Footer() {
       setIsMobile(window.innerWidth <= 1024);
     };
 
-    // Initial check
     handleResize();
 
-    // Add event listener
     window.addEventListener("resize", handleResize);
 
-    // Cleanup
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <FooterContainer>
       <FooterContent>
-        {/* For desktop view - original structure */}
         {isDesktop && (
           <>
             <AddressSection>
@@ -675,10 +669,8 @@ export default function Footer() {
           </>
         )}
 
-        {/* For mobile and tablet view - common structure */}
         {isMobile && (
           <>
-            {/* 1. KATHY RABII LAW GROUP */}
             <LogoContainer>
               <LogoText>
                 <LogoName>KATHY</LogoName>
@@ -687,7 +679,6 @@ export default function Footer() {
               <LogoSubtitle>LAW GROUP</LogoSubtitle>
             </LogoContainer>
 
-            {/* 2-3. HAVE YOUR PERSONAL INJURY QUESTIONS ANSWERED + Consult With An Attorney For Free! */}
             <ContactCard>
               <ContactTitle>
                 HAVE YOUR PERSONAL INJURY QUESTIONS ANSWERED
@@ -695,7 +686,6 @@ export default function Footer() {
               <ConsultText>Consult With An Attorney For Free!</ConsultText>
             </ContactCard>
 
-            {/* 4. Call Now Button */}
             <CallButton href="tel:+12138338361">
               <ButtonText>Call Now +1 213-833-8361</ButtonText>
               <Image
@@ -707,7 +697,6 @@ export default function Footer() {
               />
             </CallButton>
 
-            {/* 5. Email */}
             <EmailContainer>
               <EmailIcon>
                 <Image
@@ -722,7 +711,6 @@ export default function Footer() {
               </EmailAddress>
             </EmailContainer>
 
-            {/* 6-8. Address Section */}
             <AddressSection>
               <LocationWrapper>
                 <LocationIcon>
@@ -760,7 +748,6 @@ export default function Footer() {
               </LocationWrapper>
             </AddressSection>
 
-            {/* 9-10. Footer Bottom - mobile/tablet version */}
             <FooterBottom>
               <LegalLinks>
                 <LegalLink href="/terms-of-use">Terms of Use</LegalLink>
