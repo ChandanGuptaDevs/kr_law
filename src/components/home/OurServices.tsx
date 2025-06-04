@@ -4,7 +4,6 @@ import Link from "next/link";
 import styled from "styled-components";
 import ServiceItemComponent from "@/components/common/ServiceItem";
 
-// Types for service items
 interface ServiceItemType {
   name: string;
   link: string;
@@ -19,14 +18,13 @@ const SectionContainer = styled.section`
   @media (min-width: 1025px) {
     height: 794px;
     margin-top: 60px;
-    padding: 0; /* Removed the 99px padding */
+    padding: 0;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     height: 830px;
     margin-top: 60px;
-    padding: 0; /* Changed from 0 40px to 0 */
+    padding: 0;
   }
 
   @media (max-width: 768px) {
@@ -57,12 +55,11 @@ const SectionTitle = styled.h2`
     align-items: center;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 250px;
     height: 44px;
-    left: 0px; /* Changed from 40px to 0px */
+    left: 0px;
     top: 0px;
     font-size: 28px;
     line-height: 44px;
@@ -106,13 +103,12 @@ const Description = styled.p`
     align-items: center;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 100%;
     height: auto;
     min-height: 108px;
-    left: 0px; /* Changed from 40px to 0px */
+    left: 0px;
     top: 70px;
     font-size: 17px;
     line-height: 26px;
@@ -145,12 +141,11 @@ const ImageContainer = styled.div`
     top: 220px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 441px;
     height: 445px;
-    left: 0px; /* Changed from 40px to 0px */
+    left: 0px;
     top: 220px;
   }
 
@@ -176,7 +171,6 @@ const DarkRectangle = styled.div`
     top: 28px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 390px;
     height: 370px;
@@ -185,8 +179,8 @@ const DarkRectangle = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 310px; /* Updated from 348px to 310px */
-    height: 290px; /* Updated from 310px to 290px */
+    width: 310px;
+    height: 290px;
     left: 50%;
     transform: translateX(-50%);
     top: 55px;
@@ -199,11 +193,11 @@ const StyledImage = styled(Image)`
   border-radius: 10px;
   transition: transform 0.5s ease;
   z-index: 2;
-  box-shadow: 7px 9px 4px rgba(0, 0, 0, 0.25); /* Matching the button shadow */
+  box-shadow: 7px 9px 4px rgba(0, 0, 0, 0.25);
 
   &:hover {
     transform: scale(1.02);
-    box-shadow: 8px 10px 6px rgba(0, 0, 0, 0.3); /* Slightly enhanced on hover */
+    box-shadow: 8px 10px 6px rgba(0, 0, 0, 0.3);
   }
 
   @media (min-width: 1025px) {
@@ -212,22 +206,22 @@ const StyledImage = styled(Image)`
     left: 54px;
     top: 50px;
   }
-  /* Tablet specific styling - improved positioning */
+
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 380px;
     height: 360px;
 
-    left: 40px; /* Updated from 15px for better offset */
-    top: 70px; /* Updated from 15px for better positioning */
+    left: 40px;
+    top: 70px;
   }
 
   @media (max-width: 768px) {
-    width: 305px; /* Updated from 325px to 305px */
-    height: 290px; /* Updated from 275px to 290px */
-    left: 54%; /* Updated from 50% to 54% */
+    width: 305px;
+    height: 290px;
+    left: 54%;
     transform: translateX(-50%);
 
-    top: 69px; /* Updated from 20px to 69px */
+    top: 69px;
 
     &:hover {
       transform: translateX(-50%) scale(1.02);
@@ -245,13 +239,12 @@ const ServicesListContainer = styled.div`
     top: 240px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 100%;
     max-width: 500px;
     height: auto;
-    left: 470px; /* Changed from 520px to 470px to compensate for the reduced left spacing */
+    left: 470px;
     top: 220px;
   }
 
@@ -278,8 +271,8 @@ const ExploreButton = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative; /* Ensure it has a position */
-  z-index: 10; /* Increase z-index to ensure it's above other elements */
+  position: relative;
+  z-index: 10;
 
   &:hover {
     background: #2a3c4d;
@@ -294,12 +287,11 @@ const ExploreButton = styled(Link)`
     top: 729px;
   }
 
-  /* Tablet specific styling */
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
     width: 240px;
     height: 56px;
-    left: 470px; /* Changed from 520px to 470px */
+    left: 470px;
     top: 695px;
   }
 
@@ -325,7 +317,7 @@ const ButtonText = styled.span`
   color: #fafaf9;
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  white-space: nowrap; /* Ensures text stays on one line */
+  white-space: nowrap;
 
   ${ExploreButton}:hover & {
     opacity: 1;
@@ -347,25 +339,25 @@ const ArrowWhite = styled(Image)`
 `;
 
 export default function OurServices() {
-  // Updated list of services with correct link paths and services
   const services: ServiceItemType[] = [
     { name: "Car Accidents", link: "/car-accidents" },
     {
       name: "Motorcycle Accidents",
 
       link: "/accident-lawyer",
-    }, // This might need to be updated if you have a specific page
+    },
     {
       name: "Uber and Lyft Accidents",
       link: "/uber-accident-lawyers",
     },
-    { name: "Airbnb Attorney", link: "/airbnb-attorney" }, // Changed from Truck Accidents
+    { name: "Airbnb Attorney", link: "/airbnb-attorney" },
+
     {
       name: "Pedestrian Accidents",
       link: "/pedestrian-accident",
     },
 
-    { name: "Electric Scooter Accident", link: "/electric-scooter-accident" }, // Changed from Dog Bites
+    { name: "Electric Scooter Accident", link: "/electric-scooter-accident" },
     {
       name: "Wrongful Death",
       link: "/wrongful-death-attorney",
@@ -389,7 +381,7 @@ export default function OurServices() {
       <ImageContainer>
         <DarkRectangle />
         <StyledImage
-          src="/images/ourServices.jpg"
+          src="/images/ourServices.webp"
           alt="Legal services represented by a judge's gavel"
           width={505}
           height={428}
