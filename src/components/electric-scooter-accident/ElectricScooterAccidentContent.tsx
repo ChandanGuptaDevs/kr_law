@@ -1,4 +1,3 @@
-// src/components/electric-scooter-accident/ElectricScooterAccidentContent.tsx
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
@@ -8,11 +7,11 @@ import ElectricScooterAccidentInfoSection from "./ElectricScooterAccidentInfoSec
 const ContentSection = styled.section`
   position: relative;
   width: 100%;
-  margin-top: -100px; /* Negative margin to make the form overlap with hero */
-  z-index: 2; /* Add z-index to ensure content is above background image */
+  margin-top: -100px;
+  z-index: 2;
 
   @media (min-width: 1025px) {
-    margin-top: -120px; /* Increased overlap on desktop for better visual effect */
+    margin-top: -120px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -30,7 +29,7 @@ const ContentWrapper = styled.div`
   padding: 0 20px;
   display: flex;
   position: relative;
-  z-index: 2; /* Add z-index to ensure content is above background image */
+  z-index: 2;
 
   @media (min-width: 1025px) {
     padding: 0 20px;
@@ -53,7 +52,7 @@ const TextContent = styled.div`
   max-width: 600px;
   margin-top: 220px;
   position: relative;
-  z-index: 3; /* Add z-index to ensure text is above background image */
+  z-index: 3;
 
   @media (min-width: 1025px) {
     margin-right: 70px;
@@ -80,8 +79,8 @@ const Paragraph = styled.p`
   letter-spacing: -0.02em;
   color: #000000;
   margin-bottom: 25px;
-  position: relative; /* Add position relative to make z-index work */
-  z-index: 3; /* Add z-index to ensure text is above background image */
+  position: relative;
+  z-index: 3;
 
   strong {
     font-weight: 600;
@@ -111,8 +110,8 @@ const SubHeading = styled.h2`
   text-decoration-line: underline;
   color: #000000;
   margin: 40px 0 25px;
-  position: relative; /* Add position relative to make z-index work */
-  z-index: 3; /* Add z-index to ensure heading is above background image */
+  position: relative;
+  z-index: 3;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     font-size: 28px;
@@ -129,23 +128,20 @@ const SubHeading = styled.h2`
 `;
 
 const FormContainer = styled.div`
-  /* Desktop version remains absolutely positioned */
   position: absolute;
   right: 0;
   top: 80px;
   z-index: 10;
 
-  /* Hide desktop version on mobile and tablet */
   @media (max-width: 1024px) {
     display: none;
   }
 `;
 
-// New component for mobile and tablet form placement
 const MobileFormContainer = styled.div`
-  display: none; /* Hidden by default (on desktop) */
+  display: none;
   position: relative;
-  z-index: 3; /* Add z-index to ensure form is above background image */
+  z-index: 3;
 
   @media (max-width: 1024px) {
     display: block;
@@ -163,8 +159,8 @@ const MobileFormContainer = styled.div`
 `;
 
 const FullWidthParagraph = styled(Paragraph)`
-  position: relative; /* Add position relative to make z-index work */
-  z-index: 5; /* Higher z-index for the last paragraph to ensure it's above everything */
+  position: relative;
+  z-index: 5;
 
   @media (min-width: 1025px) {
     max-width: 100%;
@@ -172,17 +168,16 @@ const FullWidthParagraph = styled(Paragraph)`
   }
 `;
 
-// Background image container with overlay - positioned at bottom
 const BackgroundImageSection = styled.div`
   position: relative;
   width: 100%;
   height: 969px;
   left: 0;
-  margin-top: -100px; /* Negative margin to pull it up */
-  background-image: url("/images/common-causes-of-electric-scooter-accidents.png");
+  margin-top: -100px;
+  background-image: url("/images/common-causes-of-electric-scooter-accidents.webp");
   background-size: cover;
   background-position: center;
-  z-index: 1; /* Lower z-index to ensure it's behind the content */
+  z-index: 1;
 
   &::before {
     content: "";
@@ -191,21 +186,20 @@ const BackgroundImageSection = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.85); /* White overlay with 85% opacity */
+    background: rgba(255, 255, 255, 0.85);
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     height: 800px;
-    margin-top: -80px; /* Adjusted for tablet */
+    margin-top: -80px;
   }
 
   @media (max-width: 768px) {
     height: 700px;
-    margin-top: -70px; /* Adjusted for mobile */
+    margin-top: -70px;
   }
 `;
 
-// Add causes section on top of the background image
 const CausesContainer = styled.div`
   position: relative;
   width: 100%;
@@ -213,7 +207,7 @@ const CausesContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   z-index: 3;
-  margin-top: -800px; /* Position it over the background image */
+  margin-top: -800px;
   @media (min-width: 769px) and (max-width: 1024px) {
     margin-top: -725px;
     padding: 0 30px;
@@ -241,9 +235,9 @@ const CausesContentWrapper = styled.div`
 `;
 
 const CausesTextContent = styled.div`
-  width: 100%; /* Take full width since we've removed the image */
-  max-width: 1000px; /* Increased max-width now that we have more space */
-  margin: 0 auto; /* Center the content */
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     width: 100%;
@@ -347,7 +341,6 @@ const PointText = styled.p`
   }
 `;
 
-// Container for the Info Section
 const InfoSectionContainer = styled.div`
   position: relative;
   width: 100%;
@@ -355,7 +348,7 @@ const InfoSectionContainer = styled.div`
   margin: 0 auto;
   padding: 0 20px;
   z-index: 3;
-  margin-top: 40px; /* Position it after the causes section */
+  margin-top: 40px;
 
   @media (min-width: 769px) and (max-width: 1024px) {
     margin-top: 50px;
@@ -411,14 +404,12 @@ export default function ElectricScooterAccidentContent() {
             </FullWidthParagraph>
           </TextContent>
 
-          {/* Desktop version of the form - positioned absolutely */}
           <FormContainer>
             <PracticeAreaContactForm />
           </FormContainer>
         </ContentWrapper>
       </ContentSection>
 
-      {/* Mobile and tablet version of the form - appears at the bottom */}
       <MobileFormContainer>
         <div
           id="mobile-form-marker"
@@ -430,10 +421,8 @@ export default function ElectricScooterAccidentContent() {
         <PracticeAreaContactForm />
       </MobileFormContainer>
 
-      {/* Background image section at the bottom of the page */}
       <BackgroundImageSection />
 
-      {/* Causes section positioned on top of the background image */}
       <CausesContainer>
         <CausesContentWrapper>
           <CausesTextContent>
@@ -538,7 +527,6 @@ export default function ElectricScooterAccidentContent() {
         </CausesContentWrapper>
       </CausesContainer>
 
-      {/* Info Section positioned below the causes section */}
       <InfoSectionContainer>
         <ElectricScooterAccidentInfoSection />
       </InfoSectionContainer>

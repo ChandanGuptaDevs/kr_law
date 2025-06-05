@@ -1,4 +1,3 @@
-// src/components/electric-scooter-accident/ElectricScooterAccidentInfoSection.tsx
 "use client";
 import styled from "styled-components";
 

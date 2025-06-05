@@ -1,4 +1,3 @@
-// src/components/electric-scooter-accident/ElectricScooterHelpSection.tsx
 "use client";
 import styled from "styled-components";
 
@@ -130,7 +129,7 @@ const ServicesGrid = styled.div`
       "service1 service2"
       "service3 service4"
       "service5 service6"
-      "service7 service7"; /* Make the last service take up full width */
+      "service7 service7";
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -140,7 +139,7 @@ const ServicesGrid = styled.div`
       "service1 service2"
       "service3 service4"
       "service5 service6"
-      "service7 service7"; /* Make the last service take up full width */
+      "service7 service7";
   }
 
   @media (max-width: 768px) {
