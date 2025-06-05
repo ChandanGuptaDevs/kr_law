@@ -1,4 +1,3 @@
-// src/components/uber-accident-lawyers/UberAccidentInfoSection.tsx
 "use client";
 import styled from "styled-components";
 

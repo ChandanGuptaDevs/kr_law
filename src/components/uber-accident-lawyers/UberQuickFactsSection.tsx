@@ -1,4 +1,3 @@
-// src/components/uber-accident-lawyers/UberQuickFactsSection.tsx
 "use client";
 import styled from "styled-components";
 import Image from "next/image";
@@ -8,7 +7,6 @@ const SectionContainer = styled.section`
   width: 100%;
   overflow: hidden;
 
-  /* Apply background color only for tablet and desktop */
   @media (min-width: 769px) {
     background: #f5f5f5;
   }
@@ -23,7 +21,6 @@ const SectionContainer = styled.section`
 
   @media (max-width: 768px) {
     padding: 20px 0;
-    /* No background color for mobile */
   }
 `;
 
@@ -120,9 +117,9 @@ const ArrowContainer = styled.div`
   @media (max-width: 768px) {
     margin-right: 15px;
     margin-top: 8px;
-    /* Make the arrow container take up less space horizontally */
-    width: 30px; /* Limit the width to contain the smaller arrow */
-    margin-left: -10px; /* Move arrow more to the left in mobile version */
+
+    width: 30px;
+    margin-left: -10px;
   }
 `;
 
@@ -130,8 +127,8 @@ const ArrowImage = styled(Image)`
   display: block;
 
   @media (max-width: 768px) {
-    width: 45px !important; /* Further reduced from 40px to 30px */
-    height: 6px !important; /* Further reduced from 6px to 4px */
+    width: 45px !important;
+    height: 6px !important;
   }
 `;
 
@@ -201,7 +198,7 @@ const ImageContainer = styled.div`
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
-    width: 500px; /* Using fixed width instead of max-width */
+    width: 500px;
     height: 250px;
     margin: 0 auto;
   }
@@ -216,7 +213,7 @@ const ResponsiveImage = styled(Image)`
   object-position: center center;
   width: 100%;
   height: 100%;
-  opacity: 0.6; /* To match the rgba overlay in the CSS */
+  opacity: 0.6;
 `;
 
 export default function UberQuickFactsSection() {
@@ -339,7 +336,7 @@ export default function UberQuickFactsSection() {
         <ImagesContainer>
           <ImageContainer>
             <ResponsiveImage
-              src="/images/uber-quick-fact001.jpg"
+              src="/images/uber-quick-fact001.webp"
               alt="Uber ride-sharing service"
               width={497}
               height={300}
@@ -348,7 +345,7 @@ export default function UberQuickFactsSection() {
           </ImageContainer>
           <ImageContainer>
             <ResponsiveImage
-              src="/images/uber-quick-fact002.jpg"
+              src="/images/uber-quick-fact002.webp"
               alt="Uber mobile app interface"
               width={497}
               height={300}
