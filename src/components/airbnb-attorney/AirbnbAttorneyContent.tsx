@@ -1,4 +1,3 @@
-// src/components/airbnb-attorney/AirbnbAttorneyContent.tsx
 "use client";
 import styled from "styled-components";
 import PracticeAreaContactForm from "../common/PracticeAreaContactForm";
@@ -6,11 +5,11 @@ import PracticeAreaContactForm from "../common/PracticeAreaContactForm";
 const ContentSection = styled.section`
   position: relative;
   width: 100%;
-  margin-top: -100px; /* Negative margin to make the form overlap with hero */
+  margin-top: -100px;
   /* padding-bottom: 80px; */
 
   @media (min-width: 1025px) {
-    margin-top: -120px; /* Increased overlap on desktop for better visual effect */
+    margin-top: -120px;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -58,13 +57,13 @@ const TextContent = styled.div`
 
   @media (min-width: 769px) and (max-width: 1024px) {
     max-width: 100%;
-    margin-top: 100px; /* Reduced from 250px */
+    margin-top: 100px;
   }
 
   @media (max-width: 768px) {
     width: 100%;
     max-width: 530px;
-    margin-top: 80px; /* Reduced from 310px */
+    margin-top: 80px;
   }
 `;
 
@@ -122,21 +121,18 @@ const SubHeading = styled.h2`
 `;
 
 const FormContainer = styled.div`
-  /* Desktop version remains absolutely positioned */
   position: absolute;
   right: 0;
   top: 80px;
   z-index: 10;
 
-  /* Hide desktop version on mobile and tablet */
   @media (max-width: 1024px) {
     display: none;
   }
 `;
 
-// New component for mobile and tablet form placement
 const MobileFormContainer = styled.div`
-  display: none; /* Hidden by default (on desktop) */
+  display: none;
 
   @media (max-width: 1024px) {
     display: block;
@@ -194,14 +190,12 @@ export default function AirbnbAttorneyContent() {
             </FullWidthParagraph>
           </TextContent>
 
-          {/* Desktop version of the form - positioned absolutely */}
           <FormContainer>
             <PracticeAreaContactForm />
           </FormContainer>
         </ContentWrapper>
       </ContentSection>
 
-      {/* Mobile and tablet version of the form - appears at the bottom */}
       <MobileFormContainer>
         <div
           id="mobile-form-marker"

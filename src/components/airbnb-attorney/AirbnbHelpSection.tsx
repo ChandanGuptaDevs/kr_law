@@ -1,4 +1,3 @@
-// src/components/airbnb-attorney/AirbnbHelpSection.tsx
 "use client";
 import styled from "styled-components";
 

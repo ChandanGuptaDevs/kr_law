@@ -1,4 +1,3 @@
-// src/components/airbnb-attorney/AirbnbAttorneyHero.tsx
 "use client";
 import styled from "styled-components";
 
@@ -6,7 +5,7 @@ const HeroContainer = styled.section`
   position: relative;
   width: 100%;
 
-  background-image: url("/images/airbnb-attorney-banner.jpg");
+  background-image: url("/images/airbnb-attorney-banner.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
@@ -19,7 +18,7 @@ const HeroContainer = styled.section`
   @media (min-width: 1025px) {
     height: 622px;
     padding: 0 100px;
-    background-position: center 25%; /* Position for desktop */
+    background-position: center 25%;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -91,7 +90,6 @@ const HeroTitle = styled.h1`
   }
 `;
 
-// Styled components for the title parts
 const TitleFirstPart = styled.span`
   @media (max-width: 768px) {
     display: block;
