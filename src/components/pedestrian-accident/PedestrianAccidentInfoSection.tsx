@@ -1,4 +1,3 @@
-// src/components/pedestrian-accident/PedestrianAccidentInfoSection.tsx
 "use client";
 import styled from "styled-components";
 

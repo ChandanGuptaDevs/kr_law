@@ -1,4 +1,3 @@
-// src/components/pedestrian-accident/PedestrianAccidentHero.tsx
 "use client";
 import styled from "styled-components";
 
@@ -6,7 +5,7 @@ const HeroContainer = styled.section`
   position: relative;
   width: 100%;
 
-  background-image: url("/images/pedestrian-accident-attorney-banner.jpg");
+  background-image: url("/images/pedestrian-accident-attorney-banner.webp");
   background-size: cover;
   background-position: center;
   background-color: rgba(27, 38, 50, 0.7);
@@ -90,7 +89,6 @@ const HeroTitle = styled.h1`
   }
 `;
 
-// Styled components for the title parts
 const TitleFirstPart = styled.span`
   @media (max-width: 768px) {
     display: block;
