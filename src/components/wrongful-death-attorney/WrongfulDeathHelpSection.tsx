@@ -1,4 +1,3 @@
-// src/components/wrongful-death-attorney/WrongfulDeathHelpSection.tsx
 "use client";
 import styled from "styled-components";
 
