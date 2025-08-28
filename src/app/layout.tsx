@@ -16,6 +16,7 @@ export const viewport = {
 };
 
 export const metadata = {
+  metadataBase: new URL('https://www.krinjurylawfirm.com'),
   title: "KR Law Group | Kathy Rabii Law Firm",
 
   description:

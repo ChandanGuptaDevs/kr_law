@@ -23,9 +23,8 @@ export default function Home() {
       <SchemaOrg
         title="KR Law Group | Kathy Rabii Law Firm | Los Angeles Legal Services"
         description="KR Law Group led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!"
-        url="https://www.kathyrabii.com/"
-        imageUrl="https://www.kathyrabii.com/images/lawyer-image-4.webp
-"
+        url="https://www.krinjurylawfirm.com/"
+        imageUrl="https://www.krinjurylawfirm.com/images/lawyer-image-4.webp"
       />
       <HeroSection />
       <WhyChooseUs />
