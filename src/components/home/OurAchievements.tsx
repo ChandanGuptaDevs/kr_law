@@ -157,8 +157,8 @@ export default function OurAchievements() {
   // Define awards data using the LawCaseAward type
   const awards: LawCaseAward[] = [
     {
-      amount: "$1,000,000",
-      description: "Auto Accident Total Amount Awarded",
+      amount: "$6,000,000",
+      description: "Truck Accident Total Amount Awarded",
     },
     {
       amount: "$1,850,000",

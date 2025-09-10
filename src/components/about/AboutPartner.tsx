@@ -208,7 +208,7 @@ export default function AboutPartner() {
             <ImageWrapper>
               <StyledImage
                 src="/images/lawyer-image-4.webp"
-                alt="Kathy Rabii - Founder of KR Law Group"
+                alt="Kathy Rabii - Founder of KR Law, APC"
                 fill
                 priority
               />

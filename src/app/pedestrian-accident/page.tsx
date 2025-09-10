@@ -6,19 +6,19 @@ import SettlementsBanner from "@/components/common/SettlementsBanner";
 import SchemaOrg from "@/components/common/SchemaOrg";
 
 export const metadata = {
-  title: "Pedestrian Accident Attorney | KR Law Group",
+  title: "Pedestrian Accident Attorney | KR Law, APC",
   description:
-    "Expert pedestrian accident attorneys at KR Law Group help victims get maximum compensation for injuries. Free consultation available.",
+    "Expert pedestrian accident attorneys at KR Law, APC help victims get maximum compensation for injuries. Free consultation available.",
   keywords:
-    "pedestrian accident attorney, pedestrian injury lawyer, hit and run accident, crosswalk accident, California pedestrian laws, KR Law Group",
+    "pedestrian accident attorney, pedestrian injury lawyer, hit and run accident, crosswalk accident, California pedestrian laws, KR Law, APC",
 };
 
 export default function PedestrianAccidentPage() {
   return (
     <main>
       <SchemaOrg
-        title="Pedestrian Accident Attorney | KR Law Group"
-        description="Expert pedestrian accident attorneys at KR Law Group help victims get maximum compensation for injuries. Free consultation available."
+        title="Pedestrian Accident Attorney | KR Law, APC"
+        description="Expert pedestrian accident attorneys at KR Law, APC help victims get maximum compensation for injuries. Free consultation available."
         url="https://krlaw.com/pedestrian-accident"
         imageUrl="https://krlaw.com/images/pedestrian-accident-attorney-banner.jpg"
       />

@@ -6,19 +6,19 @@ import Testimonials from "@/components/about/Testimonials";
 import SchemaOrg from "@/components/common/SchemaOrg";
 
 export const metadata = {
-  title: "About Us | KR Law Group | Los Angeles Personal Injury Attorneys",
+  title: "About Us | KR Law, APC | Los Angeles Personal Injury Attorneys",
   description:
-    "Learn about KR Law Group, our mission, and our team of experienced personal injury attorneys dedicated to helping clients throughout Los Angeles.",
+    "Learn about KR Law, APC, our mission, and our team of experienced personal injury attorneys dedicated to helping clients throughout Los Angeles.",
   keywords:
-    "about KR Law Group, Los Angeles personal injury attorneys, Kathy Rabii, legal team, law firm mission, attorney profiles, personal injury law firm",
+    "about KR Law, APC, Los Angeles personal injury attorneys, Kathy Rabii, legal team, law firm mission, attorney profiles, personal injury law firm",
 };
 
 export default function AboutPage() {
   return (
     <main>
       <SchemaOrg
-        title="About Us | KR Law Group | Los Angeles Personal Injury Attorneys"
-        description="Learn about KR Law Group, our mission, and our team of experienced personal injury attorneys dedicated to helping clients throughout Los Angeles."
+        title="About Us | KR Law, APC | Los Angeles Personal Injury Attorneys"
+        description="Learn about KR Law, APC, our mission, and our team of experienced personal injury attorneys dedicated to helping clients throughout Los Angeles."
         url="https://krlaw.com/about"
         imageUrl="https://krlaw.com/images/about-hero.jpg"
       />

@@ -17,12 +17,12 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://www.krinjurylawfirm.com'),
-  title: "KR Law Group | Kathy Rabii Law Firm",
+  title: "KR Law, APC | Kathy Rabii Law Firm",
 
   description:
-    "KR Law Group provides expert legal representation. Behind every case is a person who deserves care.",
+    "KR Law, APC provides expert legal representation. Behind every case is a person who deserves care.",
   keywords:
-    "personal injury lawyer, auto accident attorney, Los Angeles attorney, KR Law Group, car accident lawyer, premises liability, wrongful death",
+    "personal injury lawyer, auto accident attorney, Los Angeles attorney, KR Law, APC, car accident lawyer, premises liability, wrongful death",
 
   icons: {
     icon: [
@@ -50,17 +50,17 @@ export const metadata = {
   manifest: "/site.webmanifest",
 
   openGraph: {
-    title: "KR Law Group | Personal Injury Attorneys",
+    title: "KR Law, APC | Personal Injury Attorneys",
     description:
-      "KR Law Group provides expert legal representation in personal injury cases including auto accidents, premises liability, and wrongful death.",
+      "KR Law, APC provides expert legal representation in personal injury cases including auto accidents, premises liability, and wrongful death.",
     url: "https://www.krinjurylawfirm.com/",
-    siteName: "KR Law Group",
+    siteName: "KR Law, APC",
     images: [
       {
         url: "/images/kr-law-og-image.png",
         width: 1200,
         height: 630,
-        alt: "KR Law Group",
+        alt: "KR Law, APC",
       },
     ],
     locale: "en_US",
@@ -69,9 +69,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "KR Law Group | Personal Injury Attorneys",
+    title: "KR Law, APC | Personal Injury Attorneys",
     description:
-      "KR Law Group provides expert legal representation in personal injury cases including auto accidents, premises liability, and wrongful death.",
+      "KR Law, APC provides expert legal representation in personal injury cases including auto accidents, premises liability, and wrongful death.",
     images: ["/images/kr-law-og-image.png"],
   },
 };

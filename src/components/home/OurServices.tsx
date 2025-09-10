@@ -42,10 +42,11 @@ const SectionTitle = styled.h2`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #1b2632;
+  text-align: center;
 
   @media (min-width: 1025px) {
     position: absolute;
-    width: 272px;
+    width: 100%;
     height: 48px;
     left: 0px;
     top: 0px;
@@ -53,11 +54,12 @@ const SectionTitle = styled.h2`
     line-height: 48px;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
     position: absolute;
-    width: 250px;
+    width: 100%;
     height: 44px;
     left: 0px;
     top: 0px;
@@ -65,7 +67,8 @@ const SectionTitle = styled.h2`
     line-height: 44px;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    justify-content: center;
+    padding: 0 20px;
   }
 
   @media (max-width: 768px) {
@@ -90,6 +93,7 @@ const Description = styled.p`
   line-height: 27px;
   letter-spacing: -0.02em;
   color: #000000;
+  text-align: center;
 
   @media (min-width: 1025px) {
     position: absolute;
@@ -97,10 +101,12 @@ const Description = styled.p`
     max-width: 1080px;
     height: auto;
     min-height: 108px;
-    left: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 78px;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   @media (min-width: 769px) and (max-width: 1024px) {
@@ -108,12 +114,14 @@ const Description = styled.p`
     width: 100%;
     height: auto;
     min-height: 108px;
-    left: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     top: 70px;
     font-size: 17px;
     line-height: 26px;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 20px;
   }
 
@@ -121,12 +129,12 @@ const Description = styled.p`
     position: relative;
     width: 100%;
     height: auto;
-    margin: 0 0 30px;
+    margin: 0;
     font-size: 16px;
     line-height: 24px;
     display: flex;
     align-items: center;
-    text-align: justify;
+    text-align: center;
   }
 `;
 
@@ -350,7 +358,7 @@ export default function OurServices() {
       name: "Uber and Lyft Accidents",
       link: "/uber-accident-lawyers",
     },
-    { name: "Airbnb Attorney", link: "/airbnb-attorney" },
+    // { name: "Airbnb Attorney", link: "/airbnb-attorney" },
 
     {
       name: "Pedestrian Accidents",
@@ -369,7 +377,7 @@ export default function OurServices() {
       <SectionTitle>OUR SERVICES</SectionTitle>
 
       <Description>
-        At KR LAW GROUP, we understand that a serious injury can turn your life
+        At KR LAW, APC, we understand that a serious injury can turn your life
         upside down in an instant. That's why we're here—to help you navigate
         the legal process with care, clarity, and unwavering support. Whether
         you've been hurt in an accident, suffered due to someone else's

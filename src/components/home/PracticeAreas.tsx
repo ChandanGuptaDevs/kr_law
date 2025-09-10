@@ -185,7 +185,7 @@ export default function PracticeAreas() {
         <Description>
           We are a full-fledged Personal Injury & Accident law firm. Our main
           focus is on helping our clients receive the compensation they deserve.
-          The attorneys at KR Law Group specialize in helping clients receive
+          The attorneys at KR Law, APC specialize in helping clients receive
           compensation for their personal injury claims.
         </Description>
       </ContentWrapper>

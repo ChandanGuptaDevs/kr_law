@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     let subject = "";
 
     if (type === "contact") {
-      subject = "New Contact Form Submission - KR Law Group";
+      subject = "New Contact Form Submission - KR Law, APC";
       emailContent = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1b2632;">New Contact Form Submission</h2>
@@ -34,12 +34,12 @@ export async function POST(request: NextRequest) {
             </div>
           </div>
           <p style="color: #666; font-size: 12px; margin-top: 20px;">
-            This email was sent from the KR Law Group website contact form.
+            This email was sent from the KR Law, APC website contact form.
           </p>
         </div>
       `;
     } else if (type === "practice-area") {
-      subject = "New Case Consultation Request - KR Law Group";
+      subject = "New Case Consultation Request - KR Law, APC";
       emailContent = `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1b2632;">New Case Consultation Request</h2>
@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
             </div>
           </div>
           <p style="color: #666; font-size: 12px; margin-top: 20px;">
-            This is a case consultation request from the KR Law Group website.
+            This is a case consultation request from the KR Law, APC website.
           </p>
         </div>
       `;

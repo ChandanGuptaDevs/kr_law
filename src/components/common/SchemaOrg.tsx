@@ -17,7 +17,7 @@ export default function SchemaOrg({
   const lawFirmSchema = {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    name: "KR Law Group",
+    name: "KR Law, APC",
     description,
     url,
     image: imageUrl,
@@ -189,7 +189,7 @@ export default function SchemaOrg({
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "KR Law Group",
+    name: "KR Law, APC",
     image: imageUrl,
     "@id": `${url}#organization`,
     url,
@@ -234,7 +234,7 @@ export default function SchemaOrg({
   const professionalServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "KR Law Group",
+    name: "KR Law, APC",
     image: imageUrl,
     "@id": `${url}#professionalService`,
     url,
@@ -326,7 +326,7 @@ export default function SchemaOrg({
     "@type": "WebSite",
     "@id": `${url}#website`,
     url,
-    name: "KR Law Group",
+    name: "KR Law, APC",
     description: "Expert Legal Representation in Los Angeles",
     publisher: {
       "@id": `${url}#organization`,
@@ -364,7 +364,7 @@ export default function SchemaOrg({
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${url}#organization`,
-    name: "KR Law Group",
+    name: "KR Law, APC",
     url,
     logo: {
       "@type": "ImageObject",
@@ -374,7 +374,7 @@ export default function SchemaOrg({
       contentUrl: `${url}images/kr_law_logo.webp`,
       width: 300,
       height: 100,
-      caption: "KR Law Group Logo",
+      caption: "KR Law, APC Logo",
     },
     image: {
       "@id": `${url}#/schema/logo/image/`,
@@ -396,7 +396,7 @@ export default function SchemaOrg({
     contentUrl: imageUrl,
     width: 1200,
     height: 628,
-    caption: "KR Law Group - Expert Legal Representation",
+    caption: "KR Law, APC - Expert Legal Representation",
   };
 
   return (

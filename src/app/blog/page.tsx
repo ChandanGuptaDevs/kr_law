@@ -2,9 +2,9 @@ import BlogHero from "@/components/blog/BlogHero";
 import BlogListing from "@/components/blog/BlogListing";
 
 export const metadata = {
-  title: "Blog | KR Law Group | Personal Injury Law Insights",
+  title: "Blog | KR Law, APC | Personal Injury Law Insights",
   description:
-    "Explore expert insights on personal injury law, accident claims, and legal advice from the attorneys at KR Law Group.",
+    "Explore expert insights on personal injury law, accident claims, and legal advice from the attorneys at KR Law, APC.",
 };
 
 export default function BlogPage() {

@@ -45,7 +45,7 @@ const LogoTitle = styled.h1`
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.05em;
   color: #fafaf9;
   margin: 0;
 `;
@@ -275,7 +275,7 @@ export default function Header() {
     { name: "Accident Lawyer", path: "/accident-lawyer" },
     { name: "Rental Car Accident", path: "/rental-car-accident" },
     { name: "Pedestrian Accident", path: "/pedestrian-accident" },
-    { name: "Airbnb Attorney", path: "/airbnb-attorney" },
+    // { name: "Airbnb Attorney", path: "/airbnb-attorney" },
     { name: "Uber Accident Lawyer", path: "/uber-accident-lawyers" },
     { name: "Wrongful Death Attorney", path: "/wrongful-death-attorney" },
     { name: "Electric Scooter Accident", path: "/electric-scooter-accident" },
@@ -318,8 +318,7 @@ export default function Header() {
   return (
     <HeaderContainer>
       <Logo href="/">
-        <LogoTitle>KATHY RABII</LogoTitle>
-        <LogoSubtitle>LAW GROUP</LogoSubtitle>
+        <LogoTitle>KR LAW, APC</LogoTitle>
       </Logo>
 
       <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>

@@ -222,7 +222,7 @@ const LogoName = styled.h3`
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.05em;
   margin: 0;
 
   @media (min-width: 1025px) {
@@ -632,11 +632,7 @@ export default function Footer() {
                 </CallButton>
 
                 <LogoContainer>
-                  <LogoText>
-                    <LogoName>KATHY</LogoName>
-                    <LogoName style={{ marginLeft: "10px" }}>RABII</LogoName>
-                  </LogoText>
-                  <LogoSubtitle>LAW GROUP</LogoSubtitle>
+                  <LogoName>KR LAW, APC</LogoName>
                 </LogoContainer>
               </CallAndLogoContainer>
 
@@ -657,7 +653,7 @@ export default function Footer() {
 
             <FooterBottom>
               <Copyright>
-                Copyright © {new Date().getFullYear()} KR LAW GROUP - All rights
+                Copyright © {new Date().getFullYear()} KR LAW, APC - All rights
                 reserved.
               </Copyright>
               <LegalLinks>
@@ -672,11 +668,7 @@ export default function Footer() {
         {isMobile && (
           <>
             <LogoContainer>
-              <LogoText>
-                <LogoName>KATHY</LogoName>
-                <LogoName style={{ marginLeft: "10px" }}>RABII</LogoName>
-              </LogoText>
-              <LogoSubtitle>LAW GROUP</LogoSubtitle>
+              <LogoName>KR LAW, APC</LogoName>
             </LogoContainer>
 
             <ContactCard>
@@ -755,7 +747,7 @@ export default function Footer() {
                 <LegalLink href="/anti-spam">Anti-Spam</LegalLink>
               </LegalLinks>
               <Copyright>
-                Copyright © {new Date().getFullYear()} KR LAW GROUP
+                Copyright © {new Date().getFullYear()} KR LAW, APC
                 <AllRightsReserved>All rights reserved.</AllRightsReserved>
               </Copyright>
             </FooterBottom>

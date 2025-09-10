@@ -3,7 +3,7 @@ import PersonalInjuryTimelineContent from "@/components/blog/posts/personal-inju
 import SchemaOrg from "@/components/common/SchemaOrg";
 
 export const metadata = {
-  title: "What Is The Timeline For A Personal Injury Case? | KR Law Group",
+  title: "What Is The Timeline For A Personal Injury Case? | KR Law, APC",
   description:
     "Learn about the timeline for personal injury cases, from initial accident to settlement or trial, and when to consult with an experienced personal injury lawyer.",
 };
@@ -12,7 +12,7 @@ export default function PersonalInjuryTimelineBlogPost() {
   return (
     <main>
       <SchemaOrg
-        title="What Is The Timeline For A Personal Injury Case? | KR Law Group"
+        title="What Is The Timeline For A Personal Injury Case? | KR Law, APC"
         description="Learn about the timeline for personal injury cases, from initial accident to settlement or trial, and when to consult with an experienced personal injury lawyer."
         url="https://krlaw.com/blog/personal-injury-timeline"
         imageUrl="https://krlaw.com/images/what-is-the-limeline-for-a-personal-injury-case.jpg"

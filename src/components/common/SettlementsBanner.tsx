@@ -246,8 +246,8 @@ export default function SettlementsBanner() {
       text: "Total amount awarded",
     },
     {
-      type: "Auto Accident",
-      amount: "$950,000",
+      type: "Truck Accident",
+      amount: "$6,000,000",
       text: "Total amount awarded",
     },
   ];

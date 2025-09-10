@@ -433,7 +433,7 @@ export default function SouthernCaliforniaSection() {
       </SectionTitle>
 
       <FirstParagraph>
-        At KR Law Group, we will fight to make sure you get the money that you
+        At KR Law, APC, we will fight to make sure you get the money that you
         deserve. Many law firms will simply hand your case off to a paralegal or
         a case manager, at KR Law you will work one-on-one with an attorney the
         entire time.
@@ -442,7 +442,7 @@ export default function SouthernCaliforniaSection() {
       <SecondParagraph>
         Not every law firm is right for everyone. When hiring a law firm, it is
         important to know how many cases they have won, if they tend to "settle
-        out of court every time" or go to trial if needed. At KR Law Group, we
+        out of court every time" or go to trial if needed. At KR Law, APC, we
         pride ourselves in doing what is best for our clients. And our numbers
         simply speak for themselves, so we though we would share them.
       </SecondParagraph>

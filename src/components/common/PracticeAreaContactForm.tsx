@@ -641,7 +641,7 @@ export default function PracticeAreaContactForm() {
         </FieldsRow>
 
         <FormGroup>
-          <Label htmlFor="message">Tell us more about our case/accident</Label>
+          <Label htmlFor="message">Tell us what happened</Label>
           <Textarea
             id="message"
             name="message"

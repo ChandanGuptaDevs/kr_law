@@ -94,7 +94,7 @@ const TestimonialCard = styled.div<{
   $textColor: string;
 }>`
   flex-shrink: 0;
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: ${(props) => props.$backgroundColor};
   border: 1px solid #e5e5e5;
   border-radius: 1rem;
@@ -106,14 +106,14 @@ const TestimonialCard = styled.div<{
   justify-content: space-between;
 
   /* Smaller size for mobile */
-  width: 320px;
-  height: 375px;
+  width: 300px;
+  height: 280px;
 
   /* Larger size for desktop */
   @media (min-width: 768px) {
-    width: 400px;
-    height: 400px;
-    padding: 2rem;
+    width: 350px;
+    height: 300px;
+    padding: 1.5rem;
   }
 
   /* Add subtle border glow effect */
@@ -144,8 +144,8 @@ const TestimonialCard = styled.div<{
 // Quote text
 const QuoteText = styled.blockquote<{ $textColor: string }>`
   font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 400;
   color: ${(props) => props.$textColor};
   margin: 0 0 1.5rem 0;
@@ -169,8 +169,8 @@ const ClientInfo = styled.div`
 // Client name
 const ClientName = styled.span<{ $textColor: string }>`
   font-family: "Poppins", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 500;
   color: ${(props) => props.$textColor};
   letter-spacing: -0.03em;
@@ -246,83 +246,108 @@ const ScrollWrapper = styled.div`
   padding: 1rem 0;
 `;
 
-// Mobile Carousel Components
-const MobileCarouselContainer = styled.div`
+// Mobile auto-scrolling testimonials container
+const MobileContainer = styled.div<{ $pauseOnHover: boolean }>`
   display: none;
-
+  
   @media (max-width: 767px) {
     display: block;
-    width: 100%;
     position: relative;
+    width: 100%;
     overflow: hidden;
+    padding: 1rem 0;
+
+    /* Apply gradient mask for mobile */
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      white 10%,
+      white 90%,
+      transparent
+    );
   }
+
+  ${(props) =>
+    props.$pauseOnHover &&
+    css`
+      &:hover .mobile-scroll-container {
+        animation-play-state: paused;
+      }
+    `}
 `;
 
-const CarouselTrack = styled.div<{ $activeIndex: number }>`
+const MobileScrollContainer = styled.div<{
+  $direction: "left" | "right";
+  $speed: "fast" | "normal" | "slow";
+  $isAnimating: boolean;
+}>`
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  transform: translateX(${(props) => -props.$activeIndex * 100}%);
+  gap: 1rem;
+  width: max-content;
+
+  ${(props) => {
+    const duration =
+      props.$speed === "fast"
+        ? "25s"
+        : props.$speed === "normal"
+        ? "50s"
+        : "80s";
+    const animation = props.$direction === "left" ? scrollLeft : scrollRight;
+
+    return (
+      props.$isAnimating &&
+      css`
+        animation: ${animation} ${duration} linear infinite;
+      `
+    );
+  }}
 `;
 
-const CarouselSlide = styled.div`
-  width: 100%;
+const MobileTestimonialCard = styled.div<{
+  $backgroundColor: string;
+  $textColor: string;
+}>`
   flex-shrink: 0;
+  width: 340px;
+  height: 320px;
+  padding: 1.4rem;
+  background: ${(props) => props.$backgroundColor};
+  border: 1px solid #e5e5e5;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
   display: flex;
-  justify-content: center;
-  padding: 0 10px;
-`;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 
-const PaginationDots = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  gap: 8px;
-`;
-
-const PaginationDot = styled.button<{ $isActive: boolean }>`
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: ${(props) => (props.$isActive ? "#1B2632" : "#D9D9D9")};
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-`;
-
-// Navigation buttons for mobile
-const NavButton = styled.button`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  &:focus {
-    outline: none;
+  /* Add subtle border glow effect */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.02)
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
   }
 `;
-
-// const PrevButton = styled(NavButton)`
-//   left: 5px;
-// `;
-
-// const NextButton = styled(NavButton)`
-//   right: 5px;
-// `;
 
 // Interface for testimonial items
 interface TestimonialItem {
@@ -350,10 +375,6 @@ const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Auto-scroll timer ref
-  const autoScrollTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const addAnimation = () => {
@@ -373,57 +394,6 @@ const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
     addAnimation();
   }, []);
 
-  // Auto-rotation for mobile carousel
-  useEffect(() => {
-    // Define how often to rotate slides (in milliseconds)
-    // Using much longer intervals to match desktop's slow motion effect
-    const getRotationInterval = () => {
-      if (speed === "fast") return 8000; // 8 seconds
-      if (speed === "normal") return 12000; // 12 seconds
-      return 15000; // 15 seconds for slow (much slower)
-    };
-
-    const rotationInterval = getRotationInterval();
-    // Start the auto-rotation
-    autoScrollTimerRef.current = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, rotationInterval);
-
-    // Clean up the timer when component unmounts
-    return () => {
-      if (autoScrollTimerRef.current) {
-        clearInterval(autoScrollTimerRef.current);
-      }
-    };
-  }, [speed, items.length]);
-
-  const goToSlide = (index: number) => {
-    // Reset the auto-rotation timer when manually navigating
-    if (autoScrollTimerRef.current) {
-      clearInterval(autoScrollTimerRef.current);
-    }
-
-    setActiveIndex(index);
-
-    // Restart the timer after manual navigation with the appropriate slow interval
-    const getRotationInterval = () => {
-      if (speed === "fast") return 8000; // 8 seconds
-      if (speed === "normal") return 12000; // 12 seconds
-      return 15000; // 15 seconds for slow
-    };
-
-    autoScrollTimerRef.current = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, getRotationInterval());
-  };
-
-  const goToNextSlide = () => {
-    goToSlide((activeIndex + 1) % items.length);
-  };
-
-  const goToPrevSlide = () => {
-    goToSlide((activeIndex - 1 + items.length) % items.length);
-  };
 
   return (
     <>
@@ -470,48 +440,43 @@ const InfiniteMovingCards: React.FC<InfiniteMovingCardsProps> = ({
         </ScrollWrapper>
       </Container>
 
-      {/* Mobile version - Card carousel with pagination */}
-      <MobileCarouselContainer>
-        <CarouselTrack $activeIndex={activeIndex}>
-          {items.map((item, index) => {
-            // Determine card colors based on index
-            const isEven = index % 2 === 0;
+      {/* Mobile version - Auto-scrolling testimonials */}
+      <MobileContainer $pauseOnHover={pauseOnHover}>
+        <MobileScrollContainer
+          className="mobile-scroll-container"
+          $direction="left"
+          $speed={speed}
+          $isAnimating={isAnimating}
+        >
+          {/* Render testimonials twice for seamless loop */}
+          {[...items, ...items].map((item, index) => {
+            // Determine card colors based on original index
+            const originalIndex = index % items.length;
+            const isEven = originalIndex % 2 === 0;
             const backgroundColor = isEven ? "#D9D9D9" : "#1B2632";
             const textColor = isEven ? "#57534E" : "#FFFFFF";
             const starColor = isEven ? "#000000" : "#FFFFFF";
 
             return (
-              <CarouselSlide key={`mobile-${item.name}-${index}`}>
-                <TestimonialCard
-                  $backgroundColor={backgroundColor}
-                  $textColor={textColor}
-                >
-                  <QuoteText $textColor={textColor}>"{item.quote}"</QuoteText>
-                  <ClientInfo>
-                    <ClientName $textColor={textColor}>{item.name}</ClientName>
-                    <StarContainer>
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} $color={starColor} />
-                      ))}
-                    </StarContainer>
-                  </ClientInfo>
-                </TestimonialCard>
-              </CarouselSlide>
+              <MobileTestimonialCard
+                key={`mobile-${item.name}-${index}`}
+                $backgroundColor={backgroundColor}
+                $textColor={textColor}
+              >
+                <QuoteText $textColor={textColor}>"{item.quote}"</QuoteText>
+                <ClientInfo>
+                  <ClientName $textColor={textColor}>{item.name}</ClientName>
+                  <StarContainer>
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} $color={starColor} />
+                    ))}
+                  </StarContainer>
+                </ClientInfo>
+              </MobileTestimonialCard>
             );
           })}
-        </CarouselTrack>
-
-        <PaginationDots>
-          {items.map((_, index) => (
-            <PaginationDot
-              key={`dot-${index}`}
-              $isActive={activeIndex === index}
-              onClick={() => goToSlide(index)}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </PaginationDots>
-      </MobileCarouselContainer>
+        </MobileScrollContainer>
+      </MobileContainer>
     </>
   );
 };
@@ -521,23 +486,43 @@ export default function TestimonialsInfiniteCards() {
   const testimonials: TestimonialItem[] = [
     {
       quote:
-        "After my motorcycle accident, I was overwhelmed with medical bills and unable to work. KR Law stepped in and handled everything professionally. They negotiated with the insurance companies and medical providers while I focused on recovery. Their expertise in personal injury cases was evident from our first meeting. I'm grateful for their dedication to my case and the successful outcome they achieved.",
-      name: "Sarah Williams",
+        "Exceptional Legal Representation – Highly Recommend! I am incredibly grateful for their outstanding support and expertise in handling my case.",
+      name: "Lupita Pacheco",
     },
     {
       quote:
-        "Working with KR Law was the best decision I made after my car accident. Their attention to detail and persistence resulted in a settlement that was far beyond what the insurance company initially offered. The entire team was responsive and kept me informed throughout the entire process. They took the time to explain everything in terms I could understand, which really put me at ease during a stressful time.",
-      name: "Robert Johnson",
+        "They took absolute amazing care of myself and my family. I am so glad I found them. I will absolutely send anyone to them.",
+      name: "Keyanna Robinson",
     },
     {
       quote:
-        "The team at KR Law provided exceptional service during my personal injury case. They were always available to answer questions and address concerns. Their knowledge of the law and strategic approach to my case resulted in a favorable settlement without having to go to trial. I appreciate their honesty, transparency, and commitment to getting me the compensation I deserved.",
-      name: "David Thompson",
+        "KR Law was amazing! They took care of my wife and me right away after our accident. Their support and professionalism made a tough time so much easier.",
+      name: "Jordan Cohen",
     },
     {
       quote:
-        "I could not be more satisfied with the service provided by the KR Law Office. The team provided excellent, professional, clear and understandable advice and counsel to me. They are thorough and very knowledgeable. All processes that seem complicated were handled seamlessly and efficiently. They communicated everything with me step-by-step through the entire process.",
-      name: "Michelle Gazmen",
+        "Working with KR Law, APC has been a blessing. After realizing my previous attorney couldn't help me, he referred me to Kathy Rabii.",
+      name: "Justin Anthony",
+    },
+    {
+      quote:
+        "The team at KR Law has been so great throughout my accident process. Shout out to Julie and Carlos who have been so helpful.",
+      name: "Amy Parada",
+    },
+    {
+      quote:
+        "I am so happy with this firm, I was really injured and they made sure to walk me through the whole process!",
+      name: "Pascual Hernandez",
+    },
+    {
+      quote:
+        "Kathy exceeded all my expectations! Her professionalism and expertise were remarkable. She took time to explain everything clearly.",
+      name: "Azita Hickey",
+    },
+    {
+      quote:
+        "Kathy was a delight from the moment I contacted her. Very knowledgeable and transparent throughout the process while showing empathy.",
+      name: "Lauren Talbott",
     },
   ];
 

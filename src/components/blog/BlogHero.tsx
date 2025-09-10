@@ -111,7 +111,7 @@ export default function BlogHero() {
       <ContentWrapper>
         <HeroContent>
           <HeroTitle>
-            <TitleFirstPart>KR Law Group</TitleFirstPart>{" "}
+            <TitleFirstPart>KR Law, APC</TitleFirstPart>{" "}
             <TitleSecondPart>Blog</TitleSecondPart>
           </HeroTitle>
         </HeroContent>

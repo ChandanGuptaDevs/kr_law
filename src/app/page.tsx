@@ -10,19 +10,19 @@ import FAQ from "@/components/home/FAQ";
 import SchemaOrg from "@/components/common/SchemaOrg";
 
 export const metadata = {
-  title: "KR Law Group | Kathy Rabii Law Firm | Los Angeles Legal Services",
+  title: "KR Law, APC | Kathy Rabii Law Firm | Los Angeles Legal Services",
   description:
-    "KR Law Group led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!",
+    "KR Law, APC led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!",
   keywords:
-    "KR Law Group, Kathy Rabii, law firm, legal services, Los Angeles attorney, accident lawyer, arrest attorney, free consultation",
+    "KR Law, APC, Kathy Rabii, law firm, legal services, Los Angeles attorney, accident lawyer, arrest attorney, free consultation",
 };
 
 export default function Home() {
   return (
     <main>
       <SchemaOrg
-        title="KR Law Group | Kathy Rabii Law Firm | Los Angeles Legal Services"
-        description="KR Law Group led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!"
+        title="KR Law, APC | Kathy Rabii Law Firm | Los Angeles Legal Services"
+        description="KR Law, APC led by Kathy Rabii provides expert legal representation. Behind every case is a person who deserves care. Pay nothing until you win!"
         url="https://www.krinjurylawfirm.com/"
         imageUrl="https://www.krinjurylawfirm.com/images/lawyer-image-4.webp"
       />

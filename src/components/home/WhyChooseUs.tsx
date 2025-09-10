@@ -410,8 +410,8 @@ const DesktopKnowMoreButton = styled(Link)`
 export default function WhyChooseUs() {
   const awards: LawCaseAward[] = [
     {
-      amount: "$1,000,000",
-      description: "Auto Accident Total Amount Awarded",
+      amount: "$6,000,000",
+      description: "Truck Accident Total Amount Awarded",
     },
     {
       amount: "$1,850,000",
@@ -432,7 +432,7 @@ export default function WhyChooseUs() {
       <ContentWrapper>
         <SectionTitle>Why choose us ?</SectionTitle>
         <Description>
-          At KR Law Group, we will fight to make sure you get the money that you
+          At KR Law, APC, we will fight to make sure you get the money that you
           deserve. Many law firms will simply hand your case off to a paralegal
           or a case manager, at KR Law you will work one-on-one with an attorney
           the entire time.
@@ -469,7 +469,7 @@ export default function WhyChooseUs() {
           <LightRectangle />
           <LawyerImage
             src="/images/lawyer-image-2.webp"
-            alt="Kathy Rabii - Founder of KR Law Group"
+            alt="Kathy Rabii - Founder of KR Law, APC"
             width={410}
             height={616}
             priority

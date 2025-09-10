@@ -7,19 +7,19 @@ import SettlementsBanner from "@/components/common/SettlementsBanner";
 import SchemaOrg from "@/components/common/SchemaOrg";
 
 export const metadata = {
-  title: "Rental Car Accident Lawyers | KR Law Group",
+  title: "Rental Car Accident Lawyers | KR Law, APC",
   description:
-    "Experienced rental car accident lawyers at KR Law Group can help you navigate the complex legal process after an accident. Get the compensation you deserve.",
+    "Experienced rental car accident lawyers at KR Law, APC can help you navigate the complex legal process after an accident. Get the compensation you deserve.",
   keywords:
-    "rental car accident lawyer, car rental crash, rental vehicle accident, personal injury lawyer, KR Law Group, car rental collision",
+    "rental car accident lawyer, car rental crash, rental vehicle accident, personal injury lawyer, KR Law, APC, car rental collision",
 };
 
 export default function RentalCarAccidentPage() {
   return (
     <main>
       <SchemaOrg
-        title="Rental Car Accident Lawyers | KR Law Group"
-        description="Experienced rental car accident lawyers at KR Law Group can help you navigate the complex legal process after an accident. Get the compensation you deserve."
+        title="Rental Car Accident Lawyers | KR Law, APC"
+        description="Experienced rental car accident lawyers at KR Law, APC can help you navigate the complex legal process after an accident. Get the compensation you deserve."
         url="https://krlaw.com/rental-car-accident"
         imageUrl="https://krlaw.com/images/rental-car-accident-banner.jpg"
       />

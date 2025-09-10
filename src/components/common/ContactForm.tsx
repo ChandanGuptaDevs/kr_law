@@ -398,7 +398,7 @@ export default function ContactForm() {
             required
           />
           <Label htmlFor="message" $hasValue={formData.message !== ""}>
-            Tell us about your accident or arrest...
+            Tell us what happened...
           </Label>
         </InputGroup>
 

@@ -842,14 +842,14 @@ export default function ContactForm() {
               <Textarea
                 id="message"
                 name="message"
-                placeholder="Tell us about your accident or arrest..."
+                placeholder="Tell us what happened..."
                 value={formValues.message}
                 onChange={handleChange}
                 rows={1}
                 required
               ></Textarea>
               <Label htmlFor="message" $hasValue={formValues.message !== ""}>
-                Tell us about your accident or arrest...
+                Tell us what happened...
               </Label>
             </FullWidthFormGroup>
 
@@ -951,7 +951,7 @@ export default function ContactForm() {
             <MobileTextarea
               id="mobile-message"
               name="message"
-              placeholder="Tell us about your accident or arrest..."
+              placeholder="Tell us what happened..."
               value={mobileFormValues.message}
               onChange={handleMobileChange}
               rows={1}
@@ -962,7 +962,7 @@ export default function ContactForm() {
               htmlFor="mobile-message"
               $hasValue={mobileFormValues.message !== ""}
             >
-              Tell us about your accident or arrest...
+              Tell us what happened...
             </MobileLabel>
           </MobileFormGroup>
 
