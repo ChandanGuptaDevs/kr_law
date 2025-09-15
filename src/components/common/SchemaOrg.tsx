@@ -141,9 +141,8 @@ export default function SchemaOrg({
       geoRadius: "50000", // 50km radius around Los Angeles
     },
     sameAs: [
-      "https://www.facebook.com/krlawgroup", // Replace with actual social media URLs
-      "https://www.instagram.com/krlawgroup",
-      "https://www.linkedin.com/company/kr-law-group",
+      "https://www.instagram.com/socalcrashgal?igsh=MXJ0ZnIwaXg2dHJ1dA==",
+      "https://www.linkedin.com/in/kathy-rabii-13826256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     ],
     awards: [
       {
@@ -224,9 +223,8 @@ export default function SchemaOrg({
       },
     ],
     sameAs: [
-      "https://www.facebook.com/krlawgroup", // Replace with actual social media URLs
-      "https://www.instagram.com/krlawgroup",
-      "https://www.linkedin.com/company/kr-law-group",
+      "https://www.instagram.com/socalcrashgal?igsh=MXJ0ZnIwaXg2dHJ1dA==",
+      "https://www.linkedin.com/in/kathy-rabii-13826256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     ],
   };
 
@@ -380,9 +378,8 @@ export default function SchemaOrg({
       "@id": `${url}#/schema/logo/image/`,
     },
     sameAs: [
-      "https://www.facebook.com/krlawgroup", // Replace with actual social media URLs
-      "https://www.instagram.com/krlawgroup",
-      "https://www.linkedin.com/company/kr-law-group",
+      "https://www.instagram.com/socalcrashgal?igsh=MXJ0ZnIwaXg2dHJ1dA==",
+      "https://www.linkedin.com/in/kathy-rabii-13826256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     ],
   };
 
