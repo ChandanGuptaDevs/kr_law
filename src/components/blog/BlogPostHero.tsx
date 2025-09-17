@@ -13,23 +13,25 @@ interface BlogPostHeroProps {
 const HeroContainer = styled.section`
   position: relative;
   width: 100%;
-  min-height: 400px;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(27, 38, 50, 0.7),
-    rgba(27, 38, 50, 0.9)
-  );
+  overflow: hidden;
   
   @media (min-width: 1025px) {
-    min-height: 500px;
+    height: 622px;
     padding: 100px 20px 60px;
   }
   
+  @media (min-width: 769px) and (max-width: 1024px) {
+    height: 500px;
+    padding: 80px 20px 50px;
+  }
+  
   @media (max-width: 768px) {
-    min-height: 350px;
+    height: 400px;
     padding: 80px 20px 40px;
   }
 `;
@@ -41,20 +43,34 @@ const BackgroundImage = styled.div`
   right: 0;
   bottom: 0;
   z-index: -1;
-  opacity: 0.3;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 38, 50, 0.3) 0%,
+    rgba(27, 38, 50, 0.6) 100%
+  );
+  z-index: 0;
 `;
 
 const ContentWrapper = styled.div`
   max-width: 900px;
   width: 100%;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
+  position: relative;
 `;
 
 const Category = styled.span`
   display: inline-block;
   padding: 6px 16px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(27, 38, 50, 0.8);
   border-radius: 20px;
   color: #ffffff;
   font-size: 14px;
@@ -71,6 +87,7 @@ const Title = styled.h1`
   line-height: 1.2;
   color: #ffffff;
   margin: 0 0 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   
   @media (max-width: 768px) {
     font-size: 32px;
@@ -113,8 +130,11 @@ export default function BlogPostHero({ title, date, author, category, image }: B
           fill
           style={{ objectFit: "cover" }}
           priority
+          quality={90}
+          sizes="100vw"
         />
       </BackgroundImage>
+      <Overlay />
       <ContentWrapper>
         <Category>{category}</Category>
         <Title>{title}</Title>

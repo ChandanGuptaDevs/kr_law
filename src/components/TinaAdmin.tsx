@@ -1,19 +1,21 @@
 "use client";
 
 export function TinaAdmin() {
-  // Tina CMS will only work when properly configured with API keys
-  // See TINA_SETUP.md for configuration instructions
+  // Redirect to the actual Tina CMS admin page
+  if (typeof window !== 'undefined') {
+    window.location.href = '/admin/index.html';
+  }
+  
   return (
-    <div style={{ padding: "50px", textAlign: "center", fontFamily: "sans-serif" }}>
-      <h1>Tina CMS Admin</h1>
-      <p>To enable the CMS, please follow these steps:</p>
-      <ol style={{ textAlign: "left", maxWidth: "600px", margin: "20px auto" }}>
-        <li>Create an account at <a href="https://app.tina.io" target="_blank">app.tina.io</a></li>
-        <li>Connect this GitHub repository</li>
-        <li>Add the API keys to your Vercel environment variables</li>
-        <li>Redeploy the application</li>
-      </ol>
-      <p>See TINA_SETUP.md for detailed instructions</p>
+    <div style={{ 
+      padding: "50px", 
+      textAlign: "center", 
+      fontFamily: "sans-serif",
+      minHeight: "100vh",
+      background: "#f5f5f5"
+    }}>
+      <h1 style={{ color: "#333" }}>Redirecting to Tina CMS...</h1>
+      <p style={{ color: "#666" }}>If you're not redirected, <a href="/admin/index.html">click here</a></p>
     </div>
   );
 }
