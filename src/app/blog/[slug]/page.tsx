@@ -2,6 +2,8 @@ import { getPostData, getAllPostSlugs } from "@/lib/markdown";
 import BlogPostHero from "@/components/blog/BlogPostHero";
 import BlogPostContent from "@/components/blog/BlogPostContent";
 import SchemaOrg from "@/components/common/SchemaOrg";
+import client from "../../../../tina/__generated__/client";
+import BlogPostClient from "./client-page";
 
 export async function generateStaticParams() {
   const paths = getAllPostSlugs();
@@ -20,8 +22,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({ 
+  params,
+  searchParams 
+}: { 
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const isEditMode = resolvedSearchParams?.edit === 'true';
+
+  // If in edit mode, use Tina
+  if (isEditMode) {
+    try {
+      const tinaData = await client.queries.post({
+        relativePath: `${resolvedParams.slug}.md`,
+      });
+
+      return (
+        <main>
+          <BlogPostClient {...tinaData} />
+        </main>
+      );
+    } catch (error) {
+      console.error("Error loading Tina data:", error);
+    }
+  }
+
+  // Otherwise use static content
   const postData = await getPostData(resolvedParams.slug);
 
   return (
