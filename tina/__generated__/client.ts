@@ -1,5 +1,5 @@
 import { createClient } from "tinacms/dist/client";
 import { queries } from "./types";
-export const client = createClient({ cacheDir: '/Users/chandangupta/Documents/kr_law_main/kr_law/tina/__generated__/.cache/1758486448614', url: 'https://content.tinajs.io/1.6/content/f6c4f8a9-c679-4d16-bcb2-57882a81cef8/github/main', token: '3c0cf7a9a8f44c29c718efd7c75f375ce333dd62', queries,  });
+export const client = createClient({ cacheDir: '/Users/chandangupta/Documents/kr_law_main/kr_law/tina/__generated__/.cache/1758489680225', url: 'https://content.tinajs.io/1.6/content/17efd69c-446d-4515-9e7d-78a99abe6508/github/main', token: 'bb2f744937915f22e589b838d262bdde0984f92e', queries,  });
 export default client;
   
