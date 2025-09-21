@@ -1,5 +1,5 @@
-import { TinaAdmin } from "@/components/TinaAdmin";
+import { redirect } from 'next/navigation';
 
-export default function AdminPage() {
-  return <TinaAdmin />;
+export default function AdminRedirect() {
+  redirect('/admin/index.html');
 }
