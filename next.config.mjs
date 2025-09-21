@@ -12,6 +12,19 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async headers() {
+    return [
+      {
+        source: '/admin/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
