@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # Tina CMS
-.tina/__generated__
+tina/__generated__/
